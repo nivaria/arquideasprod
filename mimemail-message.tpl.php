@@ -70,7 +70,7 @@ global $base_url;
       <table border="0" cellpadding="20" cellspacing="0" width="600" style="background-color: #333333;border-top: 4px solid #E1E1E1;color: #FFFFFF;">
         <tr>
           <td valign="top">
-            <a href="<?php print $base_url; ?>/home" style="color: #FFFFFF;">Gerencia de La Laguna</a> | <a href="<?php print $base_url; ?>/groups" style="color: #FFFFFF;">Comunidad</a>
+            <a href="<?php print $base_url; ?>/home" style="color: #FFFFFF;">Arquideas</a> | <a href="<?php print $base_url; ?>/user" style="color: #FFFFFF;"><?php print t('Access my private area'); ?></a> | <a href="<?php print $base_url; ?>/groups" style="color: #FFFFFF;"><?php print t('Community'); ?></a>
           </td>
           <td align="right">
             <a href="http://www.nivaria.com" title="Nivaria"><img src="<?php print $base_url . '/'. path_to_theme();?>/images/nws_by_nivaria.png" alt="Nivaria" /></a>
