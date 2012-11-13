@@ -76,11 +76,11 @@ function arquideasprod_preprocess_page(&$vars)
   }
   
   if(isset($vars['account'])){
-    $patterns = _arquideasprod_generic_get_user_pages_patterns($vars['account']->name);
+    $patterns = _arquideas_generic_get_user_pages_patterns($vars['account']->name);
     foreach($patterns as $pkey=>$pattern1){
         $match = preg_match($pattern1, $vars['body_id']);
         if($match==1){
-            $vars['tabs'] = _arquideasprod_generic_construct_user_tabs($vars['body_id'],$vars['account']);
+            $vars['tabs'] = _arquideas_generic_construct_user_tabs($vars['body_id'],$vars['account']);
             break;
         }
     }    
