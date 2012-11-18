@@ -80,6 +80,12 @@
             <?php print show_inscription_downloads($node, $contest); ?>
             <!-- End DOWNLOAD files -->
             
+            <!-- Votation period -->
+            <div class="public-voting-interval">
+                <?php print show_public_vote_contest_date($contest); ?>
+            </div>
+            <!-- End Votation period -->
+            
             <!-- Statuses widget -->
             <div class="facebook-statuses">
             <?php
