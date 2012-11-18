@@ -81,7 +81,7 @@
             <!-- End DOWNLOAD files -->
             
             <!-- Votation period -->
-            <div class="public-voting-interval">
+            <div class="public-voting-interval clearfix">
                 <?php print show_public_vote_contest_date($contest); ?>
             </div>
             <!-- End Votation period -->
