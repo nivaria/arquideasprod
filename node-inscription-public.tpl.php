@@ -86,15 +86,6 @@
             </div>
             <!-- End Votation period -->
             
-            <!-- Statuses widget -->
-            <div class="facebook-statuses">
-            <?php
-                $block = module_invoke('facebook_status', 'block', 'view', 'facebook_status');
-                print $block['content'];
-            ?>
-            </div>    
-            <!-- END Statuses widget -->
-            
         </div>
         <div class="col02">
             <!-- Inscription IMAGES -->
