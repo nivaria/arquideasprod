@@ -908,3 +908,5 @@ function arquideasprod_commons_profile_image_action_links_block($picture, $links
 
 //Register some texts
 t('Press enter or click !plus between tags.', array('!plus' => '\'+\''));
+t('What\'s on your mind?');
+t('Write something...');
