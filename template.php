@@ -478,6 +478,17 @@ function arquideasprod_preprocess_block($variables) {
       if($variables['block']->module=='locale' && $variables['block']->delta==0){
           $variables['block']->subject = '';
       }
+      
+      //Group Quick Tabs
+      if($variables['block']->module=='quicktabs' && $variables['block']->delta=='arqnetwork_group_quicktabs'){
+          $obj = menu_get_object('node',4);
+          if(empty($obj)){
+              $obj = menu_get_object('node',1);
+          }
+          if(!empty($obj) && og_is_group_type($obj->type)){
+            $variables['block']->subject = t('Wall of %s',array('%s'=>$obj->title));
+          }  
+      }
   }
 }
 
