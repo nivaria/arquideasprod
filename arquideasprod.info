@@ -6,6 +6,10 @@ engine = phptemplate
 
 stylesheets[all][] = css/arquideas-style.css
 
+; Soin Sans Font File
+stylesheets[all][] = css/fonts/soinsans/soinsans.css
+
+
 ; Optionally add some JavaScripts to your theme.
 scripts[] = scripts/arquideas.js
 
