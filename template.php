@@ -4,7 +4,7 @@
  * Breadcrumb themeing
  */
 function arquideasprod_breadcrumb($breadcrumb) {
-    if (!empty($breadcrumb)) {
+  if (!empty($breadcrumb)) {
     $html = '';  
     $pattern = '/^contest\/\d+\/[a-z_]+$/';
     $match = preg_match($pattern, $_GET[q]);
@@ -73,6 +73,27 @@ function arquideasprod_breadcrumb($breadcrumb) {
 
         // Get custom breadcrumbs
         $breadcrumb = drupal_get_breadcrumb();
+    }
+    
+    $pattern = '/^inscription\/\d+$/';
+    $match = preg_match($pattern, $_GET['q']);
+    if($match==1){
+        $arr = explode('/',$_GET[q]);
+        
+        $node = node_load($arr[1]);
+        $cnode = node_load($node->field_contest[0]['nid']);
+        if(!empty($node) && !empty($cnode)){
+            $links = array();
+            $links[] = l(t('Home'), '<front>');
+            $links[] = l(t('Contest'), 'node/'.$cnode->nid);
+            $links[] = $node->title;
+        
+            // Set custom breadcrumbs
+            drupal_set_breadcrumb($links);
+
+            // Get custom breadcrumbs
+            $breadcrumb = drupal_get_breadcrumb();
+        }
     }
     
     if (count($breadcrumb) > 1) {
