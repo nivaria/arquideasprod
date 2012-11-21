@@ -4,8 +4,80 @@
  * Breadcrumb themeing
  */
 function arquideasprod_breadcrumb($breadcrumb) {
-  if (!empty($breadcrumb)) {
-    $html .= '<div class="breadcrumb">'. implode(' &gt; ', $breadcrumb) .'</div>';
+    if (!empty($breadcrumb)) {
+    $html = '';  
+    $pattern = '/^contest\/\d+\/[a-z_]+$/';
+    $match = preg_match($pattern, $_GET[q]);
+    if($match==1){
+        $arr = explode('/',$_GET[q]);
+        
+        $current = '';
+        switch($arr[2]){
+            case 'canceled':
+                $current = t('Canceled');
+                break;
+            case 'finalists':
+                $current = t('Finalists');
+                break;
+            case 'selectfinal':
+                $current = t('Finalists selection');
+                break;
+            case 'inscripted':
+                $current = t('Inscripted');
+                break;
+            case 'juryvotes':
+                $current = t('Jury voting');
+                break;
+            case 'myvoting':
+                $current = t('My voting');
+                break;
+            case 'payment_pending':
+                $current = t('Payment pending');
+                break;
+            case 'preinscripted':
+                $current = t('Pre-inscripted');
+                break;
+            case 'preselect':
+                $current = t('Preselection');
+                break;
+            case 'publicvotationresults':
+                $current = t('Results of public voting');
+                break;
+            case 'publicvotation':
+                $current = t('Public voting');
+                break;
+            case 'submitted':
+                $current = t('Submitted');
+                break;
+            case 'votingresults':
+                $current = t('Voting results');
+                break;
+            case 'winners':
+                $current = t('Winners');
+                break;
+            case 'selectwinners':
+                $current = t('Winners selection');
+                break;
+            default:
+                break;
+            
+        }
+        
+        $links = array();
+        $links[] = l(t('Home'), '<front>');
+        $links[] = l(t('Contest'), 'node/'.$arr[1]);
+        $links[] = $current;
+        
+        // Set custom breadcrumbs
+        drupal_set_breadcrumb($links);
+
+        // Get custom breadcrumbs
+        $breadcrumb = drupal_get_breadcrumb();
+    }
+    
+    if (count($breadcrumb) > 1) {
+        $html .= '<div class="breadcrumb">'. implode(' &gt; ', $breadcrumb) .'</div>';
+    }    
     return $html;
   }
 }
