@@ -747,12 +747,17 @@ function arquideasprod_node_form($form) {
   //Getting datos de proyecto
   if(isset($form['group_data_project'])){
       $form['group_data_project']['#access'] = FALSE;
+      if(isset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_data_project'])){
+          unset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_data_project']);
+      }
   }
   //Getting tipo de proyecto
   if(isset($form['group_type_project'])){
       $form['group_type_project']['#access'] = FALSE;
+      if(isset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_type_project'])){
+          unset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_type_project']);
+      }
   }
-
   
   $output .= "  <div class=\"standard\">\n";
   $output .= drupal_render($form);
@@ -785,12 +790,14 @@ function arquideasprod_node_form($form) {
   }
   if(isset($form['group_data_project'])){
     $form['group_data_project']['#access'] = TRUE;
+    $form['group_data_project']['#attributes']['class'] = 'group-data-project';
     $output1 .= "  <div class=\"data-project\">\n";
     $output1 .= drupal_render($form['group_data_project']);
     $output1 .= "  </div>\n";
   }
   if(isset($form['group_type_project'])){
     $form['group_type_project']['#access'] = TRUE;
+    $form['group_type_project']['#attributes']['class'] = 'group-type-project';
     $output1 .= "  <div class=\"type-project\">\n";
     $output1 .= drupal_render($form['group_type_project']);
     $output1 .= "  </div>\n";
