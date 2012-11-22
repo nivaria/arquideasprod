@@ -586,9 +586,9 @@ function arquideasprod_preprocess_block($variables) {
 }
 
 function arquideasprod_search_theme_form($form) {
-	$form['search_theme_form']['#value']= t('Search...');
+	$form['search_theme_form']['#value']= t('Project, study, contest...');
 	$form['submit']['#type'] = 'image_button';
-	$form['submit']['#src'] = drupal_get_path('theme', 'gll20') . '/images/search_icon.png';
+	$form['submit']['#src'] = drupal_get_path('theme', 'arquideasprod') . '/images/search_icon.png';
 	$form['submit']['#attributes']['class'] = 'btn';
 	return '<div id="search" class="container-inline">' . drupal_render($form) . '</div>';
 }
