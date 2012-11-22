@@ -1011,7 +1011,7 @@ function arquideasprod_commons_profile_image_action_links_block($picture, $links
  * @param $vid - vocab id for which more link is wanted
  * @ingroup themable
  */
-function arquideas_tagadelic_more($vid) {
+function arquideasprod_tagadelic_more($vid) {
   return "";
 }
 
