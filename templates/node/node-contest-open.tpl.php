@@ -99,7 +99,7 @@
     
     <!-- SHARE SOCIAL BLOCK -->
     <?php
-        $block = module_invoke('addthis', 'block', 'view', '0');
+        $block = module_invoke('arquideas_generic', 'block', 'view', '13');
         print $block['content'];
     ?>    
     <!-- END SHARE SOCIAL BLOCK -->
