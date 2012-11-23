@@ -40,6 +40,14 @@
             </h3>
             <!-- End Project SUBTITLE -->
             
+            <!-- FiveStar Widget --> 
+            <?php 
+            if (user_access('rate content') && fivestar_validate_target('node', $node->nid)) {
+                print fivestar_widget_form($node);
+            }
+            ?>
+            <!-- END FiveStar Widget -->
+            
             <!-- Project Type -->
             <div class="project-type">
                 <?php print $field_project_type_project_rendered ?>
