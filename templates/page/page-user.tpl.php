@@ -192,7 +192,7 @@
                                                     <?php print isset($account)?userpoints_get_current_points($account->uid).' '.t('points'):''; ?>
                                                 </span>    
                                             </div>
-                                            <?php if(isset($account) && user_has_role(ROL_CONTEST_JURY, $account)): ?>
+                                            <?php if(FALSE && isset($account) && user_has_role(ROL_CONTEST_JURY, $account)): ?>
                                             <div class="jury-member">
                                                 <?php print t('Jury of Arquideas'); ?>
                                             </div>
