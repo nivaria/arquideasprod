@@ -14,9 +14,13 @@
     <h1 class="title"><?php print $contest_title ?></h1>
     <?php endif; ?>
     
+    <!-- NAVIGATION -->
+    <?php print arquideas_generic_get_inscription_detail_navigation($node); ?>
+    <!-- END NAVIGATION -->
+    
     <!-- ADDTHIS widget -->
     <?php
-        $block = module_invoke('addthis', 'block', 'view', '0');
+        $block = module_invoke('arquideas_generic', 'block', 'view', '13');
         print $block['content'];
     ?>
     <!-- END ADDTHIS widget -->
@@ -38,8 +42,16 @@
             
             <!-- FiveStar Widget --> 
             <?php 
-            if (user_access('rate content') && fivestar_validate_target('node', $node->nid)) {
-                print fivestar_widget_form($node);
+            $flag = flag_get_flag('finalist');
+            if($contest->field_contest_state[0]['value']==ContestState::PUBLIC_CONTEST && $flag->is_flagged($node->nid)){
+                if (user_access('rate content') && fivestar_validate_target('node', $node->nid)) {
+                    print fivestar_widget_form($node);
+                }
+            }    
+            if($contest->field_contest_state[0]['value']==ContestState::FINISHED && $flag->is_flagged($node->nid)){
+                if (fivestar_validate_target('node', $node->nid)) {
+                    print fivestar_static('node', $node->nid, 'vote', 'inscription');
+                }    
             }
             ?>
             <!-- END FiveStar Widget -->
