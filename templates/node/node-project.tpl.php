@@ -11,12 +11,75 @@
 <?php }?>
 <div id="node-<?php print $node->nid; ?>" class="node <?php print $node_classes; ?>">
   <div class="inner">
-    <?php print $picture ?>
+    <?php /*print $picture*/ ?>
 
     <?php if ($page == 0): ?>
     <h2 class="title"><a href="<?php print $node_url ?>" title="<?php print $title ?>"><?php print $title ?></a></h2>
     <?php endif; ?>
+    
 
+    <!-- ADDTHIS widget -->
+    <?php
+        $block = module_invoke('arquideas_generic', 'block', 'view', '13');
+        print $block['content'];
+    ?>
+    <!-- END ADDTHIS widget -->
+
+    <?php if(!$is_edit && $page == 1): ?>
+    <div class="project-info-public">
+        <div class="col01">
+            <!-- Project TITLE-->
+            <h2 class="title">
+            <?php print $title; ?>
+            </h2>
+            <!-- End Project TITLE-->
+            
+            <!-- Project SUBTITLE -->
+            <h3 class="subtitle">
+                <?php print $field_subtitle_project_rendered; ?>
+            </h3>
+            <!-- End Project SUBTITLE -->
+            
+            <!-- Project Type -->
+            <div class="project-type">
+                <?php print $field_project_type_project_rendered ?>
+            </div>
+            <!-- End Project Type -->
+            
+            <?php if ($terms): ?>
+            <div class="terms">
+            <?php print $terms; ?>
+            </div>
+            <?php endif;?>
+            
+            <!-- Description of Project -->
+            <div class="project-body">
+                <?php print $field_body_project_rendered ?>
+            </div>
+            <!-- END Description of Project -->
+            
+            <!-- DOWNLOAD files -->
+            <?php print $field_documents_project_rendered ?>
+            <!-- End DOWNLOAD files -->
+            
+            <?php if ($links): ?>
+                <div class="links">
+                <?php print $links; ?>
+                </div>
+            <?php endif; ?>
+
+        </div>
+        <div class="col02">
+            <!-- Inscription IMAGES -->
+            <?php $preset = variable_get('nivaria_contests_base_jpgpreset', 'Featured');
+            print get_project_images($node, TRUE, FALSE, $preset); ?>
+            <!-- End Inscription IMAGES -->
+            
+        </div>
+    </div>
+    <?php endif; ?>
+    
+    
     <?php if ($node_top && !$teaser): ?>
     <div id="node-top" class="node-top row nested">
       <div id="node-top-inner" class="node-top-inner inner">
@@ -25,27 +88,12 @@
     </div><!-- /node-top -->
     <?php endif; ?>
 
-    <?php if ($submitted): ?>
+    <?php if (FALSE && $submitted): ?>
     <div class="meta">
       <span class="submitted"><?php print $submitted ?></span>
     </div>
     <?php endif; ?>
 
-    <?php if ($terms): ?>
-    <div class="terms">
-      <?php print $terms; ?>
-    </div>
-    <?php endif;?>
-    
-    <div class="content clearfix">
-      <?php print $field_subtitle_project_rendered ?>
-      <?php print $field_project_type_project_rendered ?>
-      <?php print $field_images_project_rendered ?>
-      <?php print $field_body_project_rendered ?>
-      <?php print $field_documents_project_rendered ?>
-      <?php print $node->content['fivestar_widget']['#value'] ?>
-    </div>
-    
     <!-- Edit link -->
     <?php if(isset($node->content['nivaria_edit_content_link']) && !empty($node->content['nivaria_edit_content_link']['#value'])): ?>
     <div class="node-edit-link">
@@ -62,12 +110,7 @@
     <?php endif; ?>
     <!-- End Translate link -->
 
-    <?php if ($links): ?>
-    <div class="links">
-      <?php print $links; ?>
-    </div>
-    <?php endif; ?>
-  </div><!-- /inner -->
+      </div><!-- /inner -->
 
   <?php if ($node_bottom && !$teaser): ?>
   <div id="node-bottom" class="node-bottom row nested">
