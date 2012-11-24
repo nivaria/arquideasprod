@@ -78,9 +78,9 @@
 
                     <!-- Edit link -->
                     <?php if(node_access('update', $node) && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED){
-                        print l('<span>'.t('Edit team').'</span>','node/'.$node->nid.'/edit',array(
+                        print l('<span>'.t('Edit inscription').'</span>','node/'.$node->nid.'/edit',array(
                             'attributes' => array(
-                                'title' => t('Edit team'),
+                                'title' => t('Edit inscription'),
                                 'class' => 'edit-content-link',
                             ),
                             'html' => TRUE,
