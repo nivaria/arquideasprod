@@ -251,11 +251,9 @@ body {
 	clear: both;
 	float: none;
 	margin-bottom: 6px;
-	margin-bottom: 0;
 	margin-top: 3px;
 	overflow: visible;
 	padding: 0;
-	padding-bottom: 1px;
 	position: relative;
 	text-align: center;
 	width: 100%;
@@ -285,7 +283,7 @@ body {
 }
 .primary-menu-inner ul.sf-menu li {
   float: none;
-  display: block;
+  display: inline;
 	background-color: transparent;
 	border: 0 none;
 	border-radius: 0 !important;
@@ -294,11 +292,12 @@ body {
 }
 
 .primary-menu-inner ul.sf-menu a, .primary-menu-inner ul.sf-menu a:visited {
-	background-color: #FFFFFF;
+	background-color: transparent;
 	color: #000000;
 	display: inline;
 	font-weight: normal;
-	padding: 7px 30px 8px 30px;
+	line-height: 40px;
+	padding: 0 20px;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -548,7 +547,6 @@ form#search-theme-form input.form-submit {
 .preface-bottom-inner {
 }
 .main-wrapper {
-	border-top: 1px solid;
 	margin-top: 0;
 }
 .main {
