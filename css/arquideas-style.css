@@ -279,11 +279,13 @@ body {
 }
 .primary-menu-inner ul.sf-menu {
 	text-align: center;
-	font-family: SoinSans-Bold;
+	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
 	font-size: 15px;
+  float: none;
 }
 .primary-menu-inner ul.sf-menu li {
   float: none;
+  display: block;
 	background-color: transparent;
 	border: 0 none;
 	border-radius: 0 !important;
@@ -296,9 +298,7 @@ body {
 	color: #000000;
 	display: inline;
 	font-weight: normal;
-	height: 20px;
-	line-height: 35px;
-	paddingn: 7px 30px 8px 30px;
+	padding: 7px 30px 8px 30px;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -309,6 +309,7 @@ body {
 .primary-menu-inner ul.sf-menu a:hover, .primary-menu-inner ul.sf-menu li.sfHover > a {
 	background-color: #FFFFFF;
 	color: #FF3F3F;
+	border-radius: 0 !important;
 }
 .primary-menu-inner ul.sf-menu li.active-trail > a, .primary-menu-inner ul.sf-menu li.leaf > a.active {
 	background-color: white;
