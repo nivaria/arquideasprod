@@ -150,7 +150,6 @@ body {
 .header-group-wrapper {
 	background: none repeat scroll 0 0 transparent;
 }
-
 .header-group, #footer {
 	margin: 0 auto;
 	max-width: 100% !important;
@@ -263,43 +262,43 @@ body {
 	z-index: 10;
 }
 .primary-menu {
-	float: left;
+	float: none !important;
 	margin: 0;
 	position: relative;
 	text-align: center;
+	margin: 0 auto;
 	width: auto;
 	z-index: 20;
 }
 #primary-menu-inner {
-	float: left;
-	margin-left: 0;
-	padding-left: 15%;
+	margin: 0 auto;
+	padding: 0;
+	float: none;
 	text-align: center;
 	width: 100%;
 }
 .primary-menu-inner ul.sf-menu {
 	text-align: center;
+	font-family: SoinSans-Bold;
+	font-size: 15px;
 }
 .primary-menu-inner ul.sf-menu li {
+  float: none;
 	background-color: transparent;
 	border: 0 none;
-	border-top-left-radius: 1px;
-	border-top-right-radius: 0 !important;
-	margin-left: 36px;
+	border-radius: 0 !important;
+	margin: 0;
+	padding: 0;
 }
-.primary-menu-inner ul.sf-menu li:first-child {
-	margin-left: 0;
-}
+
 .primary-menu-inner ul.sf-menu a, .primary-menu-inner ul.sf-menu a:visited {
 	background-color: #FFFFFF;
 	color: #000000;
-	display: inline-block;
-	font-family: calibri, arial;
-	font-size: 18px;
+	display: inline;
 	font-weight: normal;
-	height: 36px;
+	height: 20px;
 	line-height: 35px;
-	padding: 0 6px;
+	paddingn: 7px 30px 8px 30px;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -309,13 +308,11 @@ body {
 }
 .primary-menu-inner ul.sf-menu a:hover, .primary-menu-inner ul.sf-menu li.sfHover > a {
 	background-color: #FFFFFF;
-	border-radius: 8px 8px 0 0;
 	color: #FF3F3F;
 }
 .primary-menu-inner ul.sf-menu li.active-trail > a, .primary-menu-inner ul.sf-menu li.leaf > a.active {
 	background-color: white;
-	color: #333333;
-	font-size: 13px;
+	color: #FF3F3F;
 	font-weight: bold;
 }
 .primary-menu-inner ul.sf-menu li.last {
