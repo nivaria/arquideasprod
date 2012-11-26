@@ -33,7 +33,7 @@
 
       <!-- header-group row: width = grid_width -->
       <div id="header-group-wrapper" class="header-group-wrapper full-width">
-        <div id="header-group" class="header-group row full-width">
+        <div id="header-group" class="header-group row <?php print $grid_width; ?>">
           <div id="header-group-inner" class="header-group-inner inner clearfix">
             <?php print theme('grid_block', theme('links', $secondary_links), 'secondary-menu'); ?>
 

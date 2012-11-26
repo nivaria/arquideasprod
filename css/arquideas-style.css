@@ -149,7 +149,19 @@ body {
 }
 .header-group-wrapper {
 	background: none repeat scroll 0 0 transparent;
-	height: 224px;
+}
+
+.header-group, #footer {
+	margin: 0 auto;
+	max-width: 100% !important;
+	width: 1240px;
+}
+
+.header-group .grid16-16,
+#footer .grid16-16 {
+	margin: 0 auto;
+	max-width: 100% !important;
+	width: 1240px;
 }
 .header-group {
 	background-color: white !important;
