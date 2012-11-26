@@ -77,7 +77,8 @@
                     <!-- END Description of Inscription-->
 
                     <!-- Edit link -->
-                    <?php if(node_access('update', $node) && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED){
+                    <?php if(node_access('update', $node) && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED
+                            && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN){
                         print l('<span>'.t('Edit inscription').'</span>','node/'.$node->nid.'/edit',array(
                             'attributes' => array(
                                 'title' => t('Edit inscription'),
@@ -118,7 +119,7 @@
                                 print theme_og_manage_link_default($node);
                             }
                         } else {
-                            print '<div class="info">'.t('Contest is now in progress. You can not invite new members now.').'</div>';
+                            print '<div class="info">'.t('You can not invite members at this stage of the competition').'</div>';
                         }    
                     } ?>
                     <!-- END Manage members link -->
