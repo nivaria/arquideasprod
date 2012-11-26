@@ -273,7 +273,7 @@
                 <td colspan="2">
                   <hr noshade="noshade" size="1" /><br />
 
-                  <?php if ($help_text) { ?>
+                  <?php if (FALSE && $help_text) { ?>
                   <p><b><?php echo t('Where can I get help with reviewing my order?'); ?></b><br />
                   <?php echo t('To learn more about managing your orders on !store_link, please visit our <a href="!store_help_url">help page</a>.', array('!store_link' => $store_link, '!store_help_url' => $store_help_url)); ?>
                   <br /></p>
