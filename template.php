@@ -258,6 +258,12 @@ function arquideasprod_preprocess_page(&$vars)
       $vars['sidebar_first'] = '';
   }
   
+  //PREPROCESS PROJECT PAGE
+  if(isset($vars['node']) && $vars['node']->type=='project'){
+      $vars['title'] = '';
+      $vars['sidebar_first'] = '';
+  }
+  
   // Reconstruct CSS and JS variables.
   $vars['css'] = drupal_add_css();
   $vars['styles'] = drupal_get_css();
@@ -326,6 +332,15 @@ function arquideasprod_preprocess_node(&$vars) {
           unset($vars['links']);
       }
       $vars['group_attributes_rendered'] = '';
+  }
+  
+  //PREPROCESS PROJECT NODE
+  if(isset($vars['node']) && $vars['node']->type=='project'){
+      if($_GET['q']=='node/'.$vars['nid'].'/edit'){
+          $vars['is_edit'] = TRUE;
+      } else {
+          $vars['is_edit'] = FALSE;
+      }
   }
 }
 

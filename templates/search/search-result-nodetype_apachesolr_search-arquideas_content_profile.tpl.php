@@ -76,15 +76,15 @@
     </h2>
   <?php endif; ?>
   <?php if(isset($result['node']->nid)): ?>
-    <div class="job">
+    <div class="profile-job">
         <?php
             $jobname = '';
             if(!empty($result['node']->profile_job)){
                 $jobname = $result['node']->profile_job;
             } else {
                 $node = node_load($result['node']->nid);
-                if($node && !empty($node->field_trabajo_como_acp)){
-                    $jobname = $node->field_trabajo_como_acp;
+                if($node && !empty($node->field_soy_acp[0]['value'])){
+                    $jobname = $node->field_soy_acp[0]['value'];
                 }
             }
             print $jobname;

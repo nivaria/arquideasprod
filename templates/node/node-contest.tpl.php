@@ -126,6 +126,21 @@
         </div>
     <?php endif; ?>
     <!-- END COMMENTS NUMBER FROM OG_STATISTICS -->
+
+    <!-- Public Votation Link -->
+    <?php if(!$is_edit): ?>  
+        <?php global $user; 
+        if($node->field_contest_state[0]['value']==ContestState::PUBLIC_CONTEST && $user->uid!=0){
+            print l('<span>'.t('Evaluate projects').'</span>','contest/'.$node->nid.'/publicvotation',array(
+                'attributes' => array(
+                    'title' => t('Evaluate projects of this contest'),
+                    'class' => 'public-votation-link',
+                ),
+                'html' => TRUE,
+            ));
+        } ?> 
+    <?php endif; ?>
+    <!-- End Public Votation Link -->
     
     <?php if ($node_top && !$teaser): ?>
     <div id="node-top" class="node-top row nested">
