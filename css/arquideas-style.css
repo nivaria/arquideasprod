@@ -1,10 +1,8 @@
 body {
-	font-family: arial;
-	font-size: 75%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 87.5%;
 	margin: 0;
 	padding: 0;
-}
-body.front, body.not-front {
 }
 a {
 	text-decoration: none;
@@ -16,20 +14,20 @@ a, a:link, a:visited, a:hover, a:focus, a:active {
 	color: #FF3F3F;
 }
 h1 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
 	font-size: 2.5em;
 	font-weight: normal;
 	line-height: 1.1em;
 	margin: 0.5em 0;
 }
 h2 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
 	font-size: 1.6em;
 	font-weight: normal;
 	margin: 0 0 18px;
 }
 h3 {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
 	font-size: 1.2em;
 	font-weight: bold;
 	margin: 18px 0;
@@ -806,7 +804,10 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
 .form-required {
 	color: #E10019;
 }
-h2.block-title {
+.block-title {
+  font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
 }
 .block .fusion-block-config, .block .fusion-block-edit {
 	background: url("../images/gear.png") no-repeat scroll center center transparent;
@@ -3381,7 +3382,7 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 	border: 0 none;
 	border-radius: 12px 12px 12px 12px;
 }
-.block .block-title, .gerenciall_default .block-title, body.node-type-group .page-group .sidebar-last .block .block-title, body.page-title-page .page-inner .sidebar-last .block h2.block-title {
+.gerenciall_default .block-title, body.node-type-group .page-group .sidebar-last .block .block-title, body.page-title-page .page-inner .sidebar-last .block h2.block-title, .node-right .block h2.block-title {
 	background-color: white;
 	border-bottom: 1px solid black;
 }
