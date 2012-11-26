@@ -809,6 +809,14 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
   text-transform: uppercase;
   text-align: center;
 }
+.subtitle {
+  color: #999999;
+  font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
 .block .fusion-block-config, .block .fusion-block-edit {
 	background: url("../images/gear.png") no-repeat scroll center center transparent;
 }
@@ -3476,9 +3484,7 @@ div h1.collapsiblock a, div h1.collapsiblock.collapsiblockCollapsed a {
 	background: none repeat scroll 0 0 transparent;
 }
 #footer-wrapper {
-	background-color: white;
 	border-top: 1px solid black;
-	height: 90px;
 }
 td.views-field-last-updated.active, td.views-field-last-updated {
 	color: #666666;

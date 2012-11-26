@@ -33,10 +33,10 @@
 
       <!-- header-group row: width = grid_width -->
       <div id="header-group-wrapper" class="header-group-wrapper full-width">
-        <div id="header-group" class="header-group row <?php print $grid_width; ?>">
+        <div id="header-group" class="header-group row full-width">
           <div id="header-group-inner" class="header-group-inner inner clearfix">
             <?php print theme('grid_block', theme('links', $secondary_links), 'secondary-menu'); ?>
-            
+
 			<?php if ($logo || $site_name || $site_slogan): ?>
 			<div id="header-site-info" class="header-site-info block">
 				<div id="header-site-info-inner" class="header-site-info-inner inner"><span id="slogan">CONCURSOS DE IDEAS DE ARQUITECTURA</span>
@@ -45,7 +45,7 @@
                         <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
                     </div>
                     <?php endif; ?>
-                    
+
                     <?php if ($site_name || $site_slogan): ?>
                     <div id="site-name-wrapper" class="clearfix">
                         <?php if ($site_name): ?>
@@ -59,44 +59,44 @@
 				</div><!-- /header-site-info-inner -->
             </div><!-- /header-site-info -->
             <?php endif; ?>
-            
+
 			<div id="header-region" class="header-region block">
 				<div id="header-region-inner" class="header-region-inner inner">
 					<?php print $header; ?>
 				</div><!-- /header-region-inner -->
 			</div><!-- /header-region -->
-                        
+
                         <div id="header-region-top-following" class="header-region block">
 				<div id="header-region-top-following-inner" class="header-region-inner inner">
 					<?php print $header_top_following; ?>
 				</div><!-- /header-region-top-following-inner -->
 			</div><!-- /header-region-top-following -->
-                        
+
                         <div id="header-region-following" class="header-region block">
 				<div id="header-region-following-inner" class="header-region-inner inner">
 					<?php print $header_following; ?>
 				</div><!-- /header-region-following-inner -->
 			</div><!-- /header-region-following -->
-                        
+
           </div><!-- /header-group-inner -->
-          
+
           <div id="nav-group" class="nav-group clearfix">
          		<?php print theme('grid_block', $primary_links_tree, 'primary-menu'); ?>
 			</div><!--/nav-group-->
         </div><!-- /header-group -->
       </div><!-- /header-group-wrapper -->
-   
+
       <!-- preface-top row: width = grid_width -->
 		<?php print theme('grid_row', $preface_top, 'preface-top', 'full-width', $grid_width); ?>
 		<div id="preface-top-wrapper" class="preface-top-wrapper full-width">
         	<div id="preface-top" class="preface-top row <?php print $grid_width; ?> clearfix">
             	<div class="breadcrumbs-wrapper">
-				<?php print theme('grid_block', $breadcrumb, 'breadcrumbs'); ?>  
+				<?php print theme('grid_block', $breadcrumb, 'breadcrumbs'); ?>
                 </div>
 				<?php print theme('grid_block', $search_box, 'search-box'); ?>
             </div>
 		</div>
-      
+
       <!-- main row: width = grid_width -->
       <div id="main-wrapper" class="main-wrapper full-width">
         <div id="main" class="main row <?php print $grid_width; ?>">
@@ -113,7 +113,7 @@
                     <!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
                     <div id="content-group" class="content-group row nested <?php print $content_group_width; ?>">
                       <div id="content-group-inner" class="content-group-inner inner">
-                    
+
 
                         <?php if ($content_top || $help || $messages): ?>
                         <div id="content-top" class="content-top row nested">
@@ -124,7 +124,7 @@
                           </div><!-- /content-top-inner -->
                         </div><!-- /content-top -->
                         <?php endif; ?>
-                        
+
                         <?php if ($content_front_left || $content_front_right): ?>
                         <div id="content-front" class="content-front">
                             <div id="content-front-inner" class="content-front-inner inner">
@@ -132,18 +132,18 @@
                                 <div id="content-front-left" class="content-front-left">
                                   <div class="content-inner">
                                   <?php print $content_front_left; ?>
-                                  </div>    
+                                  </div>
                                 </div>
-                              <?php endif; ?>  
+                              <?php endif; ?>
                               <?php if ($content_front_right): ?>
                                 <div id="content-front-right" class="content-front-right">
-                                  <div class="content-inner">  
-                                  <?php print $content_front_right; ?>  
-                                  </div>      
+                                  <div class="content-inner">
+                                  <?php print $content_front_right; ?>
+                                  </div>
                                 </div>
-                              <?php endif; ?>  
-                            </div> 
-                        </div>    
+                              <?php endif; ?>
+                            </div>
+                        </div>
                         <?php endif; ?>
 
                         <div id="content-region" class="content-region row nested">
@@ -155,14 +155,14 @@
                                     <?php if ($title && !$is_front): ?>
                                         <header class="header">
                                             <h1 class="title"><?php print $title; ?></h1>
-                                            <!--TODO: make it with some include --> 
+                                            <!--TODO: make it with some include -->
                                             <?php if(!$is_edit): ?>
                                             <div class="user-job"><?php print isset($account)?$account->profile_job:''; ?></div>
                                             <?php if(isset($account)){
                                                 // Follow
                                                 // Provide relationship links/messages
                                                 if (user_access('maintain own relationships')) {
-                                                    // For the Commons "Follower" relatinoship, hide controls to 
+                                                    // For the Commons "Follower" relatinoship, hide controls to
                                                     // make another user unfollow the present user.
                                                     $actions = _user_relationships_ui_actions_between($user, $account);
                                                     foreach ($actions as $action) {
@@ -190,7 +190,7 @@
                                                 <?php endif; ?>
                                                 <span class="user-points">
                                                     <?php print isset($account)?userpoints_get_current_points($account->uid).' '.t('points'):''; ?>
-                                                </span>    
+                                                </span>
                                             </div>
                                             <?php if(FALSE && isset($account) && user_has_role(ROL_CONTEST_JURY, $account)): ?>
                                             <div class="jury-member">
@@ -205,11 +205,11 @@
 
                                         </header>
                                     <?php endif; ?>
-                                    
-                                        <?php 
-                                            print theme('grid_block', $tabs, 'content-tabs'); 
+
+                                        <?php
+                                            print theme('grid_block', $tabs, 'content-tabs');
                                         ?>
-                                    
+
                                         <?php if ($content): ?>
                                             <div id="content-content" class="content-content">
                                             <?php print $content; ?>
@@ -218,7 +218,7 @@
                                         <?php endif; ?>
                                     </div><!-- /content-inner-inner -->
                                 </div><!-- /content-inner -->
-                            
+
 							</div><!-- /content-region-inner -->
 						</div><!-- /content-region -->
 
