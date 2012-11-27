@@ -44,6 +44,14 @@
         }    
     ?>
     <!-- END INSCRIPTION, PAYMENT OR PRESENTATION LINK -->
+    
+    <!-- Mark Special Arquideas Prize -->
+    <?php if($contest->field_contest_state[0]['value']==ContestState::FINISHED && user_access(PERM_ADMIN_CONTESTS)) : ?>
+    <div class="link-special-arquideas-prize">
+        <?php print flag_create_link('arquideas_prize', $node->nid); ?>
+    </div>
+    <?php endif; ?>
+    <!-- End Mark Special Arquideas Prize -->
     </div>
     <?php endif; ?>
     
