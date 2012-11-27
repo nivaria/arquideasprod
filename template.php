@@ -1015,6 +1015,13 @@ function arquideasprod_tagadelic_more($vid) {
   return "";
 }
 
+/**
+ * Single line of text
+ */
+function arquideasprod_notifications_digest_short_line($line, $group) {
+  return $line;
+}
+
 //Register some texts
 t('Press enter or click !plus between tags.', array('!plus' => '\'+\''));
 t('What\'s on your mind?');
