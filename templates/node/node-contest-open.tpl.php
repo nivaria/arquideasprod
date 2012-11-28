@@ -92,7 +92,7 @@
     <!-- INSCRIPTION, PAYMENT OR PRESENTATION LINK -->
     <?php
         if(!$is_edit){
-            print '<div class="open-contest-button">'.openContestButton($node).'</div>'; 
+            print '<div class="open-contest-button">'.openContestButton($node,TRUE).'</div>'; 
         }    
     ?>
     <!-- END INSCRIPTION, PAYMENT OR PRESENTATION LINK -->

@@ -3920,6 +3920,9 @@ body.page-node h1 a {
 body.page-node #content-tabs {
 	display: none;
 }
+body.page-node.node-type-simplenews #content-tabs{
+  display:block;
+}
 body.page-node .node-edit #content-tabs {
 	display: block;
 }
