@@ -1030,6 +1030,16 @@ function arquideasprod_tagadelic_more($vid) {
   return "";
 }
 
+function arquideas_jcalendar_view($node) {
+  $output = node_view($node, TRUE);
+  $output .= '<div id="nodelink">'. l(t('more', array(), $node->language), calendar_get_node_link($node), array(
+        'attributes' => array(
+            'title' => t('more', array(), $node->language),
+        ),
+      )) .'</div>';
+  return $output;
+}
+
 //Register some texts
 t('Press enter or click !plus between tags.', array('!plus' => '\'+\''));
 t('What\'s on your mind?');
