@@ -820,9 +820,7 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
 .subtitle {
   color: #999999;
   font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
-  font-size: 19px;
-  font-style: italic;
-  font-weight: bold;
+  font-size: 17px;
   text-align: center;
 }
 .block .fusion-block-config, .block .fusion-block-edit {
