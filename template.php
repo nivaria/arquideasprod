@@ -96,6 +96,25 @@ function arquideasprod_breadcrumb($breadcrumb) {
         }
     }
     
+    $pattern = '/^node\/\d+$/';
+    $match = preg_match($pattern, $_GET['q']);
+    if($match==1){
+        $arr = explode('/',$_GET['q']);
+        $node = node_load($arr[1]);
+        if($node->type=='news'){
+            $links = array();
+            $links[] = l(t('Home'), '<front>');
+            $links[] = l(t('News'), 'news');
+            $links[] = $node->title;
+        
+            // Set custom breadcrumbs
+            drupal_set_breadcrumb($links);
+
+            // Get custom breadcrumbs
+            $breadcrumb = drupal_get_breadcrumb();
+        }
+    }
+    
     if (count($breadcrumb) > 1) {
         $html .= '<div class="breadcrumb">'. implode(' &gt; ', $breadcrumb) .'</div>';
     }    

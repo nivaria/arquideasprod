@@ -28,7 +28,37 @@
     <?php if ($submitted): ?>
     
     <div class="meta">
-      <span class="submitted"><?php print $submitted ?></span>
+      <div class="userpicture">
+          <?php
+            $account = user_load($node->uid);
+            if(!empty($account->picture)){
+                print theme_imagecache('user_picture_meta', $account->picture, $realname);
+            }            
+          ?>
+      </div>
+      <div class="submitted">
+          <?php /*print $submitted*/
+             print t('Send by !name', array('!name' => l($realname,'user/'.$node->uid)));
+          ?>
+      </div>
+      <div class="userpoints">
+          <?php
+            $user_badges = user_badges_get_badges($node->uid);
+            if(count($user_badges)>0){
+               foreach($user_badges as $key => $badge){ 
+                  print theme('user_badge', $badge, $account);
+                  break;
+               } 
+            }
+          ?> 
+          &nbsp;
+          <?php print t('!points points', array('!points' => userpoints_get_current_points($node->uid))); ?>
+      </div>
+      <div class="date">
+          <?php
+            print $field_date_news_rendered;
+          ?>
+      </div>
     </div>
     <?php endif; ?>
 
@@ -39,12 +69,29 @@
     <?php endif;?>
     
     <div class="content clearfix">
-      <?php print $field_date_news_rendered ?>
-      <?php print $field_type_news_rendered ?>
-      <?php print $field_image_rendered ?>
-      <?php print $field_highlighted_text_news_rendered ?>
+      <?php /*print $field_type_news_rendered*/ ?>
+        
+      <!-- Image slideshow -->  
+      <?php print views_embed_view('arquideas_news_slideshow', 'default', $node->nid); ?>
+      <!-- End image slideshow -->
+      
+      <?php /*print $field_highlighted_text_news_rendered*/ ?>
       <?php print $node->content['body']['#value'] ?>
-      <?php print $node->content['fivestar_widget']['#value'] ?>
+      
+      <!-- FiveStar Widget --> 
+      <?php 
+        if (user_access('rate content') && fivestar_validate_target('node', $node->nid)) {
+            print fivestar_widget_form($node);
+        }
+      ?>
+      <!-- END FiveStar Widget -->
+      
+      <!-- SHARE SOCIAL BLOCK -->
+      <?php
+        $block = module_invoke('arquideas_generic', 'block', 'view', '13');
+        print $block['content'];
+      ?>    
+      <!-- END SHARE SOCIAL BLOCK -->
     </div>
     
     <!-- Edit link -->
