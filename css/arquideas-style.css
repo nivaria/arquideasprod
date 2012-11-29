@@ -78,7 +78,10 @@ blockquote p:last-child {
   max-width: 1240px;
 }
 
+.row, .nested, .block {overflow: visible;}
+
 body {
+
 }
 .logo {
 
@@ -615,14 +618,11 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
 }
 .block-title {
   font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
+  font-weight: normal;
   text-transform: uppercase;
-  text-align: center;
 }
 .subtitle {
-  color: #999999;
   font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  text-align: center;
   font-weight: normal;
 }
 .block .fusion-block-config, .block .fusion-block-edit {
@@ -4827,6 +4827,88 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 .secondary-menu-inner ul.links li a:hover, .secondary-menu-inner ul.links li a:focus, .secondary-menu-inner ul.links li a.active {
 }
+
+/* Skinr Styles */
+.front-page-block {
+  margin-top: 50px;
+}
+
+.front-page-block:before {
+  display: block;
+  content: " ";
+  width: 100%;
+  height: 10px;
+  border: 1px solid #000;
+  -moz-box-shadow: 4px 4px 0 #000;
+  -webkit-box-shadow: 4px 4px 0 #000;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.front-page-block .block-title {
+  margin-top: 60px;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: center;
+}
+
+.front-page-block .subtitle {
+  padding-bottom: 40px;
+  margin: 0;
+  font-size: 18px;
+  color: #999;
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
+
+.front-page-block .content {
+  margin-top: 40px;
+}
+
+.single-border-block {
+  border: 1px solid #000;
+  padding: 15px 10px 10px;
+}
+
+.single-border-shadow-block  {
+  border: 1px solid #000;
+  background-color: #fff;
+  box-shadow: 4px 4px 0 #000;
+  padding: 15px 10px 10px;
+  margin-bottom: 24px;
+}
+
+.double-border-shadow-block  {
+  border: 1px solid #000;
+  background-color: #fff;
+  -moz-box-shadow: 4px 4px 0 #000;
+  -webkit-box-shadow: 4px 4px 0 #000;
+  box-shadow: 4px 4px 0 #000;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.double-border-shadow-block .inner {
+  background-color: #fff;
+  border: 3px solid #000;
+  padding: 15px 10px 10px;
+}
+
+.single-line .block-title {
+
+}
+
+.double-line .block-title {
+
+}
+
+.triple-line .block-title {
+
+}
+
+.triple-fat-middle-line .block-title {
+
+}
+
 
 
 /*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/

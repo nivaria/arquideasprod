@@ -57,3 +57,27 @@ settings[theme_font_size] = font-size-12
 settings[sidebar_layout] = sidebars-split
 settings[sidebar_first_width] = 4
 settings[sidebar_last_width] = 5
+
+skinr[arquideas_blocks][title] = Arquideas Blocks
+skinr[arquideas_blocks][description] = Arquideas Blocks
+skinr[arquideas_blocks][type] = select
+skinr[arquideas_blocks][options][1][label] = Front Page Block
+skinr[arquideas_blocks][options][1][class] = front-page-block
+skinr[arquideas_blocks][options][2][label] = Single Border
+skinr[arquideas_blocks][options][2][class] = single-border-block
+skinr[arquideas_blocks][options][3][label] = Single Border with Shadow
+skinr[arquideas_blocks][options][3][class] = single-border-shadow-block
+skinr[arquideas_blocks][options][4][label] = Double Border with Shadow
+skinr[arquideas_blocks][options][4][class] = double-border-shadow-block
+
+skinr[arquideas_block_title][title] = Title Underline
+skinr[arquideas_block_title][description] = Underline Title Style
+skinr[arquideas_block_title][type] = select
+skinr[arquideas_block_title][options][1][label] = Single Line
+skinr[arquideas_block_title][options][1][class] = single-line
+skinr[arquideas_block_title][options][2][label] = Double Line
+skinr[arquideas_block_title][options][2][class] = double-line
+skinr[arquideas_block_title][options][3][label] = Triple Regular Line
+skinr[arquideas_block_title][options][3][class] = triple-line
+skinr[arquideas_block_title][options][4][label] = Triple Fat middle Line
+skinr[arquideas_block_title][options][4][class] = triple-fat-middle-line
