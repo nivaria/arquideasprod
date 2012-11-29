@@ -19,6 +19,7 @@ api[panels][styles][version] = 2
 
 regions[sidebar_first] = sidebar first
 regions[sidebar_last] = sidebar last
+regions[user_bar] = user bar
 regions[header_top] = header top
 regions[header] = header
 regions[header_top_following] = header top following
@@ -56,25 +57,3 @@ settings[theme_font_size] = font-size-12
 settings[sidebar_layout] = sidebars-split
 settings[sidebar_first_width] = 4
 settings[sidebar_last_width] = 5
-
-
-skinr[gerenciall_blocks][title] = Bloques Arquideas
-skinr[gerenciall_blocks][description] = Bloques Arquideas
-skinr[gerenciall_blocks][type] = checkboxes
-skinr[gerenciall_blocks][options][1][label] = Bloque por defecto
-skinr[gerenciall_blocks][options][1][class] = gerenciall_default
-skinr[gerenciall_blocks][options][2][label] = Bloque destacado
-skinr[gerenciall_blocks][options][2][class] = gerenciall_highlight
-skinr[gerenciall_blocks][options][3][label] = Añadir padding al bloque
-skinr[gerenciall_blocks][options][3][class] = gerenciall_add_padding
-skinr[gerenciall_blocks][options][4][label] = Bloque formulario
-skinr[gerenciall_blocks][options][4][class] = gerenciall_block_form
-skinr[gerenciall_blocks][options][5][label] = Bloque botón
-skinr[gerenciall_blocks][options][5][class] = gerenciall_block_button
-skinr[gerenciall_blocks][options][6][label] = Lista de enlaces
-skinr[gerenciall_blocks][options][6][class] = gerenciall_block_list
-skinr[gerenciall_blocks][options][7][label] = Bloque para calendario
-skinr[gerenciall_blocks][options][7][class] = gerenciall_calendar
-skinr[gerenciall_blocks][options][8][label] = Bloque tipo lateral de buscador
-skinr[gerenciall_blocks][options][8][class] = gerenciall_search
-
