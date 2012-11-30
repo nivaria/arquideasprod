@@ -9,7 +9,7 @@
     <?php }?>
         -->
 <?php }?>
-<div id="node-<?php print $node->nid; ?>" class="node <?php print $node_classes; ?>">
+<div id="node-<?php print $node->nid; ?>" class="test node <?php print $node_classes; ?>">
   <div class="inner">
     <?php print $picture ?>
 
