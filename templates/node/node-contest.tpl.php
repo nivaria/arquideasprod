@@ -131,9 +131,9 @@
     <?php if(!$is_edit): ?>  
         <?php global $user; 
         if($node->field_contest_state[0]['value']==ContestState::PUBLIC_CONTEST && $user->uid!=0){
-            print l('<span>'.t('Evaluate projects').'</span>','contest/'.$node->nid.'/publicvotation',array(
+            print l('<span>'.t('Vote your favorite').'</span>','contest/'.$node->nid.'/publicvotation',array(
                 'attributes' => array(
-                    'title' => t('Evaluate projects of this contest'),
+                    'title' => t('Vote your favorite'),
                     'class' => 'public-votation-link',
                 ),
                 'html' => TRUE,
