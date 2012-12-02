@@ -29,7 +29,11 @@
       </div>
 
       <!-- user-bar row: width = grid_width -->
-      <?php print theme('grid_row', $user_bar, 'user-menu', 'full-width', $grid_width); ?>
+      <div id="user-menu-wrapper" class="full-width">
+        <div id="user-menu" class="max-width row inner clearfix">
+					<?php print $user_bar; ?>
+  			</div><!-- /user-menu-wrapper -->
+      </div><!-- /user-menu -->
 
       <!-- header-group row: width = grid_width -->
       <div id="header-large-wrapper" class="full-width">

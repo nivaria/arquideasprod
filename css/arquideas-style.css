@@ -83,13 +83,24 @@ blockquote p:last-child {
 body {
 
 }
-.logo {
 
+#admin-menu {
+  position: fixed;
 }
 
 #user-menu-wrapper {
   position: fixed;
+  height: 35px;
+  background-color: #000;
+  z-index: 999;
+}
 
+body.admin-menu #user-menu-wrapper {
+  top: 20px;
+}
+
+#user-menu .block {
+  background-color: transparent;
 }
 
 #header-small-wrapper {
@@ -97,19 +108,30 @@ body {
   display: none;
   height: 45px;
   overflow: hidden;
-  position: fixed;
-  top: 0;
   z-index: 997;
+}
+
+#header-small-wrapper {
+  position: fixed;
+  top: 35px;
+}
+
+body.admin-menu #header-small-wrapper {
+  top: 55px;
 }
 
 #header-region-following {
   background-color: #fff;
+  z-index: 998;
 }
 
-.some-style #header-region-following {
+#header-region-following.fixed-menu {
   position: fixed;
-  top: 45px;
-  z-index: 998;
+  top: 80px;
+}
+
+body.admin-menu #header-region-following.fixed-menu {
+  top: 100px;
 }
 
 #header-region-following .block {
@@ -158,6 +180,10 @@ body {
 }
 #header-large-wrapper{
   text-align: center;
+  position: relative;
+  padding-top: 35px;
+  height: 180px;
+  overflow: hidden;
 }
 #header-large-inner {
   margin: 0 auto;
@@ -380,9 +406,13 @@ form#search-theme-form input.form-submit {
 }
 .preface-bottom-inner {
 }
-.main-wrapper {
+#main-wrapper {
 	margin-top: 0;
 }
+#main-wrapper.fixed-menu-page {
+  margin-top: 45px;
+}
+
 .main {
 	background: none repeat scroll 0 0 transparent;
 	margin-bottom: 10px;
@@ -3109,7 +3139,7 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 #content-front #content-front-left {
 	float: left;
 	margin-right: 20px;
-	width: 314px;
+	width: 445px;
 }
 .page-solr-nodetype #content-front #content-front-left, .page-solr-nodetype-multi #content-front #content-front-left {
 	width: 454px;
@@ -3119,7 +3149,7 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 }
 #content-front #content-front-right {
 	float: right;
-	width: 314px;
+	width: 455px;
 }
 .page-solr-nodetype #content-front #content-front-right, .page-solr-nodetype-multi #content-front #content-front-right {
 	width: 454px;
@@ -4942,7 +4972,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 }
 
-// Front page slider
+/* Front page slider */
 
 #block-views-slideshow_content-block_1 {
   position: relative;
@@ -5041,6 +5071,13 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 #block-views-slideshow_content-block_1 .views_slideshow_singleframe_pager div.activeSlide {
   background-color: #FF3F3F;
+}
+
+/* Front page Contests */
+#block-views-contests-block_1 .views-row {
+  width: 300px;
+  float: left;
+  margin: 12px;
 }
 
 /*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/
