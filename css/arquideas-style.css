@@ -86,6 +86,36 @@ body {
 .logo {
 
 }
+
+#user-menu-wrapper {
+  position: fixed;
+
+}
+
+#header-small-wrapper {
+  background-color: #fff;
+  display: none;
+  height: 45px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 997;
+}
+
+#header-region-following {
+  background-color: #fff;
+}
+
+.some-style #header-region-following {
+  position: fixed;
+  top: 45px;
+  z-index: 998;
+}
+
+#header-region-following .block {
+  margin-bottom: 0;
+}
+
 #header-small-wrapper .logo img {
   max-height: 25px;
 }
@@ -620,6 +650,7 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
   font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
   font-weight: normal;
   text-transform: uppercase;
+  font-size: 20px;
 }
 .subtitle {
   font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
@@ -4712,8 +4743,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 	border-bottom: 1px solid black;
 	border-top: 1px solid black;
 	border-radius: 0;
-	margin-bottom: 6px;
-	margin-top: 3px;
+	margin: 0;
 	overflow: visible;
 	padding: 0;
 	position: relative;
@@ -4864,12 +4894,12 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   margin-top: 40px;
 }
 
-.single-border-block {
+.single-border-block .inner {
   border: 1px solid #000;
   padding: 15px 10px 10px;
 }
 
-.single-border-shadow-block  {
+.single-border-shadow-block .inner  {
   border: 1px solid #000;
   background-color: #fff;
   box-shadow: 4px 4px 0 #000;
@@ -4885,6 +4915,9 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   box-shadow: 4px 4px 0 #000;
   padding: 4px;
   margin-bottom: 24px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 .double-border-shadow-block .inner {
@@ -4909,7 +4942,106 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 }
 
+// Front page slider
 
+#block-views-slideshow_content-block_1 {
+  position: relative;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_main {
+  background-color: #000;
+  color: #fff;
+}
+
+#block-views-slideshow_content-block_1 .views-field-title,
+#block-views-slideshow_content-block_1 .views-field-field-node-slideshow-nid,
+#block-views-slideshow_content-block_1 .views-field-body {
+  text-align: center;
+  margin: 0 90px 0 130px;
+}
+
+#block-views-slideshow_content-block_1 .views-field-title,
+#block-views-slideshow_content-block_1 .views-field-title a {
+  margin-top: 20px;
+	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
+	color: #fff;
+	font-weight: normal;
+	font-size: 40px;
+	line-height: 50px;
+	text-transform: uppercase;
+}
+
+#block-views-slideshow_content-block_1 .views-field-field-node-slideshow-nid,
+#block-views-slideshow_content-block_1 .views-field-body {
+  font-family: "SoinSans-Roman", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+#block-views-slideshow_content-block_1 .views-slideshow-controls-bottom {
+  z-index: 100;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_controls {
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  z-index: 101;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_controls a {
+  display: block;
+  float: left;
+  margin-right: 24px;
+  text-indent: -9999px;
+  width: 14px;
+  height: 22px;
+  background: transparent url("../images/slider-controls.png") no-repeat left top;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_controls a:hover {
+  opacity: 0.8;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_controls a.views_slideshow_singleframe_next {
+  background-position: right top;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_controls a.views_slideshow_singleframe_pause {
+  display: none;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_pager {
+  position: absolute;
+  width: 110px;
+  left: 15px;
+  bottom: 50px;
+  z-index: 102;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_pager div {
+  width: 8px;
+  height: 8px;
+  text-indent: -9999px;
+  display: block;
+  float: left;
+  padding: 0;
+  margin-right: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 3px solid #fff;
+  cursor: pointer;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_pager div:hover {
+  background-color: #ddd;
+}
+
+#block-views-slideshow_content-block_1 .views_slideshow_singleframe_pager div.activeSlide {
+  background-color: #FF3F3F;
+}
 
 /*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/
 
