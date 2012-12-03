@@ -5090,6 +5090,17 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   float: left;
   margin: 12px;
 }
+/* Front page Contest Link */
+#block-nodeblock-293 .inner {
+  background: white url(../images/single-border.png) repeat-x center center;
+  padding: 0 200px;
+}
+#block-nodeblock-293 .inner > .content {
+  padding: 0 80px;
+  background: white url(../images/envelope.png) no-repeat 20px center;
+  font-family: SoinSans-BoldOblique, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
 
 /*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/
 
