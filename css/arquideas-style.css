@@ -2346,6 +2346,7 @@ table.views-view-grid td {
 .view div.more-link, .view .view-footer, .heartbeat-more-messages-wrapper {
   background: none repeat scroll 0 0 transparent;
   text-align: center;
+  min-height: 40px;
 }
 
 .view div.more-link, .view .view-footer a, .heartbeat-more-messages-wrapper {
@@ -4980,18 +4981,85 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 
 .single-line .block-title {
-
+  padding-bottom: 20px;
+  margin-bottom: 21px;
+  background: transparent url(../images/single-border.png) repeat-x bottom;
 }
 
 .double-line .block-title {
-
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  background: transparent url(../images/double-border.png) repeat-x bottom;
 }
 
 .triple-line .block-title {
-
+  padding-bottom: 21px;
+  margin-bottom: 30px;
+  background: transparent url(../images/triple-border.png) repeat-x bottom;
 }
 
 .triple-fat-middle-line .block-title {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  background: transparent url(../images/triple-fat-border.png.png) repeat-x bottom;
+}
+
+.small-block-title .block-title {
+  font-size: 15px;
+  line-height: 1.1em;
+  margin-top: 4px;
+}
+
+.medium-block-title .block-title {
+  line-height: 1.1em;
+  margin-top: 7px;
+}
+
+.large-block-title .block-title {
+  font-size: 26px;
+  line-height: 1.1em;
+  margin-top: 10px;
+}
+
+.extra-large-block-title .block-title {
+  font-size: 40px;
+  line-height: 1.1em;
+  margin-top: 14px;
+}
+
+.centered-block,
+.centered-block .block-title {
+  text-align: center;
+}
+
+.small-block-contents {
+  font-size: 10px;
+  line-height: 1.4em;
+}
+
+.medium-block-contents {
+}
+
+.large-block-contents {
+  font-size: 15px;
+  line-height: 1.4em;
+}
+
+.extra-large-block-contents {
+  font-size: 18px;
+  line-height: 1.4em;
+}
+
+.left-float-block {
+  float: left;
+  width: 310px;
+  margin-left: 150px;
+}
+
+.right-float-block {
+  float: right;
+  width: 310px;
+  margin-right: 150px;
 
 }
 
@@ -5204,6 +5272,17 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 #block-views-contests-block_1 .views-field-field-contest-sponsors-home-fid {
   margin-top: 20px;
+}
+
+/* Front page Network View */
+#block-views-activity_log_stream-block_2 .activity-log-message {
+  font-size: 13px;
+  border: 0 none;
+  padding: 15px 0;
+}
+
+#block-views-activity_log_stream-block_2 .view-content {
+  margin-bottom: 40px;
 }
 
 /* Front page Contest Link */

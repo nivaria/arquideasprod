@@ -70,6 +70,18 @@ skinr[arquideas_blocks][options][3][class] = single-border-shadow-block
 skinr[arquideas_blocks][options][4][label] = Double Border with Shadow
 skinr[arquideas_blocks][options][4][class] = double-border-shadow-block
 
+skinr[arquideas_block_title_size][title] = Title Size
+skinr[arquideas_block_title_size][description] = Change the size of block title
+skinr[arquideas_block_title_size][type] = select
+skinr[arquideas_block_title_size][options][1][label] = Small
+skinr[arquideas_block_title_size][options][1][class] = small-block-title
+skinr[arquideas_block_title_size][options][2][label] = Medium
+skinr[arquideas_block_title_size][options][2][class] = medium-block-title
+skinr[arquideas_block_title_size][options][3][label] = Large
+skinr[arquideas_block_title_size][options][3][class] = large-block-title
+skinr[arquideas_block_title_size][options][4][label] = Extra Large
+skinr[arquideas_block_title_size][options][4][class] = extra-large-block-title
+
 skinr[arquideas_block_title][title] = Title Underline
 skinr[arquideas_block_title][description] = Underline Title Style
 skinr[arquideas_block_title][type] = select
@@ -81,3 +93,29 @@ skinr[arquideas_block_title][options][3][label] = Triple Regular Line
 skinr[arquideas_block_title][options][3][class] = triple-line
 skinr[arquideas_block_title][options][4][label] = Triple Fat middle Line
 skinr[arquideas_block_title][options][4][class] = triple-fat-middle-line
+
+skinr[arquideas_center_title][title] = Centered Block
+skinr[arquideas_center_title][description] = Center Contents of the block
+skinr[arquideas_center_title][type] = checkboxes
+skinr[arquideas_center_title][options][1][label] = Centered Block
+skinr[arquideas_center_title][options][1][class] = centered-block
+
+skinr[arquideas_block_content_size][title] = Block Content Size
+skinr[arquideas_block_content_size][description] = Change the size of block content
+skinr[arquideas_block_content_size][type] = select
+skinr[arquideas_block_content_size][options][1][label] = Small
+skinr[arquideas_block_content_size][options][1][class] = small-block-contents
+skinr[arquideas_block_content_size][options][2][label] = Medium
+skinr[arquideas_block_content_size][options][2][class] = medium-block-contents
+skinr[arquideas_block_content_size][options][3][label] = Large
+skinr[arquideas_block_content_size][options][3][class] = large-block-contents
+skinr[arquideas_block_content_size][options][4][label] = Extra Large
+skinr[arquideas_block_content_size][options][4][class] = extra-large-block-contents
+
+skinr[arquideas_block_float][title] = Block Floating
+skinr[arquideas_block_float][description] = Float blocks at left or right
+skinr[arquideas_block_float][type] = select
+skinr[arquideas_block_float][options][1][label] = Float Left
+skinr[arquideas_block_float][options][1][class] = left-float-block
+skinr[arquideas_block_float][options][2][label] = Float Right
+skinr[arquideas_block_float][options][2][class] = right-float-block
