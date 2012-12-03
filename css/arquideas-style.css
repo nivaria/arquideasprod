@@ -3777,9 +3777,15 @@ body.page-node h1 {
 body.page-node h1 a {
 	color: #333333;
 }
+
 body.page-node #content-tabs {
 	display: none;
 }
+
+body.node-type-simplenews #content-tabs {
+	display: block;
+}
+
 body.page-node .node-edit #content-tabs {
 	display: block;
 }
