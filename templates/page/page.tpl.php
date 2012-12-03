@@ -22,7 +22,7 @@
 </head>
 
 <body id="<?php print $body_id; ?>" class="<?php print $body_classes; ?>">
-  <div id="page" class="page">
+  <div id="page" class="page<?php print isset($page_classes)?$page_classes:''; ?>">
     <div id="page-inner" class="page-inner">
       <div id="skip">
         <a href="#main-content-area"><?php print t('Skip to Main Content Area'); ?></a>
