@@ -329,13 +329,34 @@ function arquideasprod_preprocess_node(&$vars) {
       $vars['picture'] = '';
       $cnid = $vars['node']->field_contest[0]['nid'];
       $cnode = node_load($cnid);
+      $cnode_trans = NULL;
+      if(!empty($cnode->tnid) && $cnode->tnid!=0){
+          $translations = translation_node_get_translations($cnode->tnid);
+          if(!empty($translations[$user->language])){
+              $cnode_trans = node_load($translations[$user->language]->nid);
+          }
+      }
+      
       if($cnode){
           $vars['contest'] = $cnode;
-          $vars['contest_title'] = $cnode->title;
-          $vars['field_contest_image'] = $cnode->field_contest_image;
+          if(!empty($cnode_trans)){
+              $vars['contest_translation'] = $cnode_trans;
+              $vars['contest_title'] = $cnode_trans->title;
+              $vars['field_contest_image'] = $cnode_trans->field_contest_image;
+          } else {
+              $vars['contest_title'] = $cnode->title;
+              $vars['field_contest_image'] = $cnode->field_contest_image;
+          }  
           $vars['inscription_mission'] = $vars['node']->content['og_mission']['#value'];
       }
+      
+      $pattern = '/^inscription\/\d+$/';
+      $match = preg_match($pattern, $_GET['q']);
+      if($match==1){
+          $vars['template_files'][] = 'node-inscription-public';
+      }
   }
+  
   
   //PREPROCESS WEBFORM NODE
   if(isset($vars['type']) && $vars['type']=='webform'){
