@@ -3139,7 +3139,9 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 #content-front #content-front-left {
 	float: left;
 	margin-right: 20px;
-	width: 445px;
+	width: 405px;
+	position: relative;
+	margin-left: 25px;
 }
 .page-solr-nodetype #content-front #content-front-left, .page-solr-nodetype-multi #content-front #content-front-left {
 	width: 454px;
@@ -3150,12 +3152,19 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 #content-front #content-front-right {
 	float: right;
 	width: 455px;
+	height: 190px;
 }
 .page-solr-nodetype #content-front #content-front-right, .page-solr-nodetype-multi #content-front #content-front-right {
 	width: 454px;
 }
 #content-front #content-front-right .content-inner {
 	margin-left: 0;
+}
+#content-front #content-front-left .content-inner {
+  height: 176px;
+}
+#content-front #content-front-right .content-inner {
+  height: 190px;
 }
 .field-ds-group-ds-node-date-type-vote {
 	float: left;
@@ -4924,12 +4933,13 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   margin-top: 40px;
 }
 
-.single-border-block .inner {
+.single-border-block > .inner {
   border: 1px solid #000;
   padding: 15px 10px 10px;
 }
 
-.single-border-shadow-block .inner  {
+.single-border-shadow-block > .inner,
+.single-border-shadow-block > .content-inner  {
   border: 1px solid #000;
   background-color: #fff;
   box-shadow: 4px 4px 0 #000;
@@ -4945,12 +4955,13 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   box-shadow: 4px 4px 0 #000;
   padding: 4px;
   margin-bottom: 24px;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;         /* Opera/IE 8+ */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.double-border-shadow-block .inner {
+.double-border-shadow-block > .inner,
+.double-border-shadow-block > .content-inner  {
   background-color: #fff;
   border: 3px solid #000;
   padding: 15px 10px 10px;

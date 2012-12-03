@@ -122,7 +122,9 @@
                   </div>
                 </div><?php endif; ?>
               </div>
-            </div><?php endif; ?><?php print theme('grid_row', $sidebar_first, 'sidebar-first', 'nested', $sidebar_first_width); ?>
+            </div><?php endif; ?>
+
+            <?php print theme('grid_row', $sidebar_first, 'sidebar-first', 'nested', $sidebar_first_width); ?>
 
             <!-- main group: width = grid_width - sidebar_first_width -->
             <div id="main-group" class="main-group row nested &lt;?php print $main_group_width; ?&gt;">

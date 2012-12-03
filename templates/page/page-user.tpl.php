@@ -123,27 +123,27 @@
 
                         <?php if ($content_front_left || $content_front_right): ?>
                         <div id="content-front" class="content-front">
-                            <div id="content-front-inner" class="content-front-inner inner">
-                              <?php if ($content_front_left): ?>
-                                <div id="content-front-left" class="content-front-left">
-                                  <div class="content-inner">
-                                  <?php print $content_front_left; ?>
-                                  </div>
+                          <div id="content-front-inner" class="content-front-inner inner">
+                            <?php if ($content_front_left): ?>
+                              <div id="content-front-left" class="content-front-left double-border-shadow-block">
+                                <div class="content-inner clearfix">
+                                <?php print $content_front_left; ?>
                                 </div>
-                              <?php endif; ?>
-                              <?php if ($content_front_right): ?>
-                                <div id="content-front-right" class="content-front-right">
-                                  <div class="content-inner">
-                                  <?php print $content_front_right; ?>
-                                  </div>
+                              </div>
+                            <?php endif; ?>
+                            <?php if ($content_front_right): ?>
+                              <div id="content-front-right" class="content-front-right single-border-shadow-block">
+                                <div class="content-inner clearfix">
+                                <?php print $content_front_right; ?>
                                 </div>
-                              <?php endif; ?>
-                            </div>
+                              </div>
+                            <?php endif; ?>
+                          </div>
                         </div>
                         <?php endif; ?>
 
                         <div id="content-region" class="content-region row nested">
-			  <div id="content-region-inner" class="content-region-inner inner">
+                  			  <div id="content-region-inner" class="content-region-inner inner">
                             <a name="main-content-area" id="main-content-area"></a>
 
                                 <div id="content-inner" class="content-inner block">
