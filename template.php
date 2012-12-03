@@ -304,7 +304,7 @@ function arquideasprod_preprocess_node(&$vars) {
           if(intval($vars['field_contest_state'][0]['value'])===ContestState::OPEN){
               $vars['template_files'][] = 'node-contest-open';
           }
-          if(intval($vars['field_contest_state'][0]['value'])===ContestState::FINISHED){
+          if(intval($vars['field_contest_state'][0]['value'])>=ContestState::PRIZE){
               $qt_name = 'quicktabs_contest_closed';
           }
       }
