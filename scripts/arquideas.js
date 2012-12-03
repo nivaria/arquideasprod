@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -21,7 +21,7 @@ $(function(){
         $("body.node-type-group div.node #node-bottom #block-notifications_ui-0 .content .form-checkboxes").prepend("<a href='#' title='Marcar todos' class='mark-all'>Marcar todos</a>");
     } else {
         $("body.node-type-group div.node #node-bottom #block-notifications_ui-0 .content .form-checkboxes").prepend("<a href='#' title='Desmarcar todos' class='unmark-all'>Desmarcar todos</a>");
-    }    
+    }
     $("body.node-type-group div.node #node-bottom #block-notifications_ui-0 .content .form-checkboxes a.mark-all").live("click",function(ev){
         ev.preventDefault();
         $(this).parents(".form-checkboxes").find(".form-item input[type='checkbox']").attr("checked","checked").end().end().removeClass("mark-all").addClass("unmark-all").attr("title","Desmarcar todos").html("Desmarcar todos");
@@ -58,27 +58,50 @@ $(function(){
     if($("html").hasClass("activeSlide")){
         $("html").removeClass("activeSlide");
     }
-    //Some improvements for dates 
+    //Some improvements for dates
     $("span.date-display-start").each(function(index){
         var todate = $(this).parents(".field-content").find("span.date-display-end");
         if(todate.length>0){
             var from = $(this).html();
             var to = todate.html();
-            
+
             var arr1 = from.split(" ");
             var arr2 = to.split(" ");
             for(var i=arr2.length-1;i>=0;i--){
                 if(arr2[i]===arr1[i]){
-                   arr1 = arr1.slice(0,i); 
+                   arr1 = arr1.slice(0,i);
                 } else {
                     break;
                 }
             }
             if(arr1.length==2){
-               arr1 = arr1.slice(0,1); 
+               arr1 = arr1.slice(0,1);
             }
-                
+
             $(this).html(arr1.join(" "));
+        }
+    });
+
+    // Switch top menu based on scoll position
+    if ($('body').is('.admin-menu')) {
+      var adminHeight = 20;
+    } else {
+      var adminHeight = 0;
+    }
+
+    adminHeight = adminHeight + 140;
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > adminHeight) {
+            $('#header-large-inner').hide(200);
+            $('#header-small-wrapper').show(200);
+            $('#header-region-following').addClass('fixed-menu');
+            $('#main-wrapper').addClass('fixed-menu-page');
+        } else {
+            $('#header-large-inner').show(200);
+            $('#header-small-wrapper').hide(200);
+            $('#header-region-following').removeClass('fixed-menu');
+            $('#main-wrapper').removeClass('fixed-menu-page');
         }
     });
 });

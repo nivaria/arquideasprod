@@ -92,14 +92,14 @@
     <!-- INSCRIPTION, PAYMENT OR PRESENTATION LINK -->
     <?php
         if(!$is_edit){
-            print '<div class="open-contest-button">'.openContestButton($node).'</div>'; 
+            print '<div class="open-contest-button">'.openContestButton($node,TRUE).'</div>'; 
         }    
     ?>
     <!-- END INSCRIPTION, PAYMENT OR PRESENTATION LINK -->
     
     <!-- SHARE SOCIAL BLOCK -->
     <?php
-        $block = module_invoke('addthis', 'block', 'view', '0');
+        $block = module_invoke('arquideas_generic', 'block', 'view', '13');
         print $block['content'];
     ?>    
     <!-- END SHARE SOCIAL BLOCK -->

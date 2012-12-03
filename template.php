@@ -96,6 +96,25 @@ function arquideasprod_breadcrumb($breadcrumb) {
         }
     }
     
+    $pattern = '/^node\/\d+$/';
+    $match = preg_match($pattern, $_GET['q']);
+    if($match==1){
+        $arr = explode('/',$_GET['q']);
+        $node = node_load($arr[1]);
+        if($node->type=='news'){
+            $links = array();
+            $links[] = l(t('Home'), '<front>');
+            $links[] = l(t('News'), 'news');
+            $links[] = $node->title;
+        
+            // Set custom breadcrumbs
+            drupal_set_breadcrumb($links);
+
+            // Get custom breadcrumbs
+            $breadcrumb = drupal_get_breadcrumb();
+        }
+    }
+    
     if (count($breadcrumb) > 1) {
         $html .= '<div class="breadcrumb">'. implode(' &gt; ', $breadcrumb) .'</div>';
     }    
@@ -258,6 +277,12 @@ function arquideasprod_preprocess_page(&$vars)
       $vars['sidebar_first'] = '';
   }
   
+  //PREPROCESS PROJECT PAGE
+  if(isset($vars['node']) && $vars['node']->type=='project'){
+      $vars['title'] = '';
+      $vars['sidebar_first'] = '';
+  }
+  
   // Reconstruct CSS and JS variables.
   $vars['css'] = drupal_add_css();
   $vars['styles'] = drupal_get_css();
@@ -326,6 +351,15 @@ function arquideasprod_preprocess_node(&$vars) {
           unset($vars['links']);
       }
       $vars['group_attributes_rendered'] = '';
+  }
+  
+  //PREPROCESS PROJECT NODE
+  if(isset($vars['node']) && $vars['node']->type=='project'){
+      if($_GET['q']=='node/'.$vars['nid'].'/edit'){
+          $vars['is_edit'] = TRUE;
+      } else {
+          $vars['is_edit'] = FALSE;
+      }
   }
 }
 
@@ -586,9 +620,9 @@ function arquideasprod_preprocess_block($variables) {
 }
 
 function arquideasprod_search_theme_form($form) {
-	$form['search_theme_form']['#value']= t('Search...');
+	$form['search_theme_form']['#value']= t('Project, study, contest...');
 	$form['submit']['#type'] = 'image_button';
-	$form['submit']['#src'] = drupal_get_path('theme', 'gll20') . '/images/search_icon.png';
+	$form['submit']['#src'] = drupal_get_path('theme', 'arquideasprod') . '/images/search_icon.png';
 	$form['submit']['#attributes']['class'] = 'btn';
 	return '<div id="search" class="container-inline">' . drupal_render($form) . '</div>';
 }
@@ -1015,11 +1049,14 @@ function arquideasprod_tagadelic_more($vid) {
   return "";
 }
 
-/**
- * Single line of text
- */
-function arquideasprod_notifications_digest_short_line($line, $group) {
-  return $line;
+function arquideas_jcalendar_view($node) {
+  $output = node_view($node, TRUE);
+  $output .= '<div id="nodelink">'. l(t('more', array(), $node->language), calendar_get_node_link($node), array(
+        'attributes' => array(
+            'title' => t('more', array(), $node->language),
+        ),
+      )) .'</div>';
+  return $output;
 }
 
 //Register some texts

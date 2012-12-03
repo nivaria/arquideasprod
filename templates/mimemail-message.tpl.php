@@ -48,7 +48,7 @@ global $base_url;
           <tr>
           <td class="logo">
             <?php if ($logo): ?>
-               <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+               <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home',array(),!empty($recipient->language)?$recipient->language:NULL); ?>" /></a>
             <?php endif; ?>
           </td>
           <td class="headercontent"></td>
@@ -70,7 +70,7 @@ global $base_url;
       <table border="0" cellpadding="20" cellspacing="0" width="600" style="background-color: #333333;border-top: 4px solid #E1E1E1;color: #FFFFFF;">
         <tr>
           <td valign="top">
-            <a href="<?php print $base_url; ?>/home" style="color: #FFFFFF;">Arquideas</a> | <a href="<?php print $base_url; ?>/user" style="color: #FFFFFF;"><?php print t('Access my private area'); ?></a> | <a href="<?php print $base_url; ?>/groups" style="color: #FFFFFF;"><?php print t('Community'); ?></a>
+            <a href="<?php print $base_url; ?>/home" style="color: #FFFFFF;">Arquideas</a> | <a href="<?php print $base_url; ?>/user" style="color: #FFFFFF;"><?php print t('Access my private area',array(),!empty($recipient->language)?$recipient->language:NULL); ?></a> | <a href="<?php print $base_url; ?>/groups" style="color: #FFFFFF;"><?php print t('Community',array(),!empty($recipient->language)?$recipient->language:NULL); ?></a>
           </td>
           <td align="right">
             <a href="http://www.nivaria.com" title="Nivaria"><img src="<?php print $base_url . '/'. path_to_theme();?>/images/nws_by_nivaria.png" alt="Nivaria" /></a>

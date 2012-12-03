@@ -14,12 +14,24 @@
     <h1 class="title"><?php print $contest_title ?></h1>
     <?php endif; ?>
     
+    <!-- NAVIGATION -->
+    <?php print arquideas_generic_get_inscription_detail_navigation($node); ?>
+    <!-- END NAVIGATION -->
+    
     <!-- ADDTHIS widget -->
     <?php
-        $block = module_invoke('addthis', 'block', 'view', '0');
+        $block = module_invoke('arquideas_generic', 'block', 'view', '13');
         print $block['content'];
     ?>
     <!-- END ADDTHIS widget -->
+    
+    <!-- Mark Special Arquideas Prize -->
+    <?php if($contest->field_contest_state[0]['value']==ContestState::FINISHED && user_access(PERM_ADMIN_CONTESTS)) : ?>
+    <div class="link-special-arquideas-prize">
+        <?php print flag_create_link('arquideas_prize', $node->nid); ?>
+    </div>
+    <?php endif; ?>
+    <!-- End Mark Special Arquideas Prize -->
     
     <?php if(!$is_edit && $page == 1): ?>
     <div class="inscription-info-public">
@@ -38,8 +50,16 @@
             
             <!-- FiveStar Widget --> 
             <?php 
-            if (user_access('rate content') && fivestar_validate_target('node', $node->nid)) {
-                print fivestar_widget_form($node);
+            $flag = flag_get_flag('finalist');
+            if($contest->field_contest_state[0]['value']==ContestState::PUBLIC_CONTEST && $flag->is_flagged($node->nid)){
+                if (user_access('rate content') && fivestar_validate_target('node', $node->nid)) {
+                    print fivestar_widget_form($node);
+                }
+            }    
+            if($contest->field_contest_state[0]['value']==ContestState::FINISHED && $flag->is_flagged($node->nid)){
+                if (fivestar_validate_target('node', $node->nid)) {
+                    print fivestar_static('node', $node->nid, 'vote', 'inscription');
+                }    
             }
             ?>
             <!-- END FiveStar Widget -->
