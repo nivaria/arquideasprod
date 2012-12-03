@@ -13,6 +13,9 @@ a:hover {
 a, a:link, a:visited, a:hover, a:focus, a:active {
 	color: #FF3F3F;
 }
+img {
+  max-width: 100%;
+}
 h1 {
 	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
 	font-size: 2.5em;
@@ -5088,18 +5091,25 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 #block-views-contests-block_1 .views-row {
   width: 300px;
   float: left;
-  margin: 12px;
+  margin: 8px;
 }
 /* Front page Contest Link */
+#block-nodeblock-293 {margin: 20px 0;}
 #block-nodeblock-293 .inner {
   background: white url(../images/single-border.png) repeat-x center center;
   padding: 0 200px;
 }
 #block-nodeblock-293 .inner > .content {
-  padding: 0 80px;
-  background: white url(../images/envelope.png) no-repeat 20px center;
+  padding: 3px 85px;
+  background: white url(../images/envelope.png) no-repeat 35px center;
   font-family: SoinSans-BoldOblique, Helvetica, Arial, sans-serif;
   font-size: 16px;
+  line-height: 20px;
+}
+#block-nodeblock-293 div.node,
+#block-nodeblock-293 p {
+  margin: 0;
+  padding: 0;
 }
 
 /*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/
