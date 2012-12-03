@@ -5,6 +5,8 @@
  */
 function arquideasprod_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
+    global $language;  
+      
     $html = '';  
     $pattern = '/^contest\/\d+\/[a-z_]+$/';
     $match = preg_match($pattern, $_GET[q]);
@@ -83,9 +85,21 @@ function arquideasprod_breadcrumb($breadcrumb) {
         $node = node_load($arr[1]);
         $cnode = node_load($node->field_contest[0]['nid']);
         if(!empty($node) && !empty($cnode)){
+            
+            $ctitle = $cnode->title;
+            if(!empty($cnode->tnid) && $cnode->tnid!=0){
+                $translations = translation_node_get_translations($cnode->tnid);
+                if(!empty($translations[$language->language])){
+                    $cnode_trans = node_load($translations[$language->language]->nid);
+                    if(!empty($cnode_trans)){
+                        $ctitle = $cnode_trans->title;
+                    }
+                }
+            }
+            
             $links = array();
             $links[] = l(t('Home'), '<front>');
-            $links[] = l(t('Contest'), 'node/'.$cnode->nid);
+            $links[] = l($ctitle, 'node/'.$cnode->nid);
             $links[] = $node->title;
         
             // Set custom breadcrumbs
