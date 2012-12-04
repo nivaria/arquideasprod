@@ -396,6 +396,25 @@ function arquideasprod_preprocess_node(&$vars) {
           $vars['is_edit'] = FALSE;
       }
   }
+  
+  //PREPROCESS NEWSLETTER ISSUE NODE
+  if(isset($vars['node']) && $vars['node']->type=='simplenews'){
+      if($_GET['q']=='node/'.$vars['nid'].'/edit'){
+          $vars['is_edit'] = TRUE;
+      } else {
+          $vars['is_edit'] = FALSE;
+      }
+      
+      $generaltid = variable_get('nivaria_contests_base_newslettertid', 0);
+      
+      $node = $vars['node'];
+      
+      $vars['general_newsletter'] = FALSE;
+      if(isset($node->taxonomy[$generaltid]) && $node->taxonomy[$generaltid]->tid == $generaltid){
+          $vars['general_newsletter'] = TRUE;
+      }
+      
+  }
 }
 
 
@@ -888,7 +907,9 @@ function arquideasprod_node_form($form) {
 function arquideasprod_preprocess_mimemail_message(&$variables) {
   global $base_url;
   $variables['logo'] = $base_url . theme_get_setting('logo');
+  $variables['slogan'] = t('The architecture and design ideas community');
   $variables['front_page'] = url();
+  
 }
 
 function arquideasprod_username($user, $link = TRUE) {

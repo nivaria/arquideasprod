@@ -48,7 +48,12 @@ global $base_url;
           <tr>
           <td class="logo">
             <?php if ($logo): ?>
+              <div class="logo">
                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home',array(),!empty($recipient->language)?$recipient->language:NULL); ?>" /></a>
+              </div>
+              <div class="slogan">
+                  <?php print $slogan; ?>
+              </div>
             <?php endif; ?>
           </td>
           <td class="headercontent"></td>
@@ -59,6 +64,9 @@ global $base_url;
   <tr>
     <td align="center" valign="top">
       <table border="0" cellpadding="20" cellspacing="0" width="600" id="content">
+        <tr>
+          <td valign="top" style="color: #666666;"><?php print t('Hello, !user',array('!user'=> (!empty($recipient->realname)?$recipient->realname:$recipient->name)),$recipient->language); ?></td>
+        </tr>  
         <tr>
           <td valign="top" style="color: #666666;"><?php print $body; ?></td>
         </tr>
