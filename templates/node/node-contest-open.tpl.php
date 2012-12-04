@@ -177,6 +177,14 @@
     </div>
     <?php endif; ?>
     <!-- End Translate link -->
+    
+    <!-- Mark Highlighted in Newsletter -->
+    <?php if(user_access(PERM_ADMIN_CONTESTS)) : ?>
+    <div class="link-highlight-arquideas-newsletter">
+        <?php print flag_create_link('newsletter', $node->nid); ?>
+    </div>
+    <?php endif; ?>
+    <!-- End Mark Highlighted in Newsletter -->
 
     <?php if ($links): ?>
     <div class="links">
