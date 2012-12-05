@@ -5,14 +5,14 @@
  */
 function arquideasprod_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
-    global $language;  
-      
-    $html = '';  
+    global $language;
+
+    $html = '';
     $pattern = '/^contest\/\d+\/[a-z_]+$/';
     $match = preg_match($pattern, $_GET[q]);
     if($match==1){
         $arr = explode('/',$_GET[q]);
-        
+
         $current = '';
         switch($arr[2]){
             case 'canceled':
@@ -62,30 +62,30 @@ function arquideasprod_breadcrumb($breadcrumb) {
                 break;
             default:
                 break;
-            
+
         }
-        
+
         $links = array();
         $links[] = l(t('Home'), '<front>');
         $links[] = l(t('Contest'), 'node/'.$arr[1]);
         $links[] = $current;
-        
+
         // Set custom breadcrumbs
         drupal_set_breadcrumb($links);
 
         // Get custom breadcrumbs
         $breadcrumb = drupal_get_breadcrumb();
     }
-    
+
     $pattern = '/^inscription\/\d+$/';
     $match = preg_match($pattern, $_GET['q']);
     if($match==1){
         $arr = explode('/',$_GET[q]);
-        
+
         $node = node_load($arr[1]);
         $cnode = node_load($node->field_contest[0]['nid']);
         if(!empty($node) && !empty($cnode)){
-            
+
             $ctitle = $cnode->title;
             if(!empty($cnode->tnid) && $cnode->tnid!=0){
                 $translations = translation_node_get_translations($cnode->tnid);
@@ -96,12 +96,12 @@ function arquideasprod_breadcrumb($breadcrumb) {
                     }
                 }
             }
-            
+
             $links = array();
             $links[] = l(t('Home'), '<front>');
             $links[] = l($ctitle, 'node/'.$cnode->nid);
             $links[] = $node->title;
-        
+
             // Set custom breadcrumbs
             drupal_set_breadcrumb($links);
 
@@ -109,7 +109,7 @@ function arquideasprod_breadcrumb($breadcrumb) {
             $breadcrumb = drupal_get_breadcrumb();
         }
     }
-    
+
     $pattern = '/^node\/\d+$/';
     $match = preg_match($pattern, $_GET['q']);
     if($match==1){
@@ -120,7 +120,7 @@ function arquideasprod_breadcrumb($breadcrumb) {
             $links[] = l(t('Home'), '<front>');
             $links[] = l(t('News'), 'news');
             $links[] = $node->title;
-        
+
             // Set custom breadcrumbs
             drupal_set_breadcrumb($links);
 
@@ -128,10 +128,10 @@ function arquideasprod_breadcrumb($breadcrumb) {
             $breadcrumb = drupal_get_breadcrumb();
         }
     }
-    
+
     if (count($breadcrumb) > 1) {
         $html .= '<div class="breadcrumb">'. implode(' &gt; ', $breadcrumb) .'</div>';
-    }    
+    }
     return $html;
   }
 }
@@ -142,7 +142,7 @@ function arquideasprod_breadcrumb($breadcrumb) {
 function arquideasprod_preprocess_page(&$vars)
 {
   // Format the footer message
-  // We do this here instead of in page.tpl.php because 
+  // We do this here instead of in page.tpl.php because
   // we need a formatted message to pass along to the
   // same theme function as the $footer in order to have
   // them nested together
@@ -164,7 +164,7 @@ function arquideasprod_preprocess_page(&$vars)
           $vars['is_edit'] = FALSE;
       }
   }
-  
+
   //PREPROCESS INTRANET CONTEST's PAGES
   $match = preg_match('/^pid\-contest\-\d+\-/', $vars['body_id']);
   if($match==1){
@@ -172,12 +172,12 @@ function arquideasprod_preprocess_page(&$vars)
       $vars['content_top'] = _contest_show_short_info($vars['body_id']);
       $vars['page_classes'] = ' page-full-view';
   }
-  
+
   $match = preg_match('/^pid\-user\-\d+\-edit$/', $vars['body_id']);
   if($match==1 && !user_access('administer site configuration')){
       $vars['tabs'] = '';
   }
-  
+
   //Checks if we stay on user page
   $pattern = '/^user\/\d+\//';
   $res = preg_match($pattern, $_GET['q']);
@@ -200,7 +200,7 @@ function arquideasprod_preprocess_page(&$vars)
   } else {
       $vars['is_edit'] = FALSE;
   }
-  
+
   if(isset($vars['account'])){
     $patterns = _arquideas_generic_get_user_pages_patterns($vars['account']->name);
     foreach($patterns as $pkey=>$pattern1){
@@ -209,14 +209,14 @@ function arquideasprod_preprocess_page(&$vars)
             $vars['tabs'] = _arquideas_generic_construct_user_tabs($vars['body_id'],$vars['account']);
             break;
         }
-    }    
+    }
   }
-    
+
   if (isset($vars['node'])) {
    // If the node type is "blog" the template suggestion will be "page-blog.tpl.php".
    $vars['template_files'][] = 'page-'. str_replace('_', '-', $vars['node']->type);
-  }  
-  
+  }
+
   if(isset($vars['template_files'])){
       foreach($vars['template_files'] as $tpl){
           if(strpos($tpl,'page-user-')!==FALSE){
@@ -226,7 +226,7 @@ function arquideasprod_preprocess_page(&$vars)
                   $cuser = user_load($cuid);
                   if(empty($cuser->profile_name) || empty($cuser->profile_last_name)){
                      profile_load_profile($cuser);
-                  }  
+                  }
                   if(!empty($cuser->profile_name) && !empty($cuser->profile_last_name)){
                       $vars['title'] = $cuser->profile_name.' '.$cuser->profile_last_name;
                   }
@@ -235,37 +235,37 @@ function arquideasprod_preprocess_page(&$vars)
           }
       }
   }
-  
+
   //Contest Page Preprocess
   if(isset($vars['node']) && $vars['node']->type=='contest'){
       if(!$vars['is_edit']){
         $vars['title'] = '';
-      }  
+      }
       $vars['page_classes'] = ' page-group';
-      $qt_name = 'quicktabs_contest_open'; 
+      $qt_name = 'quicktabs_contest_open';
       if(isset($vars['node']->field_contest_state)){
           if(intval($vars['node']->field_contest_state[0]['value'])===ContestState::OPEN){
               if(isset($vars['node']->field_registration_limit_date[0]['value2'])){
                 jquery_countdown_add('.field-registration-limit-date #jquery-countdown', array(
-                    'until' => $vars['node']->field_registration_limit_date[0]['value2'], 
-                    'format' => 'dHM', 
+                    'until' => $vars['node']->field_registration_limit_date[0]['value2'],
+                    'format' => 'dHM',
                     'expiryText' => t('<span>Inscription finished</span>'),
                 ));
                 jquery_countdown_add('.field-registration-limit-date #jquery-countdown-1', array(
-                    'until' => $vars['node']->field_registration_limit_date[0]['value2'], 
-                    'format' => 'dHM', 
+                    'until' => $vars['node']->field_registration_limit_date[0]['value2'],
+                    'format' => 'dHM',
                 ));
               }
               if(isset($vars['node']->field_early_registration[0]['value2'])){
                 jquery_countdown_add('.field-early-registration #jquery-countdown', array(
-                    'until' => $vars['node']->field_early_registration[0]['value2'], 
-                    'format' => 'dHM', 
+                    'until' => $vars['node']->field_early_registration[0]['value2'],
+                    'format' => 'dHM',
                 ));
               }
               if(isset($vars['node']->field_delivery_limit_date[0]['value'])){
                 jquery_countdown_add('.field-delivery-limit-date #jquery-countdown', array(
-                    'until' => $vars['node']->field_delivery_limit_date[0]['value'], 
-                    'format' => 'dHM', 
+                    'until' => $vars['node']->field_delivery_limit_date[0]['value'],
+                    'format' => 'dHM',
                 ));
               }
           }
@@ -277,7 +277,7 @@ function arquideasprod_preprocess_page(&$vars)
       $vars['contest_quicktab'] = theme('quicktabs', $quicktabs);
       $vars['template_files'][] = 'page';
   }
-  
+
   //PREPROCESS INSCRIPTION PAGE
   $pattern = '/^user\/\d+\/account\/inscriptions\/\d+$/';
   $res = preg_match($pattern, $_GET['q']);
@@ -290,18 +290,18 @@ function arquideasprod_preprocess_page(&$vars)
       $vars['title'] = '';
       $vars['sidebar_first'] = '';
   }
-  
+
   //PREPROCESS PROJECT PAGE
   if(isset($vars['node']) && $vars['node']->type=='project'){
       $vars['title'] = '';
       $vars['sidebar_first'] = '';
   }
-  
+
   // Reconstruct CSS and JS variables.
   $vars['css'] = drupal_add_css();
   $vars['styles'] = drupal_get_css();
   $vars['scripts'] = drupal_get_js();
-  
+
 }
 
 /**
@@ -310,7 +310,7 @@ function arquideasprod_preprocess_page(&$vars)
 function arquideasprod_preprocess_node(&$vars) {
   // Add node_right region content
   $vars['node_right'] = theme('blocks', 'node_right');
-  
+
   //PREPROCESS CONTEST NODE
   if(isset($vars['type']) && $vars['type']=='contest'){
       $qt_name = 'quicktabs_contest_open';
@@ -327,8 +327,8 @@ function arquideasprod_preprocess_node(&$vars) {
       if(isset($vars['links'])){
           unset($vars['links']);
       }
-  } 
-  
+  }
+
   $arr_types_og = og_get_types('group');
   if(isset($vars['node']) && in_array($vars['node']->type,$arr_types_og)){
       if($_GET['q']=='node/'.$vars['nid'].'/edit'){
@@ -337,7 +337,7 @@ function arquideasprod_preprocess_node(&$vars) {
           $vars['is_edit'] = FALSE;
       }
   }
-  
+
   //PREPROCESS INSCRIPTION NODE
   if(isset($vars['node']) && $vars['node']->type=='inscription'){
       $vars['picture'] = '';
@@ -350,7 +350,7 @@ function arquideasprod_preprocess_node(&$vars) {
               $cnode_trans = node_load($translations[$user->language]->nid);
           }
       }
-      
+
       if($cnode){
           $vars['contest'] = $cnode;
           if(!empty($cnode_trans)){
@@ -360,18 +360,18 @@ function arquideasprod_preprocess_node(&$vars) {
           } else {
               $vars['contest_title'] = $cnode->title;
               $vars['field_contest_image'] = $cnode->field_contest_image;
-          }  
+          }
           $vars['inscription_mission'] = $vars['node']->content['og_mission']['#value'];
       }
-      
+
       $pattern = '/^inscription\/\d+$/';
       $match = preg_match($pattern, $_GET['q']);
       if($match==1){
           $vars['template_files'][] = 'node-inscription-public';
       }
   }
-  
-  
+
+
   //PREPROCESS WEBFORM NODE
   if(isset($vars['type']) && $vars['type']=='webform'){
       $vars['submitted'] = '';
@@ -379,7 +379,7 @@ function arquideasprod_preprocess_node(&$vars) {
           unset($vars['links']);
       }
   }
-  
+
   //PREPROCESS GROUP NODE (KM)
   if(isset($vars['type']) && $vars['type']=='group'){
       if(isset($vars['links'])){
@@ -387,7 +387,7 @@ function arquideasprod_preprocess_node(&$vars) {
       }
       $vars['group_attributes_rendered'] = '';
   }
-  
+
   //PREPROCESS PROJECT NODE
   if(isset($vars['node']) && $vars['node']->type=='project'){
       if($_GET['q']=='node/'.$vars['nid'].'/edit'){
@@ -396,7 +396,7 @@ function arquideasprod_preprocess_node(&$vars) {
           $vars['is_edit'] = FALSE;
       }
   }
-  
+
   //PREPROCESS NEWSLETTER ISSUE NODE
   if(isset($vars['node']) && $vars['node']->type=='simplenews'){
       if($_GET['q']=='node/'.$vars['nid'].'/edit'){
@@ -404,16 +404,16 @@ function arquideasprod_preprocess_node(&$vars) {
       } else {
           $vars['is_edit'] = FALSE;
       }
-      
+
       $generaltid = variable_get('nivaria_contests_base_newslettertid', 0);
-      
+
       $node = $vars['node'];
-      
+
       $vars['general_newsletter'] = FALSE;
       if(isset($node->taxonomy[$generaltid]) && $node->taxonomy[$generaltid]->tid == $generaltid){
           $vars['general_newsletter'] = TRUE;
       }
-      
+
   }
 }
 
@@ -423,7 +423,7 @@ function arquideasprod_preprocess_node(&$vars) {
  */
 function arquideasprod_preprocess_user_profile_item(&$vars) {
   // Separate userpoints value from the edit links
-  if ($vars['title'] == 'Points') { 
+  if ($vars['title'] == 'Points') {
     $userpoints = explode(' - ', $vars['value']);
     $vars['value'] = '<span class="points">' . $userpoints[0] . '</span><span class="edit-links">' . $userpoints[1] . '</span>';
     unset($vars['title']);
@@ -435,7 +435,7 @@ function arquideasprod_preprocess_user_profile_item(&$vars) {
  */
 function arquideasprod_shoutbox_post($shout, $links = array(), $alter_row_color=TRUE) {
   global $user;
-  
+
   // Gather moderation links
   if ($links) {
     foreach ($links as $link) {
@@ -445,7 +445,7 @@ function arquideasprod_shoutbox_post($shout, $links = array(), $alter_row_color=
       $img_links = l($link_html, $link_url, array('html' => TRUE, 'query' => array('destination' => drupal_get_path_alias($_GET['q'])))) . $img_links;
     }
   }
-  
+
   // Generate user name with link
   $user_name = shoutbox_get_user_link($shout);
 
@@ -461,7 +461,7 @@ function arquideasprod_shoutbox_post($shout, $links = array(), $alter_row_color=
     $shout_classes[] = 'shoutbox-unpublished';
     $approval_message = '&nbsp;(' . t('This shout is waiting for approval by a moderator.') . ')';
   }
-  
+
   // Check for specific user class
   $user_classes = array();
   $user_classes[] = 'shoutbox-user-name';
@@ -469,9 +469,9 @@ function arquideasprod_shoutbox_post($shout, $links = array(), $alter_row_color=
     $user_classes[] = 'shoutbox-current-user-name';
   }
   else if ($shout->uid == 0) {
-    $user_classes[] = 'shoutbox-anonymous-user';  
+    $user_classes[] = 'shoutbox-anonymous-user';
   }
-  
+
   // Load user image and format
   $author_picture ='';
   $shout_author =  user_load($shout->uid);
@@ -481,7 +481,7 @@ function arquideasprod_shoutbox_post($shout, $links = array(), $alter_row_color=
   if ($shout_author->picture) {
     $author_picture = theme_imagecache('user_picture_meta', $shout_author->picture, $shout_author->name, $shout_author->name);
   }
-  
+
   // Time format
   $format = variable_get('shoutbox_time_format', 'ago');
   switch ($format) {
@@ -494,7 +494,7 @@ function arquideasprod_shoutbox_post($shout, $links = array(), $alter_row_color=
       $submitted = format_date($shout->created, $format);
       break;
   }
-   
+
   // Build the post
   $post = '';
   $post .= '<div class="' . implode(' ', $shout_classes) . '" title="' . $title . '">';
@@ -514,7 +514,7 @@ function arquideasprod_item_list($items = array(), $title = NULL, $type = 'ul', 
   if (isset($title)) {
     $output .= '<h3>'. $title .'</h3>';
   }
-  
+
   if(isset($attributes['class']) && $attributes['class']=='pager'){
       $match = preg_match('/^contest\/\d+\//', $_GET['q']);
       if($match==1){
@@ -529,7 +529,7 @@ function arquideasprod_item_list($items = array(), $title = NULL, $type = 'ul', 
         $output .=  '<option value="200"'.(($items_per_page_override == 200) ? ' selected="selected"' : '').'>200</option>';
         $output .=  '<option value="99999"'.(($items_per_page_override == 99999) ? ' selected="selected"' : '').'>'.t('All').'</option>';
         $output .=  '</select></div>';
-      }   
+      }
   }
 
   if (!empty($items)) {
@@ -556,7 +556,7 @@ function arquideasprod_item_list($items = array(), $title = NULL, $type = 'ul', 
       else {
          $data = $item;
       }
-      
+
       if (!is_numeric($i)) {
         if (count($children) > 0) {
           $data .= theme_item_list($children, NULL, $type, $attributes); // Render nested list
@@ -567,10 +567,10 @@ function arquideasprod_item_list($items = array(), $title = NULL, $type = 'ul', 
         if ($c == 0) {
           $attributes['class'] = empty($attributes['class']) ? 'last' : ($attributes['class'] .' last');
         }
-        
+
         $attributes['class'] .= ' ' . ($c % 2 ? 'even' : 'odd');
         $output .= '<li'. drupal_attributes($attributes) .'>'. $data ."</li>\n";
-      } 
+      }
       else {
         if (count($children) > 0) {
           $data .= theme_item_list($children, NULL, $type, $attributes); // Render nested list
@@ -581,12 +581,12 @@ function arquideasprod_item_list($items = array(), $title = NULL, $type = 'ul', 
         if ($i == $num_items - 1) {
           $attributes['class'] = empty($attributes['class']) ? 'last' : ($attributes['class'] .' last');
         }
-        
+
         $attributes['class'] .= ' ' . ($i % 2 ? 'even' : 'odd');
         $output .= '<li'. drupal_attributes($attributes) .'>'. $data ."</li>\n";
       }
     }
-    
+
     $output .= "<$type>";
   }
   $output .= '</div>';
@@ -594,7 +594,7 @@ function arquideasprod_item_list($items = array(), $title = NULL, $type = 'ul', 
 }
 
 function arquideasprod_preprocess_block($variables) {
-  global $user;  
+  global $user;
   $variables['template_files'][] = 'block-'.$variables['block']->region.'-'.$variables['block']->module;
   $variables['template_files'][] = 'block-'.$variables['block']->region.'-'.$variables['block']->module.'-'.$variables['block']->delta;
   if(isset($variables['block'])){
@@ -612,10 +612,10 @@ function arquideasprod_preprocess_block($variables) {
                         'class' => 'thickbox',
                     ),
                 )),
-            ));  
+            ));
           } else {
             $variables['block']->content = t('Already a member? !login', array('!login' => l(t('Login'), 'user')));
-          }        
+          }
       }
       //Superheader menu block
       if($variables['block']->module=='menu' && $variables['block']->delta=='menu-menu-superheader'){
@@ -644,22 +644,22 @@ function arquideasprod_preprocess_block($variables) {
           }
           $variables['block']->content = implode('</li>',$arrElem);
       }
-      
+
       //Superheader left menu block
       if($variables['block']->module=='menu' && $variables['block']->delta=='menu-menu-superheader-left'){
           $variables['block']->subject = '';
       }
-      
+
       //Site Follow block
       if($variables['block']->module=='follow' && $variables['block']->delta=='site'){
           $variables['block']->subject = '';
       }
-      
+
       //Language switcher
       if($variables['block']->module=='locale' && $variables['block']->delta==0){
           $variables['block']->subject = '';
       }
-      
+
       //Group Quick Tabs
       if($variables['block']->module=='quicktabs' && $variables['block']->delta=='arqnetwork_group_quicktabs'){
           $obj = menu_get_object('node',4);
@@ -668,7 +668,7 @@ function arquideasprod_preprocess_block($variables) {
           }
           if(!empty($obj) && og_is_group_type($obj->type)){
             $variables['block']->subject = t('Wall of %s',array('%s'=>$obj->title));
-          }  
+          }
       }
   }
 }
@@ -676,14 +676,48 @@ function arquideasprod_preprocess_block($variables) {
 function arquideasprod_search_theme_form($form) {
 	$form['search_theme_form']['#value']= t('Project, study, contest...');
 	$form['submit']['#type'] = 'image_button';
-	$form['submit']['#src'] = drupal_get_path('theme', 'arquideasprod') . '/images/search_icon.png';
+	$form['submit']['#src'] = drupal_get_path('theme', 'arquideasdev') . '/images/search_icon.png';
 	$form['submit']['#attributes']['class'] = 'btn';
 	return '<div id="search" class="container-inline">' . drupal_render($form) . '</div>';
 }
 
+function arquideasprod_preprocess_search_block_form(&$vars, $hook) {
+  // Modify elements of the search form
+  unset($vars['form']['search_block_form']['#title']);
+
+  // Set a default value for the search box
+  $vars['form']['search_block_form']['#value'] = t('Project, study, contest...');
+
+  // Add a custom class to the search box
+  // Set yourtheme.css > #search-block-form .form-text { color: #888888; }
+  $vars['form']['search_block_form']['#attributes'] = array(
+     'onblur' => "if (this.value == '') {this.value = '".$vars['form']['search_block_form']['#value']."';} this.style.color = '#888888';",
+     'onfocus' => "if (this.value == '".$vars['form']['search_block_form']['#value']."') {this.value = '';} this.style.color = '#000000';" );
+
+  // Modify elements of the submit button
+  unset($vars['form']['submit']);
+
+  // Change text on the submit button
+  //$vars['form']['submit']['#value'] = t('Go!');
+
+  // Change submit button into image button - NOTE: '#src' leading '/' automatically added
+  $vars['form']['submit']['image_button'] = array('#type' => 'image_button', '#src' => drupal_get_path('theme', 'arquideasdev') . '/images/search_icon.png');
+
+  // Rebuild the rendered version (search form only, rest remains unchanged)
+  unset($vars['form']['search_block_form']['#printed']);
+  $vars['search']['search_block_form'] = drupal_render($vars['form']['search_block_form']);
+
+  // Rebuild the rendered version (submit button, rest remains unchanged)
+  unset($vars['form']['submit']['#printed']);
+  $vars['search']['submit'] = drupal_render($vars['form']['submit']);
+
+  // Collect all form elements to print entire form
+  $vars['search_form'] = implode($vars['search']);
+}
+
 function arquideasprod_commons_core_info_block() {
   $content = '';
-  
+
   $content .= '<div id="acquia-footer-message">';
 
   $content .= '<a href="http://acquia.com/drupalcommons" title="' . t('Commons social business software') . '">';
@@ -694,7 +728,7 @@ function arquideasprod_commons_core_info_block() {
   $content .= l(t('Acquia'), 'http://acquia.com', array('attributes' => array('title' => t('Acquia'))));
   $content .= '</span>';
   $content .= '</div>';
-  
+
   $content .= '<div id="fusion-footer-message">';
   $content .= t('Theme by') . '&nbsp;';
   $content .= '<a href="http://www.brightlemon.com" title="' . t('Drupal Themes by BrightLemon') . '">' . t('BrightLemon') . '</a>';
@@ -718,7 +752,7 @@ function arquideasprod_taxonomy_term_page($tids, $result) {
   }
   $last_name = array_pop($names);
   if (count($names) == 0) {
-    $title = t("Pages containing '@tag'", array('@tag' => $last_name));    
+    $title = t("Pages containing '@tag'", array('@tag' => $last_name));
   } elseif ($terms['operator'] == "or") {
       $title = t("Pages containing '@tags or @last_tag'", array('@tags' => implode(", ", $names), '@last_tag' => $last_name));
   } else {
@@ -797,10 +831,10 @@ function arquideasprod_node_form($form) {
   if(isset($form['body_field'])){
       $form['body_field']['#weight'] = 0;
   }
-  
-  
+
+
   $form['group_relations']['#access'] = FALSE;
-  
+
   if(!empty($form['group_relations'])){
       foreach($form['group_relations'] as $grelkey => $grelval){
           if(strpos($grelkey,'#')===FALSE){
@@ -810,25 +844,25 @@ function arquideasprod_node_form($form) {
                   $grelval['#weight'] = -2.3;
               } else {
                   $grelval['#weight'] = -2.2;
-              }    
+              }
               $form[$grelkey] = $grelval;
           }
       }
   }
-  
-  //Getting personal data 
+
+  //Getting personal data
   if(isset($form['group_personal_data'])){
       $form['group_personal_data']['#access'] = FALSE;
   }
-  //Getting contact data 
+  //Getting contact data
   if(isset($form['group_contact_data'])){
       $form['group_contact_data']['#access'] = FALSE;
   }
-  //Getting professional data 
+  //Getting professional data
   if(isset($form['group_profesional_data'])){
       $form['group_profesional_data']['#access'] = FALSE;
   }
-  //Getting social networks data 
+  //Getting social networks data
   if(isset($form['group_network_profiles'])){
       $form['group_network_profiles']['#access'] = FALSE;
   }
@@ -846,7 +880,7 @@ function arquideasprod_node_form($form) {
           unset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_type_project']);
       }
   }
-  
+
   $output .= "  <div class=\"standard\">\n";
   $output .= drupal_render($form);
   $output .= "  </div>\n";
@@ -890,9 +924,9 @@ function arquideasprod_node_form($form) {
     $output1 .= drupal_render($form['group_type_project']);
     $output1 .= "  </div>\n";
   }
-  
+
   $output = $output1.$output;
-  
+
   if (!empty($admin)) {
     $output .= "  <div class=\"admin\">\n";
     $output .= $admin;
@@ -909,7 +943,7 @@ function arquideasprod_preprocess_mimemail_message(&$variables) {
   $variables['logo'] = $base_url . theme_get_setting('logo');
   $variables['slogan'] = t('The architecture and design ideas community');
   $variables['front_page'] = url();
-  
+
 }
 
 function arquideasprod_username($user, $link = TRUE) {
@@ -1029,7 +1063,7 @@ function arquideasprod_pager($tags = array(), $limit = 10, $element = 0, $parame
           );
         }
         if ($i > $pager_current) {
-          $items[] = array( 
+          $items[] = array(
             'class' => 'pager-item pager-number',
             'data' => theme('pager_next', $i, $limit, $element, ($i - $pager_current), $parameters),
           );
@@ -1067,32 +1101,32 @@ function arquideasprod_pager($tags = array(), $limit = 10, $element = 0, $parame
 function arquideasprod_commons_profile_image_action_links_block($picture, $links, $account) {
   $content = '';
   $pops = array();
-  
+
   if(count($links)>0){
       $pops['budges_gll'] = array_pop($links);
       if(count($links)>0){
           $pops['points_gll'] = array_pop($links);
       }
   }
-  
+
   $links['drafts'] = array(
       'href' => 'mycontent/drafts',
       'title' => t('My drafts'),
   );
-  
+
   if(isset($pops['points_gll'])){
       $links['points_gll'] = $pops['points_gll'];
   }
   if(isset($pops['budges_gll'])){
       $links['budges_gll'] = $pops['budges_gll'];
   }
-  
+
   // Add the picture
   $content .= $picture;
-  
+
   // Add the links
   $content .= theme('links', $links);
-  
+
   return $content;
 }
 

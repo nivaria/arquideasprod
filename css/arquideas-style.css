@@ -77,8 +77,9 @@ blockquote p:last-child {
 	color: #FF3F3F;
 }
 .max-width {
-  min-width: 960px;
+  min-width: 920px;
   max-width: 1240px;
+  padding: 0 20px;
 }
 
 .row, .nested, .block {overflow: visible;}
@@ -155,6 +156,7 @@ body.admin-menu #header-region-following.fixed-menu {
 	font-style: normal;
 	height: 27px;
 	line-height: 27px;
+	margin: 0 0 15px 0;
 }
 .main, .footer {
 	position: relative;
@@ -191,7 +193,13 @@ body.admin-menu #header-region-following.fixed-menu {
 #header-large-inner {
   margin: 0 auto;
 }
+#header-large-inner .logo {
+  position: relative;
+  top: -9px;
+}
 #header-top-region {
+  height: 29px;
+  overflow: hidden;
 }
 
 #header-top-region .block {
@@ -209,18 +217,22 @@ body.admin-menu #header-region-following.fixed-menu {
   margin: 0 auto;
 }
 
-#header-top-region,
+#header-large-wrapper .inner,
+#header-small-wrapper .inner {
+  margin-top: 5px;
+}
+
 #header-top-region .block,
 #header-top-region ul,
 #header-top-region li,
 #header-top-region ul li a,
 #header-region-top-following,
-#header-region-top-following .logo,
 #header-region-top-following .block,
 #header-region-top-following ul,
 #header-region-top-following li,
 #header-region-top-following ul li a {
   display: inline;
+  line-height: 25px;
   margin: 0;
   padding: 0;
   width: auto;
@@ -235,6 +247,7 @@ body.admin-menu #header-region-following.fixed-menu {
 
 #header-region-top-following .logo {
   float: left;
+  margin-left: 10px;
 }
 
 #header-region-top-following .block {
@@ -2344,19 +2357,19 @@ table.views-view-grid td {
 }
 
 .view div.more-link, .view .view-footer, .heartbeat-more-messages-wrapper {
-  background: none repeat scroll 0 0 transparent;
-  text-align: center;
-  min-height: 40px;
-}
-
-.view div.more-link, .view .view-footer a, .heartbeat-more-messages-wrapper {
-	clear: both;
   font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-weight: normal;
 	line-height: 1.1em;
-	text-align: center;
+  background: none repeat scroll 0 0 transparent;
+  text-align: center;
+  min-height: 40px;
+	clear: both;
 	margin: 0;
+	padding: 0;
+}
+
+.view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a {
 	padding: 10px 25px;
 	color: #fff;
 	background: #FF3F3F;
@@ -2364,7 +2377,7 @@ table.views-view-grid td {
   -moz-border-radius: 5px;
   border-radius: 5px;
   text-shadow: 1px 1px 2px #000000;
-  filter: dropshadow(color=#000000, offx=1, offy=1);
+  text-decoration: none;
 }
 
 .heartbeat-more-messages-wrapper p {
@@ -3303,9 +3316,7 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 	margin-top: 0;
 }
 .block.block-views .content .more-link {
-	border-top: 1px solid #F4F4F4;
-	margin-top: 0;
-	padding-top: 10px;
+	border: 0 none;
 }
 #main .gerenciall_calendar .content {
 	background-color: transparent;
@@ -5066,8 +5077,56 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   float: right;
   width: 310px;
   margin-right: 150px;
-
 }
+
+/* Search Block Form */
+#search-block-form,
+#search-block-form-1 {
+  position: relative;
+}
+
+#search-block-form .container-inline,
+#search-block-form-1 .container-inline {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 220px;
+  height: 32px;
+  background: transparent url("../images/search_box.png") no-repeat left center;
+}
+
+#search-block-form-1 .container-inline {
+  position: absolute;
+  margin-left: 170px;
+  padding-left: 6px;
+}
+
+#search-block-form .form-item input,
+#search-block-form-1 .form-item input {
+  position: relative;
+  border: 0 none;
+  width: 185px;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  height: 32px;
+  line-height: 32px;
+}
+
+#search-block-form .form-submit,
+#search-block-form-1 .form-submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+}
+
+
 
 /* Front page slider */
 
@@ -5093,8 +5152,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
 	color: #fff;
 	font-weight: normal;
-	font-size: 40px;
-	line-height: 50px;
+	font-size: 38px;
+	line-height: 46px;
 	text-transform: uppercase;
 }
 
@@ -5308,6 +5367,114 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 #block-nodeblock-293 p {
   margin: 0;
   padding: 0;
+}
+
+/* Front page Contests View */
+#block-views-arqnetwork_projects-block_1 td {
+  padding: 0 12px 30px 0;
+}
+
+#block-views-arqnetwork_projects-block_1 td.col-last {
+  padding: 0;
+}
+
+#block-views-arqnetwork_projects-block_1 .project-wrapper {
+  position: relative;
+}
+
+#block-views-arqnetwork_projects-block_1 .views-field-field-images-project-fid {
+  width: 229px;
+  height: 172px;
+  margin-bottom: 5px;
+}
+
+#block-views-arqnetwork_projects-block_1 .views-field-field-images-project-fid img {
+  vertical-align: middle;
+}
+#block-views-arqnetwork_projects-block_1 .project-info {
+  width: 229px;
+  height: 172px;
+  position: absolute;
+  top: 0;
+  color: #fff;
+  opacity: 0;
+}
+
+#block-views-arqnetwork_projects-block_1 .project-info:hover {
+  background: transparent url(../images/transparent-spacer.png) repeat;
+  opacity: 1;
+}
+
+#block-views-arqnetwork_projects-block_1 .views-field-title {
+  position: absolute;
+  bottom: 50%;
+  text-align: center;
+  width: 229px;
+}
+
+#block-views-arqnetwork_projects-block_1 .views-field-title a {
+  color: #fff;
+}
+
+#block-views-arqnetwork_projects-block_1 .views-field-field-project-type-project-value {
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  width: 229px;
+  color: #FF3F3F;
+  font-size: 13px;
+}
+
+#block-views-arqnetwork_projects-block_1 .project-social {
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  top: 142px;
+  margin-left: 74px;
+  padding: 5px 8px;
+  width: 81px;
+  height: 20px;
+}
+
+#block-views-arqnetwork_projects-block_1 .views-field-rating-value,
+#block-views-arqnetwork_projects-block_1 .views-field-comment-count {
+  padding-left: 20px;
+  margin-right: 8px;
+}
+
+#block-views-arqnetwork_projects-block_1 .project-owner {
+  font-size: 11px;
+  line-height: 24px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Block News on Front page */
+#block-views-news-block_4 td {
+  padding: 0 20px 40px 0;
+  min-width: 168px;
+}
+
+#block-views-news-block_4 td.col-last {
+  padding: 0;
+}
+
+#block-views-news-block_4 .views-field-title {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+#block-views-news-block_4 .views-field-field-date-news-value {
+  color: #999;
+  margin-bottom: 6px;
+}
+
+
+/* Front Page Partners */
+#block-views-colaborators-block_2 .partner-logo {
+  position: relative;
+  float: left;
+  height: 490px;
 }
 
 /*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/
