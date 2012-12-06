@@ -184,10 +184,15 @@
       <!-- postscript-bottom row: width = grid_width -->
       <?php print theme('grid_row', $postscript_bottom, 'postscript-bottom', 'full-width', $grid_width); ?>
 
-      <!-- footer row: width = grid_width -->
-      <?php if ($footer || $footer_message): ?>
-			  <?php print theme('grid_row', $footer . $footer_message, 'footer', 'full-width', $grid_width); ?>
-	    <?php endif; ?>
+      <!-- footer row -->
+      <div id="footer-wrapper" class="footer-wrapper full-width">
+        <div id="footer" class="footer max-width row inner clearfix">
+          <div id="footer-inner" class="footer-inner inner clearfix">
+            <?php print theme('grid_block', $primary_links_tree, 'primary-menu-footer'); ?>
+            <?php print $footer; ?>
+          </div><!-- /footer-inner -->
+        </div><!-- /footer -->
+      </div>
 
     </div><!-- /page-inner -->
   </div><!-- /page -->
