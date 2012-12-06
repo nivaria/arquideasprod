@@ -81,7 +81,7 @@
 
       <div id="header-region-following" class="full-width">
         <div id="header-region-following-inner" class="max-width row inner clearfix">
-					<?php print $header_following; ?>
+					<?php print theme('grid_block', $primary_links_tree, 'primary-menu'); ?>
   			</div><!-- /header-region-following-inner -->
       </div><!-- /header-region-following -->
 

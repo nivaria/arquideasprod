@@ -252,6 +252,11 @@ body.admin-menu #header-region-following.fixed-menu {
 
 #header-region-top-following .block {
   float: right;
+  margin-left: 15px;
+}
+
+#header-region-top-following li {
+  margin-left: 10px;
 }
 
 .calendar-calendar td .inner div.calendar div, .calendar-calendar td .inner div.calendar div a {
@@ -4794,6 +4799,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 	z-index: 20;
 }
 
+#primary-menu-inner,
 .primary-menu-inner {
 	margin: 0 auto;
 	padding: 0;
