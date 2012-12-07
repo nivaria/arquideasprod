@@ -60,9 +60,11 @@ function arquideasprod_breadcrumb($breadcrumb) {
             case 'selectwinners':
                 $current = t('Winners selection');
                 break;
+            case 'all':
+                $current = t('All inscriptions');
+                break;
             default:
                 break;
-
         }
 
         $links = array();
