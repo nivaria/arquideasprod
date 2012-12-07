@@ -6,9 +6,9 @@
   <div class="inner">
     <!-- IMAGE --> 
     <?php 
-        if(isset($field_contest_image[0]['filepath']) && !$is_edit){
+        if(isset($field_detail_image_contest[0]['filepath']) && !$is_edit){
             $preset = variable_get('nivaria_contests_base_preset_contest_closed', 'Featured');
-            print theme_imagecache($preset, $field_contest_image[0]['filepath'], $title);
+            print theme_imagecache($preset, $field_detail_image_contest[0]['filepath'], $title);
         } 
     ?>
     <!-- END IMAGE -->
