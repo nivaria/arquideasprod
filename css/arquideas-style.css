@@ -52,7 +52,7 @@ blockquote p:last-child {
 	padding: 12px 0;
 }
 #sidebar-last.nested {
-	width: 246px;
+	width: 300px;
 }
 .front #sidebar-last.nested, .node-type-group #sidebar-last.nested, .page-title-page #sidebar-last.nested {
 	width: 282px;
@@ -2372,7 +2372,8 @@ table.views-view-grid td {
 	padding: 0;
 }
 
-.view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a {
+.view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a,
+#view-id-contests-page_2 .views-field-view-node-1 a {
 	padding: 10px 25px;
 	color: #fff;
 	background: #FF3F3F;
@@ -3513,15 +3514,15 @@ tbody {
 }
 body #main, body.page-one-column.page-node.node-type-group #main {
 	background-color: #FFFFFF;
-	border: 1px solid #E4E4E4;
-	border-radius: 12px 12px 12px 12px;
-	padding: 0 16px;
+	border: 0 none;
+	border-radius: 0;
+	padding: 40px 16px 0 16px;
 	width: 928px;
 }
 body.not-front #content-group, body.page-node #content-group {
-	box-shadow: 8px 0 8px 0 #F3F3F3;
-	padding-right: 16px;
-	width: 648px;
+	box-shadow: 0 none;
+	padding-right: 0;
+	width: 580px;
 }
 body.node-type-contest .page-group #content-group {
 	width: 918px;
@@ -3591,7 +3592,7 @@ body.page-node.node-type-group #content-group {
 }
 body h1.title, body.page-node h1.title {
 	padding: 24px 0 10px;
-	width: 492px;
+	width: auto;
 }
 body.page-node .node-edit h1.title, body.page-taxonomy h1.title {
 	width: 100%;
@@ -5485,6 +5486,102 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   position: relative;
   float: left;
   height: 490px;
+}
+
+/* Contests Page - Opened Contests */
+#view-id-contests-page_2 .views-row,
+#view-id-contests-page_3 .views-row {
+  position: relative;
+  background: #fff;
+  margin-bottom: 40px;
+  border: 1px solid #000000;
+  top: 4px;
+  left: 4px;
+}
+
+#view-id-contests-page_2 .views-row-inner,
+#view-id-contests-page_3 .views-row-inner {
+  position: relative;
+  top: -4px;
+  left: -4px;
+  background: #000;
+}
+
+#view-id-contests-page_2 .views-field-phpcode-1,
+#view-id-contests-page_2 .views-field-comments-count,
+#view-id-contests-page_3 .views-field-phpcode-1,
+#view-id-contests-page_3 .views-field-comments-count {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 25px;
+  background: transparent url(../images/transparent-spacer.png) repeat;
+}
+#view-id-contests-page_2 .views-field-comments-count,
+#view-id-contests-page_3 .views-field-comments-count {
+  top: 26px;
+}
+#view-id-contests-page_2 .views-field-title,
+#view-id-contests-page_3 .views-field-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 26px;
+  margin-top: 10px;
+  padding: 0 25px;
+}
+#view-id-contests-page_2 .views-field-title a,
+#view-id-contests-page_3 .views-field-title a {
+  color: #fff;
+}
+
+
+#view-id-contests-page_2 .views-field-field-contest-tagline-value,
+#view-id-contests-page_3 .views-field-field-contest-tagline-value {
+  color: #fff;
+  font-size: 16px;
+  padding-bottom: 20px;
+  margin: 10px 25px 20px 25px;
+  border-bottom: 1px solid #333333;
+  text-align: center;
+}
+
+#view-id-contests-page_2 .views-field-phpcode,
+#view-id-contests-page_3 .views-field-phpcode {
+  color: #fff;
+  width: 240px;
+  text-align: right;
+}
+
+#view-id-contests-page_2 .views-field-phpcode-3,
+#view-id-contests-page_3 .views-field-phpcode-3 {
+  text-align: right;
+  width: 240px;
+  height: 40px;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  color: #fff !important;
+}
+
+#view-id-contests-page_2 .hasCountdown {
+  background: transparent;
+  border: 0 none;
+}
+
+#view-id-contests-page_2 .countdown_section {
+
+}
+
+#view-id-contests-page_2 .countdown_section .countdown_amount {
+  font-size: 20px;
+}
+
+#view-id-contests-page_2 .views-field-view-node-1,
+#view-id-contests-page_3 .views-field-view-node-1 {
+  height: 40px;
+  padding: 15px 0 15px 250px;
 }
 
 /*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/
