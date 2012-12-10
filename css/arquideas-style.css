@@ -3846,12 +3846,11 @@ body.not-front .sidebar-last .block h2.block-title a, body.page-node .sidebar-la
 	font-size: 18px;
 	padding: 12px 0;
 }
-body.not-front .sidebar-last .block .content, body.page-node .sidebar-last .block .content {
+body.not-front .sidebar-last .block .inner > .content,
+body.page-node .sidebar-last .block .inner > .content {
 	background-color: transparent;
-	border-bottom: 1px dashed #D9D9D9;
 	border-radius: 0 0 0 0;
 	border-right: 0 none;
-	border-top: 1px dashed #D9D9D9;
 	box-shadow: none;
 }
 body.not-front .sidebar-last .block .view-content .item-list ul li.views-row-even, body.not-front .sidebar-last .block .view-content .item-list ul li.views-row-odd, body.page-node .sidebar-last .block .view-content .item-list ul li.views-row-even, body.page-node .sidebar-last .block .view-content .item-list ul li.views-row-odd {
@@ -5581,7 +5580,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 #view-id-contests-page_2 .views-field-comments-count,
 #view-id-contests-page_3 .views-field-comments-count {
-  top: 26px;
+  top: 25px;
 }
 #view-id-contests-page_2 .views-field-title,
 #view-id-contests-page_3 .views-field-title {
@@ -5609,17 +5608,13 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 
 #view-id-contests-page_2 .views-field-phpcode,
-#view-id-contests-page_3 .views-field-phpcode {
-  color: #fff;
-  width: 240px;
-  text-align: right;
-}
-
+#view-id-contests-page_3 .views-field-phpcode,
 #view-id-contests-page_2 .views-field-phpcode-3,
 #view-id-contests-page_3 .views-field-phpcode-3 {
   text-align: right;
-  width: 240px;
-  height: 40px;
+  width: 225px;
+  height: 25px;
+  padding: 15px 0 0 15px;
   position: absolute;
   bottom: 30px;
   left: 0;
@@ -5642,7 +5637,32 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 #view-id-contests-page_2 .views-field-view-node-1,
 #view-id-contests-page_3 .views-field-view-node-1 {
   height: 40px;
-  padding: 15px 0 15px 250px;
+  padding: 15px 0 5px 250px;
+}
+
+/* Block News in Sidebar */
+#block-views-news-block_1 .view-content {
+  padding-left: 130px;
+}
+
+#block-views-news-block_1 .views-row {
+  margin-bottom: 20px;
+}
+
+#block-views-news-block_1 .views-field-field-image-fid {
+  position: absolute;
+  left: 0;
+}
+
+#block-views-news-block_1 .views-field-title {
+  font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+#block-views-news-block_1 .views-field-field-date-news-value {
+  color: #999;
+  margin-bottom: 5px;
 }
 
 /*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/
