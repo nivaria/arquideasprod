@@ -139,6 +139,10 @@
                       <?php if ($title && !$is_front): ?>
 
                       <h1 class="title"><?php print $title; ?></h1><?php endif; ?>
+                       <?php if ($subtitle): ?>
+                          <h2 class="subtitle"><?php print $subtitle; ?></h2>
+                        <?php endif; ?>
+                        <?php print $subtitle_edit?>
 
                       <div id="content-group-inner" class="content-group-inner inner">
                         <div id="content-region" class="content-region row nested">
