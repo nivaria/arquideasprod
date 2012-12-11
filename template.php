@@ -1141,7 +1141,7 @@ function arquideasprod_tagadelic_more($vid) {
   return "";
 }
 
-function arquideas_jcalendar_view($node) {
+function arquideasprod_jcalendar_view($node) {
   $output = node_view($node, TRUE);
   $output .= '<div id="nodelink">'. l(t('more', array(), $node->language), calendar_get_node_link($node), array(
         'attributes' => array(
@@ -1149,6 +1149,27 @@ function arquideas_jcalendar_view($node) {
         ),
       )) .'</div>';
   return $output;
+}
+
+/**
+ *  Theme from/to date combination on form.
+ */
+function arquideasprod_date_combo($element) {
+  $field = content_fields($element['#field_name'], $element['#type_name']);
+  if (!$field['todate']) {
+    return $element['#children'];
+  }
+
+  // Group from/to items together in fieldset.
+  $fieldset = array(
+    '#title' => check_plain($element['#title']) .' '. ($element['#delta'] > 0 ? intval($element['#delta'] + 1) : ''),
+    '#value' => $element['#children'],
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+    '#description' => $element['#fieldset_description'],
+    '#attributes' => array(),
+  );
+  return theme('fieldset', $fieldset);
 }
 
 //Register some texts
