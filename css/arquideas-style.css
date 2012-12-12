@@ -2374,7 +2374,8 @@ table.views-view-grid td {
 }
 
 .view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a,
-#view-id-contests-page_2 .views-field-view-node-1 a {
+#view-id-contests-page_2 .views-field-view-node-1 a,
+#block-views-contests-block_5 .views-field-view-node a {
 	padding: 10px 25px;
 	color: #fff;
 	background: #FF3F3F;
@@ -4594,7 +4595,7 @@ a.disabled {
 	color: #FFFFFF;
 }
 .activeSlide a {
-	/* color: #FFFFFF; */
+	color: #FFFFFF;
 }
 .view-contest-inscriptions-winners .view-footer {
 	color: #666666;
@@ -5653,7 +5654,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 /* Contests Page - Opened Contests */
 #view-id-contests-page_2 .views-row,
-#view-id-contests-page_3 .views-row {
+#view-id-contests-page_3 .views-row,
+#block-views-contests-block_5 .views-row {
   position: relative;
   background: #fff;
   margin-bottom: 40px;
@@ -5663,7 +5665,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 
 #view-id-contests-page_2 .views-row-inner,
-#view-id-contests-page_3 .views-row-inner {
+#view-id-contests-page_3 .views-row-inner,
+#block-views-contests-block_5 .views-row-inner {
   position: relative;
   top: -4px;
   left: -4px;
@@ -5673,7 +5676,10 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 #view-id-contests-page_2 .views-field-phpcode-1,
 #view-id-contests-page_2 .views-field-comments-count,
 #view-id-contests-page_3 .views-field-phpcode-1,
-#view-id-contests-page_3 .views-field-comments-count {
+#view-id-contests-page_3 .views-field-comments-count,
+#block-views-contests-block_5 .views-field-phpcode,
+#block-views-contests-block_5 .views-field-phpcode-2,
+#block-views-contests-block_5 .views-field-comments-count {
   position: absolute;
   top: 0;
   left: 0;
@@ -5683,12 +5689,19 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   background: transparent url(../images/transparent-spacer.png) repeat;
 }
 #view-id-contests-page_2 .views-field-comments-count,
-#view-id-contests-page_3 .views-field-comments-count {
+#view-id-contests-page_3 .views-field-comments-count,
+#block-views-contests-block_5 .views-field-comments-count {
   top: 25px;
   padding-bottom: 5px;
 }
+
+#block-views-contests-block_5 .views-field-phpcode {
+  top: 50px;
+}
+
 #view-id-contests-page_2 .views-field-title,
-#view-id-contests-page_3 .views-field-title {
+#view-id-contests-page_3 .views-field-title,
+#block-views-contests-block_5 .views-field-title {
   text-align: center;
   text-transform: uppercase;
   font-size: 22px;
@@ -5697,13 +5710,15 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   padding: 0 25px;
 }
 #view-id-contests-page_2 .views-field-title a,
-#view-id-contests-page_3 .views-field-title a {
+#view-id-contests-page_3 .views-field-title a,
+#block-views-contests-block_5 .views-field-title a {
   color: #fff;
 }
 
 
 #view-id-contests-page_2 .views-field-field-contest-tagline-value,
-#view-id-contests-page_3 .views-field-field-contest-tagline-value {
+#view-id-contests-page_3 .views-field-field-contest-tagline-value,
+#block-views-contests-block_5 .views-field-field-contest-tagline-value {
   color: #fff;
   font-size: 16px;
   padding-bottom: 20px;
@@ -5715,7 +5730,9 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 #view-id-contests-page_2 .views-field-phpcode,
 #view-id-contests-page_3 .views-field-phpcode,
 #view-id-contests-page_2 .views-field-phpcode-3,
-#view-id-contests-page_3 .views-field-phpcode-3 {
+#view-id-contests-page_3 .views-field-phpcode-3,
+#block-views-contests-block_5 .views-field-phpcode-1,
+#block-views-contests-block_5 .views-field-phpcode-3 {
   text-align: right;
   width: 225px;
   height: 25px;
@@ -5726,7 +5743,15 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   color: #fff !important;
 }
 
-#view-id-contests-page_2 .hasCountdown {
+
+#block-views-contests-block_5 .views-field-field-sponsors-image-contest-fid {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#view-id-contests-page_2 .hasCountdown,
+#block-views-contests-block_5 .hasCountdown {
   background: transparent;
   border: 0 none;
 }
@@ -5735,12 +5760,14 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 }
 
-#view-id-contests-page_2 .countdown_section .countdown_amount {
+#view-id-contests-page_2 .countdown_section .countdown_amount,
+#block-views-contests-block_5 .countdown_section .countdown_amount {
   font-size: 20px;
 }
 
 #view-id-contests-page_2 .views-field-view-node-1,
-#view-id-contests-page_3 .views-field-view-node-1 {
+#view-id-contests-page_3 .views-field-view-node-1,
+#block-views-contests-block_5 .views-field-view-node {
   height: 40px;
   padding: 15px 0 5px 250px;
 }
