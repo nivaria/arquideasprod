@@ -49,7 +49,7 @@ blockquote p:last-child {
 }
 .sidebar-first .block .content, .sidebar-last .block .content {
 	overflow: hidden;
-	padding: 12px 0;
+	padding: 0;
 }
 #sidebar-last.nested {
 	width: 300px;
@@ -1703,6 +1703,7 @@ input.node-add-to-cart:hover, input.node-add-to-cart.hover, input.node-add-to-ca
 	border: 0 none;
 	margin: 0;
 	padding: 0;
+	border-radius: 0;
 }
 .sidebar-last #block-commons_core-group_create_content.block .inner {
 	background: none repeat scroll 0 0 transparent;
@@ -3202,7 +3203,7 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 	width: 100%;
 }
 #main-content-inner .block {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 .field-ds-group-ds-node-date-type-vote .field {
 	display: inline;
@@ -3394,7 +3395,8 @@ td.views-field-last-updated.active, td.views-field-last-updated {
 .views-field-last-updated a, .views-field-last-updated h2, .views-field-title a, .views-field-title a h2 {
 	color: #333333;
 	font-size: 12px;
-	font-weight: bold;
+	font-weight: normal;
+	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
 	line-height: 14px;
 }
 .view .view-content .views-field-title a {
@@ -3837,21 +3839,13 @@ body.page-node.no-sidebars #edit-submit, #edit-publish, #search-form #edit-submi
 body.page-node .edit-content-link:hover {
 	text-decoration: none;
 }
-body.not-front .sidebar-last .block h2.block-title, body.page-node .sidebar-last .block h2.block-title {
-	background: none repeat scroll 0 0 transparent;
-}
-body.not-front .sidebar-last .block h2.block-title a, body.page-node .sidebar-last .block h2.block-title a {
-	color: #666666;
-	font-family: calibri, arial;
-	font-size: 18px;
-	padding: 12px 0;
-}
 body.not-front .sidebar-last .block .inner > .content,
 body.page-node .sidebar-last .block .inner > .content {
 	background-color: transparent;
 	border-radius: 0 0 0 0;
 	border-right: 0 none;
 	box-shadow: none;
+	padding: 0;
 }
 body.not-front .sidebar-last .block .view-content .item-list ul li.views-row-even, body.not-front .sidebar-last .block .view-content .item-list ul li.views-row-odd, body.page-node .sidebar-last .block .view-content .item-list ul li.views-row-even, body.page-node .sidebar-last .block .view-content .item-list ul li.views-row-odd {
 	background-color: transparent;
@@ -4974,20 +4968,26 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   margin-top: 40px;
 }
 
+.sidebar-last .single-border-block > .inner,
+.sidebar-first .single-border-block > .inner,
 .single-border-block > .inner {
   border: 1px solid #000;
   padding: 15px 10px 10px;
 }
 
+.sidebar-last .single-border-shadow-block > .inner,
+.sidebar-first .single-border-shadow-block > .inner,
 .single-border-shadow-block > .inner,
 .single-border-shadow-block > .content-inner  {
   border: 1px solid #000;
   background-color: #fff;
   box-shadow: 4px 4px 0 #000;
-  padding: 15px 10px 10px;
+  padding: 25px 10px 10px;
   margin-bottom: 24px;
 }
 
+.sidebar-last .double-border-shadow-block,
+.sidebar-first .double-border-shadow-block,
 .double-border-shadow-block  {
   border: 1px solid #000;
   background-color: #fff;
@@ -5001,6 +5001,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 	box-sizing: border-box;
 }
 
+.sidebar-last .double-border-shadow-block > .inner,
+.sidebar-first .double-border-shadow-block > .inner,
 .double-border-shadow-block > .inner,
 .double-border-shadow-block > .content-inner  {
   background-color: #fff;
@@ -5008,71 +5010,97 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   padding: 15px 10px 10px;
 }
 
-.single-line .block-title {
-  padding-bottom: 20px;
-  margin-bottom: 21px;
+.sidebar-last .single-line h2.block-title,
+.sidebar-first .single-line h2.block-title,
+.single-line h2.block-title {
+  padding-bottom: 15px;
+  margin-bottom: 16px;
   background: transparent url(../images/single-border.png) repeat-x bottom;
 }
 
-.double-line .block-title {
-  padding-bottom: 15px;
-  margin-bottom: 20px;
+.sidebar-last .double-line h2.block-title,
+.sidebar-first .double-line h2.block-title,
+.double-line h2.block-title {
+  padding-bottom: 18px;
+  margin-bottom: 18px;
   background: transparent url(../images/double-border.png) repeat-x bottom;
 }
 
-.triple-line .block-title {
-  padding-bottom: 21px;
-  margin-bottom: 30px;
+.sidebar-last .triple-line h2.block-title,
+.sidebar-first .triple-line h2.block-title,
+.triple-line h2.block-title {
+  padding-bottom: 20px;
+  margin-bottom: 25px;
   background: transparent url(../images/triple-border.png) repeat-x bottom;
 }
 
-.triple-fat-middle-line .block-title {
+.sidebar-last .triple-fat-middle-line h2.block-title,
+.sidebar-first .triple-fat-middle-line h2.block-title,
+.triple-fat-middle-line h2.block-title {
   padding-bottom: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   background: transparent url(../images/triple-fat-border.png.png) repeat-x bottom;
 }
 
-.small-block-title .block-title {
+.sidebar-last .small-block-title h2.block-title,
+.sidebar-first .small-block-title h2.block-title,
+.small-block-title h2.block-title {
   font-size: 15px;
-  line-height: 1.1em;
+  line-height: 15px;
   margin-top: 4px;
 }
 
-.medium-block-title .block-title {
+.sidebar-last .medium-block-title h2.block-title,
+.sidebar-first .medium-block-title h2.block-title,
+.medium-block-title h2.block-title {
   line-height: 1.1em;
   margin-top: 7px;
 }
 
-.large-block-title .block-title {
+.sidebar-last .large-block-title h2.block-title,
+.sidebar-first .large-block-title h2.block-title,
+.large-block-title h2.block-title {
   font-size: 26px;
-  line-height: 1.1em;
+  line-height: 26px;
   margin-top: 10px;
 }
 
-.extra-large-block-title .block-title {
+.sidebar-last .extra-large-block-title h2.block-title,
+.sidebar-first .extra-large-block-title h2.block-title,
+.extra-large-block-title h2.block-title {
   font-size: 40px;
-  line-height: 1.1em;
+  line-height: 40px;
   margin-top: 14px;
 }
 
+.sidebar-last .centered-block,
+.sidebar-first .centered-block,
 .centered-block,
-.centered-block .block-title {
+.centered-block h2.block-title {
   text-align: center;
 }
 
+.sidebar-last .small-block-contents,
+.sidebar-first .small-block-contents,
 .small-block-contents {
   font-size: 10px;
   line-height: 1.4em;
 }
 
+.sidebar-last .medium-block-contents,
+.sidebar-first .medium-block-contents,
 .medium-block-contents {
 }
 
+.sidebar-last .large-block-contents,
+.sidebar-first .large-block-contents,
 .large-block-contents {
   font-size: 15px;
   line-height: 1.4em;
 }
 
+.sidebar-last .extra-large-block-contents,
+.sidebar-first .extra-large-block-contents,
 .extra-large-block-contents {
   font-size: 18px;
   line-height: 1.4em;
@@ -5434,8 +5462,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   font-size: 16px;
   line-height: 20px;
 }
-#block-nodeblock-293 div.node,
-#block-nodeblock-293 p {
+.block div.node,
+.block p {
   margin: 0;
   padding: 0;
 }
@@ -5500,17 +5528,92 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   background-color: #000;
   color: #fff;
   position: absolute;
-  top: 142px;
-  margin-left: 74px;
-  padding: 5px 8px;
-  width: 81px;
-  height: 20px;
+  top: 144px;
+  margin-left: 72px;
+  padding: 0 2px;
+  width: 85px;
+  height: 28px;
 }
 
 #block-views-arqnetwork_projects-block_1 .views-field-rating-value,
 #block-views-arqnetwork_projects-block_1 .views-field-comment-count {
+  padding-left: 25px;
+  margin-left: 8px;
+  line-height: 28px;
+  width: auto;
+  display: block;
+  float: left;
+}
+
+.view .contest-followers span,
+.view .views-field-rating-value span,
+.view .views-field-comment-count span,
+.view .views-field-comments-count span,
+.view .votes-count span {
+  display: block;
+  color: #fff;
+  padding-left: 25px;
+  line-height: 25px;
+  height: 25px;
+  width: 65px;
+  background: transparent url(../images/social.png) no-repeat 0 4px;
+}
+
+.view .views-field-value label,
+.view .views-field-phpcode label,
+.view .views-field-phpcode-1 label,
+.view .views-field-phpcode-2 label,
+.view .views-field-phpcode-3 label,
+.view .views-field-rating-value label,
+.view .views-field-comment-count label,
+.view .views-field-comments-count label {
+  display: none;
+}
+
+.view .views-field-comment-count span,
+.view .views-field-comments-count span {
+  background-position: 0 -27px;
+}
+
+.view .contest-followers span,
+.view .votes-count {
+  background-position: 0 -54px;
+}
+
+.sidebar-last .contest-followers span
+.sidebar-last .views-field-rating-value span,
+.sidebar-last .views-field-comment-count span,
+.sidebar-last .views-field-comments-count span,
+.sidebar-last .votes-count,
+.sidebar-first .contest-followers span,
+.sidebar-first .views-field-rating-value span,
+.sidebar-first .views-field-comment-count span,
+.sidebar-first .views-field-comments-count span,
+.sidebar-first .votes-count {
+  display: block;
+  float: left;
+  color: #000;
   padding-left: 20px;
-  margin-right: 8px;
+  line-height: 20px;
+  height: 20px;
+  width: auto;
+  margin-right: 5px;
+  background: transparent url(../images/social.png) no-repeat 0 -84px;
+}
+
+
+.sidebar-last .views-field-comment-count span,
+.sidebar-last .views-field-comments-count span,
+.sidebar-first .views-field-comment-count span,
+.sidebar-first .views-field-comments-count span {
+  background-position: 0 -110px;
+}
+
+.sidebar-last .contest-followers span,
+.sidebar-first .contest-followers span,
+.sidebar-last .view .votes-count,
+.sidebar-first .view .votes-count {
+  background-position: 0 -135px;
 }
 
 #block-views-arqnetwork_projects-block_1 .project-owner {
@@ -5574,13 +5677,15 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   position: absolute;
   top: 0;
   left: 0;
-  width: 80px;
+  width: 50px;
+  padding: 0 15px;
   height: 25px;
   background: transparent url(../images/transparent-spacer.png) repeat;
 }
 #view-id-contests-page_2 .views-field-comments-count,
 #view-id-contests-page_3 .views-field-comments-count {
   top: 25px;
+  padding-bottom: 5px;
 }
 #view-id-contests-page_2 .views-field-title,
 #view-id-contests-page_3 .views-field-title {
