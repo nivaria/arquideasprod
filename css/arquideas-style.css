@@ -4594,7 +4594,7 @@ a.disabled {
 	color: #FFFFFF;
 }
 .activeSlide a {
-	color: #FFFFFF;
+	/* color: #FFFFFF; */
 }
 .view-contest-inscriptions-winners .view-footer {
 	color: #666666;
