@@ -303,6 +303,161 @@ function arquideasprod_preprocess_page(&$vars)
   $vars['css'] = drupal_add_css();
   $vars['styles'] = drupal_get_css();
   $vars['scripts'] = drupal_get_js();
+  
+  //PREPROCESS ARQUIDEAS BOOK
+  $pattern = '/^arqbook\/\w+$/';
+  $res = preg_match($pattern, $_GET['q']);
+  if($res==1){
+      //Detect the user for this book
+      $arr = explode('/',$_GET['q']);
+      $bookname = $arr[1];
+      
+      $ser = serialize($bookname);
+      
+      $result = db_query("SELECT name FROM {variable} WHERE name like 'arquideas_book_name_%' AND value like '%s'", $ser);
+      $row = db_fetch_object($result);
+      if($row){
+          $arr1 = explode('_',$row->name);
+          $uid = $arr1[3];
+          
+          $account = user_load(array('uid' => $uid));
+          
+          if($account){
+              global $language;
+              
+              $profile = content_profile_load('arquideas_content_profile', $account->uid);
+              $preset = 'image_220_220';
+              
+              $vars['arqbook_uid'] = $account->uid;
+              $vars['arqbook_realname'] = realname_make_name($account); 
+              if(!empty($account->picture)){
+                $vars['arqbook_image'] = theme_imagecache($preset, $account->picture, $vars['arqbook_realname']);
+              }  
+              
+              $profile = node_build_content($profile, FALSE, TRUE);
+              
+              $vars['arqbook_address'] = $profile->field_address_acp[0]['safe'];
+              if(!empty($profile->field_birthdate_acp[0]['value'])){
+                $vars['arqbook_birthdate'] = format_date(strtotime($profile->field_birthdate_acp[0]['value']), 'small', '', NULL, $language->language);
+              }  
+              
+              $vars['arqbook_company'] = $profile->field_company_acp[0]['value'];
+              $vars['arqbook_company_web'] = l($profile->field_company_web_acp[0]['display_title'],$profile->field_company_web_acp[0]['url'],array('attributes' => $profile->field_company_web_acp[0]['attributes']));
+              $vars['arqbook_web'] = l($profile->field_web_acp[0]['display_title'],$profile->field_web_acp[0]['url'],array('attributes' => $profile->field_web_acp[0]['attributes']));
+              
+              $vars['arqbook_country'] = t(countries_api_iso2_get_name($profile->field_country_acp[0]['value']));
+              $vars['arqbook_email'] = $profile->field_email_acp[0]['safe'];
+              $vars['arqbook_office_phone'] = $profile->field_office_phone_acp[0]['safe'];
+              $vars['arqbook_phone'] = $profile->field_phone_acp[0]['safe'];
+              $vars['arqbook_skype'] = $profile->field_skype_acp[0]['safe'];
+              
+              $vars['arqbook_social_networks'] = array();
+              if(!empty($profile->field_facebook_acp[0]['url'])){
+                  $vars['arqbook_social_networks']['facebook'] = l('Facebook',$profile->field_facebook_acp[0]['url'],array('attributes' => $profile->field_facebook_acp[0]['attributes']));
+              }
+              if(!empty($profile->field_google_acp[0]['url'])){
+                  $vars['arqbook_social_networks']['google'] = l('Google',$profile->field_google_acp[0]['url'],array('attributes' => $profile->field_google_acp[0]['attributes'], 'query' => $profile->field_google_acp[0]['query']));
+              }
+              if(!empty($profile->field_linkedin_acp[0]['url'])){
+                  $vars['arqbook_social_networks']['linkedin'] = l('Linkedin',$profile->field_linkedin_acp[0]['url'],array('attributes' => $profile->field_linkedin_acp[0]['attributes']));
+              }
+              if(!empty($profile->field_pinterest_acp[0]['url'])){
+                  $vars['arqbook_social_networks']['pinterest'] = l('Pinterest',$profile->field_pinterest_acp[0]['url'],array('attributes' => $profile->field_pinterest_acp[0]['attributes']));
+              }
+              if(!empty($profile->field_twitter_acp[0]['url'])){
+                  $vars['arqbook_social_networks']['twitter'] = l('Twitter',$profile->field_twitter_acp[0]['url'],array('attributes' => $profile->field_twitter_acp[0]['attributes']));
+              }
+              
+              if(!empty($profile->field_finished_year_acp[0]['value'])){
+                  $vars['arqbook_finished_year'] = format_date(strtotime($profile->field_finished_year_acp[0]['value']), 'custom', 'Y', NULL, $language->language);
+              }
+              
+              $vars['arqbook_i_am'] = $profile->field_soy_acp[0]['safe'];
+              $vars['arqbook_description'] = $profile->field_small_description_acp[0]['safe'];
+              $vars['arqbook_cv'] = $profile->field_large_description_acp[0]['safe'];
+              
+              if(!empty($profile->field_university_acp[0]['value'])){
+                  $term = taxonomy_get_term($profile->field_university_acp[0]['value']);
+                  $vars['arqbook_university'] = $term->name;
+              }
+              
+              $vars['arqbook_bookname'] = $bookname;
+              $arqbase = variable_get('arqideas_book_base_path', 'http://book.arquideas.es/');
+              $vars['arqbook_page_url'] = l($arqbase.$bookname, $arqbase.$bookname);
+              
+              if(module_exists('mobile_codes')){
+                  $qrfile = mobile_codes_generate($arqbase.$bookname);
+                  if($qrfile){
+                      $vars['arqbook_qrcode'] = theme_imagecache('arquideas_book_qr', $qrfile, $arqbase.$bookname);
+                  }
+              }
+              
+              $query = "SELECT DISTINCT ab.fid, f.filepath, ab.tid, ab.title, ab.subtitle, n.title as nodetitle, c.title as contest, n.type, MAX(fl.name) as flagname 
+                        FROM {arquideas_book} ab INNER JOIN {files} f ON ab.fid = f.fid
+                        INNER JOIN {node} n ON ab.nid = n.nid
+                        LEFT JOIN {content_type_inscription} i ON n.nid = i.nid
+                        LEFT JOIN {node} c ON i.field_contest_nid = c.nid
+                        LEFT JOIN {flag_content} fc ON n.nid = fc.content_id
+                        LEFT JOIN (SELECT * FROM {flags} WHERE name IN ('first_prize','second_prize','third_prize','special_mention','arquideas_prize')) fl ON fc.fid = fl.fid
+                        WHERE ab.uid = %d 
+                        GROUP BY fid, filepath, tid, title, subtitle, nodetitle, contest, type
+                        ORDER BY ab.weight ASC";
+              
+              $result = db_query($query, $account->uid);
+              
+              $imagepreset = 'arquideas_book';
+              
+              $vars['arqbook_images'] = array();
+              while($row = db_fetch_object($result)){
+                  $term = taxonomy_get_term($row->tid);
+                  
+                  $nodetitle = $row->nodetitle;
+                  if($row->type=='inscription'){
+                      $nodetitle = $row->contest;
+                  }
+                  
+                  $prize = '';
+                  switch($row->flagname){
+                      case 'first_prize':
+                          $prize = t('First prize');
+                          break;
+                      case 'second_prize':
+                          $prize = t('Second prize');
+                          break;
+                      case 'third_prize':
+                          $prize = t('Third prize');
+                          break;
+                      case 'special_mention':
+                          $prize = t('Special mention');
+                          break;
+                      case 'arquideas_prize':
+                          $prize = t('Arquideas special prize');
+                          break;
+                      default:
+                          break;
+                  }
+                  
+                  $vars['arqbook_images'][] = array(
+                      'filepath' => $row->filepath,
+                      'image' => theme_imagecache($imagepreset, $row->filepath, $row->title),
+                      'title' => $row->title,
+                      'subtitle' => $row->subtitle,
+                      'type' => $term->name,
+                      'contest' => $nodetitle,
+                      'prize' => $prize,
+                  );
+              }
+          }
+      }
+  }
+  
+  //PREPROCESS ARQUIDEAS BOOK SHARE 
+  $pattern = '/^arqbook\/\w+\/share$/';
+  $res = preg_match($pattern, $_GET['q']);
+  if($res==1){
+      $vars['template_files'][] = 'page-arqbook-share'; 
+  }
+  
 
 }
 
