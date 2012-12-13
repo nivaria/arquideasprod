@@ -128,6 +128,17 @@ function arquideasprod_breadcrumb($breadcrumb) {
 
             // Get custom breadcrumbs
             $breadcrumb = drupal_get_breadcrumb();
+        } elseif($node->type=='colaborator'){
+            $links = array();
+            $links[] = l(t('Home'), '<front>');
+            $links[] = l(t('Partners&Co'), 'partners-and-co');
+            $links[] = $node->title;
+
+            // Set custom breadcrumbs
+            drupal_set_breadcrumb($links);
+
+            // Get custom breadcrumbs
+            $breadcrumb = drupal_get_breadcrumb();
         }
     }
 
