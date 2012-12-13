@@ -397,7 +397,7 @@ function arquideasprod_preprocess_page(&$vars)
               $vars['arqbook_page_url'] = l($arqbase.$bookname, $arqbase.$bookname);
               
               if(module_exists('mobile_codes')){
-                  $qrfile = mobile_codes_generate($arqbase.$bookname);
+                  $qrfile = variable_get('arquideas_book_qr_'.$account->uid, NULL);
                   if($qrfile){
                       $vars['arqbook_qrcode'] = theme_imagecache('arquideas_book_qr', $qrfile, $arqbase.$bookname);
                   }

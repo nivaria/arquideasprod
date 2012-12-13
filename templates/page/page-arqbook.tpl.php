@@ -25,7 +25,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
   <script src="/sites/all/libraries/booklet/jquery.easing.1.3.js" type="text/javascript"></script>
   <script src="/sites/all/libraries/booklet/jquery.booklet.1.4.0.min.js" type="text/javascript"></script>
-  
+  <script type="text/javascript">var switchTo5x=true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher: "229e3f66-d682-4563-a7b5-18c5e67a7e77"});</script>
 </head>
 
 <body id="<?php print $body_id; ?>" class="<?php print $body_classes; ?>">
@@ -122,14 +124,6 @@
                                                             ),
                                                         )); ?>
                                                     </div>
-                                                    <div class="link-recommend">
-                                                        <?php print l(t('Recommend this CV'),'arqbook/'.$arqbook_bookname.'/share',array(
-                                                            'attributes' => array(
-                                                                'title' => t('Recommend this CV'),
-                                                                'class' => 'recommend-cv',
-                                                            ),
-                                                        )); ?>
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div id="social-networks">
@@ -142,6 +136,17 @@
                                                     <?php } ?>
                                                 </ul>
                                                 <?php endif; ?>
+                                                
+                                                <div class="share-in">
+                                                    <div class="title"><?php print t('Share in'); ?></div>
+                                                    <span class='st_email_large' displayText='Email'></span>
+                                                    <span class='st_facebook_large' displayText='Facebook'></span>
+                                                    <span class='st_twitter_large' displayText='Tweet'></span>
+                                                    <span class='st_linkedin_large' displayText='LinkedIn'></span>
+                                                    <span class='st_googleplus_large' displayText='Google +'></span>
+                                                    <span class='st_pinterest_large' displayText='Pinterest'></span>
+                                                    <span class='st_stumbleupon_large' displayText='StumbleUpon'></span>
+                                                </div>
                                                 <div class="url">
                                                     url: <?php print $arqbook_page_url; ?>
                                                 </div>
