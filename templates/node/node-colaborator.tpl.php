@@ -27,7 +27,7 @@
 
     <?php if ($submitted): ?>
     <div class="meta">
-      <span class="submitted"><?php print $submitted ?></span>
+      <span class="submitted"><?php /*print $submitted*/ ?></span>
     </div>
     <?php endif; ?>
 
@@ -38,11 +38,36 @@
     <?php endif;?>
     
     <div class="content clearfix">
-      <?php print $node->content['field_square_image_col']['#children'] ?>
-      <?php print $node->content['field_rectangular_image_col']['#children'] ?>
-      <?php print $node->content['field_colaborator_type_col']['#children'] ?> 
-      <?php print $node->content['body']['#value'] ?>
-      <?php print $node->content['field_link_col']['#children'] ?>
+        <div class="colaborator-top">
+           <?php print theme_imagecache('image_220_220', $field_square_image_col[0]['filepath'], $node->title); ?> 
+            <h1 class="title"><?php print $node->title; ?></h1>
+            <div class="short-description">
+            <?php print $field_short_description[0]['value']; ?>
+            </div>    
+            <?php print $field_link_col_rendered; ?>
+            <?php print $field_colaborator_type_col_rendered; ?> 
+            <?php if(!empty($node->field_colaborator_user[0]['uid'])): ?>
+            <div class="user-profile">
+                <?php print l(t('View profile in Arquideas Network'), 'user/'.$node->field_colaborator_user[0]['uid'], array(
+                    'attributes' => array(
+                        'title' => t('View profile in Arquideas Network'),
+                    ),
+                )); ?>
+            </div>
+            <?php endif; ?>
+        </div>    
+        <div class="colaborator-comment">
+           <div class="comment-title"> 
+           <?php print $field_comment_title_col[0]['safe']; ?>
+           </div> 
+           <div class="comment-body"> 
+           <?php print $field_comment_body_col[0]['safe']; ?> 
+           </div>     
+        </div>
+        <div class="colaborator-presentation">
+            <h2><?php print t('Presentation'); ?></h2>
+            <?php print $node->content['body']['#value'] ?>
+        </div>
     </div>
     
         <!-- Edit link -->

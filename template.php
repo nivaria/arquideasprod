@@ -458,6 +458,13 @@ function arquideasprod_preprocess_page(&$vars)
       $vars['template_files'][] = 'page-arqbook-share'; 
   }
   
+  
+  //PREPROCESS COLABORATOR PAGE
+  if(isset($vars['node']) && $vars['node']->type=='colaborator'){
+      if(!$vars['is_edit']){
+        $vars['title'] = '';
+      }
+  }
 
 }
 
