@@ -64,9 +64,18 @@ global $base_url;
   <tr>
     <td align="center" valign="top">
       <table border="0" cellpadding="20" cellspacing="0" width="600" id="content">
+        <?php $username = '';
+              $userlang = $GLOBALS['language']->language;
+              if(is_object($recipient)){
+                $username = !empty($recipient->realname)?$recipient->realname:$recipient->name;
+                $userlang = $recipient->language;
+              } 
+        ?>  
+        <?php if($username): ?>  
         <tr>
-          <td valign="top" style="color: #666666;"><?php print t('Hello, !user',array('!user'=> (!empty($recipient->realname)?$recipient->realname:$recipient->name)),$recipient->language); ?></td>
-        </tr>  
+          <td valign="top" style="color: #666666;"><?php print t('Hello, !user',array('!user'=> $username),$userlang); ?></td>
+        </tr>
+        <?php endif; ?>  
         <tr>
           <td valign="top" style="color: #666666;"><?php print $body; ?></td>
         </tr>
