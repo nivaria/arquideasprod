@@ -101,6 +101,20 @@
                         ));
                     } ?>
                     <!-- End Edit link -->
+                    
+                    <!-- Delete link -->
+                    <?php if(node_access('delete', $node) && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED
+                            && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN){
+                        
+                        print l('<span>'.t('Unsubscribe').'</span>','node/'.$node->nid.'/delete',array(
+                            'attributes' => array(
+                                'title' => t('Delete inscription'),
+                                'class' => 'delete-content-link',
+                            ),
+                            'html' => TRUE,
+                        ));
+                    } ?>
+                    <!-- End Delete link -->
                 </div>
                 <div class="col02">
                     <h3 class="title"><?php print t('Team members'); ?></h3>
