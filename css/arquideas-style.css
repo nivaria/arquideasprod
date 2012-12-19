@@ -2464,6 +2464,9 @@ html.js fieldset.views-exposed-form.collapsed {
 	max-width: 100%;
 	width: 60px;
 }
+.views-exposed-wrapper .views-exposed-widget.views-exposed-submit fieldset.collapsible {
+    display:none;
+}
 div#block-commons_core-5 a, div#block-commons_core-5 a:link, div#block-commons_core-5 a:visited {
 	color: #228BC8;
 }
