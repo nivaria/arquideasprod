@@ -76,7 +76,7 @@
 
                     <!-- ID of Inscription-->
                     <h3 class="title">
-                    <?php print 'ID'.$node->nid; ?>
+                    <?php print $contest->model.' - '.$node->nid; ?>
                     </h3>
                     <!-- End ID of Inscription -->
 
@@ -87,13 +87,17 @@
                     <!-- Edit link -->
                     <?php if(node_access('update', $node) && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED
                             && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN){
+                        $uid = $user->uid;
+                        if(!og_is_group_member($node->nid)){
+                            $uid = $node->uid;
+                        }
                         print l('<span>'.t('Edit inscription').'</span>','node/'.$node->nid.'/edit',array(
                             'attributes' => array(
                                 'title' => t('Edit inscription'),
                                 'class' => 'edit-content-link',
                             ),
                             'html' => TRUE,
-                            'query' => 'destination=user/'.$user->uid.'/account/inscriptions/'.$node->nid,
+                            'query' => 'destination=user/'.$uid.'/account/inscriptions/'.$node->nid,
                         ));
                     } ?>
                     <!-- End Edit link -->

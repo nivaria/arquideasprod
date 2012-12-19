@@ -44,7 +44,7 @@
             
             <!-- ID of Inscription-->
             <h2 class="title">
-            <?php print 'ID'.$node->nid; ?>
+            <?php print $contest->model.' - '.$node->nid; ?>
             </h2>
             <!-- End ID of Inscription -->
             
