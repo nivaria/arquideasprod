@@ -5800,6 +5800,6 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   margin-bottom: 5px;
 }
 
-/*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/
-
-/*** !!!!! ESTO ES TEMPORAL !!!!! QUITAR CUANDO SEA NECESARIO PARA MAQUETAR****/
+.field-inscription-files-by-category select {
+    display: none;
+}
