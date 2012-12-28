@@ -18,10 +18,16 @@
     
     <?php if(!$is_edit && $page == 1): ?>
     <div class="contest-info">
+    <!-- Identifier Code -->
+    <div class="inscription-code">
+        <?php print t('Your identifier is !code',array('!code' => $node->field_inscription_code[0]['value'])); ?>
+    </div>
+    <!-- Identifier Code -->
+        
     <!-- IMAGE --> 
     <?php 
         if(isset($field_contest_image[0]['filepath']) && !$is_edit){
-            $preset = variable_get('nivaria_contests_base_preset_contest_inscription_detail', 'Featured');
+            $preset = 'inscriptions_336_162';
             print theme_imagecache($preset, $field_contest_image[0]['filepath'], $contest_title);
         } 
     ?>
@@ -37,6 +43,105 @@
     
     <div class="clearfix">&nbsp;</div>
     
+    <!-- Introduction text -->
+    <?php if($node->field_inscription_state[0]['value']==InscriptionState::PREINSCRIPTED && $num_members>1): ?>
+    <div class="two-columns">
+        <div class="column-01">
+            <h3 class="title"><?php print t('Team members'); ?></h3>
+            <!-- Team members -->
+            <?php print views_embed_view('og_members_faces', 'default', $node->nid); ?> 
+            <!-- END Team members -->
+        </div>
+        <div class="column-02">
+            <?php
+                $block = module_invoke('nodeblock', 'block', 'view', 868);
+                print '<div class="block block-nodeblock"><div class="inner clearfix"><div class="content">'.$block['content'].'</div></div></div>';
+            ?>
+        </div>
+    </div>
+    
+    <!-- Manage members link -->
+    <?php if(node_access('update', $node) && og_is_group_admin($node) && module_exists('og_manage_link') && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED){
+        $cnid = $node->field_contest[0]['nid'];
+        $cnode = node_load($cnid);
+        if(!empty($cnode) && $cnode->field_contest_state[0]['value']==ContestState::OPEN){
+            if($node->field_inscription_state[0]['value']==InscriptionState::INSCRIPTED || $node->field_inscription_state[0]['value']==InscriptionState::SUBMITTED){
+                //Gets order to see if it is individual
+                $order_id = $node->field_inscription_order[0]['value'];
+                if(!empty($order_id)){
+                    $order = uc_order_load($order_id);
+                    $product_attr = $order->products[0]->data['attributes'];
+                    if(empty($product_attr)){
+                        print '<div class="info">'.t('You have made individual payment and can\'t invite other members.').'</div>';
+                    } else {
+                        print theme_og_manage_link_default($node);
+                    }
+                } else {
+                    print theme_og_manage_link_default($node);
+                }    
+            } else {
+                print theme_og_manage_link_default($node);
+            }
+        } else {
+            print '<div class="info">'.t('You can not invite members at this stage of the competition').'</div>';
+        }    
+    } ?>
+    <!-- END Manage members link -->
+    <?php endif; ?>
+    
+    <?php if($node->field_inscription_state[0]['value']==InscriptionState::PREINSCRIPTED && $num_members==1): ?>
+    <div class="introduction">
+        <?php print t('You can participate in this contest as individuals or form your group'); ?>
+    </div>
+    
+    <div class="clearfix">&nbsp;</div>
+    
+    <div class="two-columns">
+        <div class="column-01">
+            <?php
+                $block = module_invoke('nodeblock', 'block', 'view', 863);
+                print '<div class="block block-nodeblock"><div class="inner clearfix"><h2 class="title block-title">'.$block['subject'].'</h2><div class="content">'.$block['content'].'</div></div></div>';
+            ?>
+        </div>
+        <div class="column-02">
+            <?php
+                $block = module_invoke('nodeblock', 'block', 'view', 865);
+                print '<div class="block block-nodeblock"><div class="inner clearfix"><h2 class="title block-title">'.$block['subject'].'</h2><div class="content">'.$block['content'].'</div></div></div>';
+            ?>
+        </div>
+    </div>
+    
+    <!-- Manage members link -->
+    <?php if(node_access('update', $node) && og_is_group_admin($node) && module_exists('og_manage_link') && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED){
+        $cnid = $node->field_contest[0]['nid'];
+        $cnode = node_load($cnid);
+        if(!empty($cnode) && $cnode->field_contest_state[0]['value']==ContestState::OPEN){
+            if($node->field_inscription_state[0]['value']==InscriptionState::INSCRIPTED || $node->field_inscription_state[0]['value']==InscriptionState::SUBMITTED){
+                //Gets order to see if it is individual
+                $order_id = $node->field_inscription_order[0]['value'];
+                if(!empty($order_id)){
+                    $order = uc_order_load($order_id);
+                    $product_attr = $order->products[0]->data['attributes'];
+                    if(empty($product_attr)){
+                        print '<div class="info">'.t('You have made individual payment and can\'t invite other members.').'</div>';
+                    } else {
+                        print theme_og_manage_link_default($node);
+                    }
+                } else {
+                    print theme_og_manage_link_default($node);
+                }    
+            } else {
+                print theme_og_manage_link_default($node);
+            }
+        } else {
+            print '<div class="info">'.t('You can not invite members at this stage of the competition').'</div>';
+        }    
+    } ?>
+    <!-- END Manage members link -->
+    <?php endif; ?>
+    <!-- End Introduction text -->
+
+    
     <!-- INSCRIPTION, PAYMENT OR PRESENTATION LINK -->
     <?php
         if(!$is_edit && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN){
@@ -44,6 +149,8 @@
         }    
     ?>
     <!-- END INSCRIPTION, PAYMENT OR PRESENTATION LINK -->
+    
+    <div class="clearfix">&nbsp;</div>
     
     <!-- Mark Special Arquideas Prize -->
     <?php if($contest->field_contest_state[0]['value']==ContestState::FINISHED && user_access(PERM_ADMIN_CONTESTS)) : ?>
@@ -56,108 +163,51 @@
     <?php endif; ?>
     
     <?php if(!$is_edit && $page == 1): ?>
-    <div class="block">
-        <div class="title">
-            <h2><?php print t('Form a team and enjoy an collaborative area with all members'); ?></h2>
-        </div>
-        <div class="block-inner">
-            <div class="inscription-info">
-                <div class="col01">
-                    <!-- Inscription IMAGE-->
-                    <?php $preset = variable_get('nivaria_contests_base_preset_inscription_detail', 'Featured');
-                    print getInscriptionImage($node, TRUE, TRUE, $preset); ?>
-                    <!-- End Inscription IMAGE-->
+        <!-- Edit link -->
+        <?php if(node_access('update', $node) && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED
+                && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN){
+            $uid = $user->uid;
+            if(!og_is_group_member($node->nid)){
+                $uid = $node->uid;
+            }
+            print l('<span>'.t('Edit inscription').'</span>','node/'.$node->nid.'/edit',array(
+                'attributes' => array(
+                    'title' => t('Edit inscription'),
+                    'class' => 'edit-content-link',
+                ),
+                'html' => TRUE,
+                'query' => 'destination=user/'.$uid.'/account/inscriptions/'.$node->nid,
+            ));
+        } ?>
+        <!-- End Edit link -->
 
-                    <!-- Inscription TITLE-->
-                    <h3 class="title">
-                    <?php print $node->title; ?>
-                    </h3>
-                    <!-- End Inscription TITLE-->
+        <!-- Delete link -->
+        <?php if(node_access('delete', $node) && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED
+                && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN){
 
-                    <!-- ID of Inscription-->
-                    <h3 class="title">
-                    <?php print $contest->model.' - '.$node->nid; ?>
-                    </h3>
-                    <!-- End ID of Inscription -->
+            print l('<span>'.t('Unsubscribe').'</span>','node/'.$node->nid.'/delete',array(
+                'attributes' => array(
+                    'title' => t('Delete inscription'),
+                    'class' => 'delete-content-link',
+                ),
+                'html' => TRUE,
+            ));
+        } ?>
+        <!-- End Delete link -->
 
-                    <!-- Description of Inscription-->
-                    <?php print $inscription_mission; ?>
-                    <!-- END Description of Inscription-->
-
-                    <!-- Edit link -->
-                    <?php if(node_access('update', $node) && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED
-                            && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN){
-                        $uid = $user->uid;
-                        if(!og_is_group_member($node->nid)){
-                            $uid = $node->uid;
-                        }
-                        print l('<span>'.t('Edit inscription').'</span>','node/'.$node->nid.'/edit',array(
-                            'attributes' => array(
-                                'title' => t('Edit inscription'),
-                                'class' => 'edit-content-link',
-                            ),
-                            'html' => TRUE,
-                            'query' => 'destination=user/'.$uid.'/account/inscriptions/'.$node->nid,
-                        ));
-                    } ?>
-                    <!-- End Edit link -->
-                    
-                    <!-- Delete link -->
-                    <?php if(node_access('delete', $node) && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED
-                            && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN){
-                        
-                        print l('<span>'.t('Unsubscribe').'</span>','node/'.$node->nid.'/delete',array(
-                            'attributes' => array(
-                                'title' => t('Delete inscription'),
-                                'class' => 'delete-content-link',
-                            ),
-                            'html' => TRUE,
-                        ));
-                    } ?>
-                    <!-- End Delete link -->
-                </div>
-                <div class="col02">
-                    <h3 class="title"><?php print t('Team members'); ?></h3>
-                    <!-- Team members -->
-                    <?php print views_embed_view('og_members_faces', 'default', $node->nid); ?> 
-                    <!-- END Team members -->
-
-                    <!-- Manage members link -->
-                    <?php if(node_access('update', $node) && og_is_group_admin($node) && module_exists('og_manage_link') && $node->field_inscription_state[0]['value']!=InscriptionState::SUBMITTED){
-                        $cnid = $node->field_contest[0]['nid'];
-                        $cnode = node_load($cnid);
-                        if(!empty($cnode) && $cnode->field_contest_state[0]['value']==ContestState::OPEN){
-                            if($node->field_inscription_state[0]['value']==InscriptionState::INSCRIPTED || $node->field_inscription_state[0]['value']==InscriptionState::SUBMITTED){
-                                //Gets order to see if it is individual
-                                $order_id = $node->field_inscription_order[0]['value'];
-                                if(!empty($order_id)){
-                                    $order = uc_order_load($order_id);
-                                    $product_attr = $order->products[0]->data['attributes'];
-                                    if(empty($product_attr)){
-                                        print '<div class="info">'.t('You have made individual payment and can\'t invite other members.').'</div>';
-                                    } else {
-                                        print theme_og_manage_link_default($node);
-                                    }
-                                } else {
-                                    print theme_og_manage_link_default($node);
-                                }    
-                            } else {
-                                print theme_og_manage_link_default($node);
-                            }
-                        } else {
-                            print '<div class="info">'.t('You can not invite members at this stage of the competition').'</div>';
-                        }    
-                    } ?>
-                    <!-- END Manage members link -->
-                </div>
+        <!-- DOWNLOAD files -->
+        <?php print show_inscription_downloads($node, $contest); ?>
+        <!-- End DOWNLOAD files -->
+    <?php endif; ?>
+        
+    <?php if($node->field_inscription_state[0]['value']==InscriptionState::PREINSCRIPTED && $num_members==1): ?>
+        <!-- THIS DIV MUST BE POSITIONED OVER THE WALL -->
+        <div class="inscription-wall-overlay">
+            <div class="inner clearfix">
+                <?php print t('Form a team and enjoy an collaborative area with all members'); ?>
             </div>
         </div>
-    </div>
-    
-    <!-- DOWNLOAD files -->
-    <?php print show_inscription_downloads($node, $contest); ?>
-    <!-- End DOWNLOAD files -->
-    <?php endif; ?>
+    <?php endif; ?>    
     
     
     <?php if ($node_top && !$teaser): ?>

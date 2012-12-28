@@ -5803,3 +5803,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 .field-inscription-files-by-category select {
     display: none;
 }
+
+.node-type-inscription.only-groups input.contest-payment-individual {
+    display: none;
+}

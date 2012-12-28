@@ -544,6 +544,13 @@ function arquideasprod_preprocess_node(&$vars) {
       if($match==1){
           $vars['template_files'][] = 'node-inscription-public';
       }
+      
+      $members = contest_notifications_get_group_members($vars['node']);
+      $vars['num_members'] = count($members);
+      
+      if(count($members)>0){
+          $vars['node_classes'] .= ' only-groups'; 
+      }
   }
 
 
