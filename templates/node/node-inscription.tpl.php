@@ -41,10 +41,19 @@
     ?>
     <!-- END INSCRIPTION LIMIT DATE -->
     
+    <!-- INSCRIPTION, PAYMENT OR PRESENTATION LINK -->
+    <?php
+        if(!$is_edit && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN && $node->field_inscription_state[0]['value']!=InscriptionState::PREINSCRIPTED){
+            print '<div class="open-contest-button">'.openContestButton($contest).'</div>'; 
+        }    
+    ?>
+    <!-- END INSCRIPTION, PAYMENT OR PRESENTATION LINK -->
+    
     <div class="clearfix">&nbsp;</div>
     
     <!-- Introduction text -->
-    <?php if($node->field_inscription_state[0]['value']==InscriptionState::PREINSCRIPTED && $num_members>1): ?>
+    <?php if(($node->field_inscription_state[0]['value']==InscriptionState::PREINSCRIPTED && $num_members>1) 
+            || $node->field_inscription_state[0]['value']!=InscriptionState::PREINSCRIPTED): ?>
     <div class="two-columns">
         <div class="column-01">
             <h3 class="title"><?php print t('Team members'); ?></h3>
@@ -144,7 +153,7 @@
     
     <!-- INSCRIPTION, PAYMENT OR PRESENTATION LINK -->
     <?php
-        if(!$is_edit && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN){
+        if(!$is_edit && isset($contest) && $contest->field_contest_state[0]['value']==ContestState::OPEN && $node->field_inscription_state[0]['value']==InscriptionState::PREINSCRIPTED){
             print '<div class="open-contest-button">'.openContestButton($contest).'</div>'; 
         }    
     ?>

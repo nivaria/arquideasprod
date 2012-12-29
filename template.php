@@ -548,7 +548,7 @@ function arquideasprod_preprocess_node(&$vars) {
       $members = contest_notifications_get_group_members($vars['node']);
       $vars['num_members'] = count($members);
       
-      if(count($members)>0){
+      if(count($members)>1){
           $vars['node_classes'] .= ' only-groups'; 
       }
   }
