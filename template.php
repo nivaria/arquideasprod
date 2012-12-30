@@ -1049,18 +1049,34 @@ function arquideasprod_node_form($form) {
       $form['group_network_profiles']['#access'] = FALSE;
   }
   //Getting datos de proyecto
-  if(isset($form['group_data_project'])){
-      $form['group_data_project']['#access'] = FALSE;
-      if(isset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_data_project'])){
-          unset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_data_project']);
+  if(isset($form['group_project_data'])){
+      $form['group_project_data']['#access'] = FALSE;
+      if(isset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_project_data'])){
+          unset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_project_data']);
       }
   }
   //Getting tipo de proyecto
-  if(isset($form['group_type_project'])){
-      $form['group_type_project']['#access'] = FALSE;
-      if(isset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_type_project'])){
-          unset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_type_project']);
+  if(isset($form['group_project_type'])){
+      $form['group_project_type']['#access'] = FALSE;
+      if(isset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_project_type'])){
+          unset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_project_type']);
       }
+  }
+  //Getting additional data of proyecto
+  if(isset($form['group_additional_data'])){
+      $form['group_additional_data']['#access'] = FALSE;
+      if(isset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_additional_data'])){
+          unset($form['vertical_tabs']['#attached']['js'][0]['data']['verticalTabs']['group_additional_data']);
+      }
+  }
+  if(isset($form['markup_title'])){
+      $form['markup_title']['#access'] = FALSE;
+  }
+  if(isset($form['markup_contest_code'])){
+      $form['markup_contest_code']['#access'] = FALSE;
+  }
+  if(isset($form['markup_visibility_fields'])){
+      $form['markup_visibility_fields']['#access'] = FALSE;
   }
 
   $output .= "  <div class=\"standard\">\n";
@@ -1092,18 +1108,37 @@ function arquideasprod_node_form($form) {
     $output1 .= drupal_render($form['group_network_profiles']);
     $output1 .= "  </div>\n";
   }
-  if(isset($form['group_data_project'])){
-    $form['group_data_project']['#access'] = TRUE;
-    $form['group_data_project']['#attributes']['class'] = 'group-data-project';
+  if(isset($form['markup_title'])){
+    $form['markup_title']['#access'] = TRUE;
+    $output1 .= drupal_render($form['markup_title']);
+  }
+  if(isset($form['markup_contest_code'])){
+    $form['markup_contest_code']['#access'] = TRUE;
+    $output1 .= drupal_render($form['markup_contest_code']);
+  }
+  if(isset($form['markup_visibility_fields'])){
+    $form['markup_visibility_fields']['#access'] = TRUE;
+    $output1 .= drupal_render($form['markup_visibility_fields']);
+  }
+  if(isset($form['group_project_data'])){
+    $form['group_project_data']['#access'] = TRUE;
+    $form['group_project_data']['#attributes']['class'] = 'group-data-project';
     $output1 .= "  <div class=\"data-project\">\n";
-    $output1 .= drupal_render($form['group_data_project']);
+    $output1 .= drupal_render($form['group_project_data']);
     $output1 .= "  </div>\n";
   }
-  if(isset($form['group_type_project'])){
-    $form['group_type_project']['#access'] = TRUE;
-    $form['group_type_project']['#attributes']['class'] = 'group-type-project';
+  if(isset($form['group_project_type'])){
+    $form['group_project_type']['#access'] = TRUE;
+    $form['group_project_type']['#attributes']['class'] = 'group-type-project';
     $output1 .= "  <div class=\"type-project\">\n";
-    $output1 .= drupal_render($form['group_type_project']);
+    $output1 .= drupal_render($form['group_project_type']);
+    $output1 .= "  </div>\n";
+  }
+  if(isset($form['group_additional_data'])){
+    $form['group_additional_data']['#access'] = TRUE;
+    $form['group_additional_data']['#attributes']['class'] = 'group-additional-data-project';
+    $output1 .= "  <div class=\"additional-data-project\">\n";
+    $output1 .= drupal_render($form['group_additional_data']);
     $output1 .= "  </div>\n";
   }
 
