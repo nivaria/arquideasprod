@@ -20,7 +20,7 @@
     <div class="contest-info">
     <!-- Identifier Code -->
     <div class="inscription-code">
-        <?php print t('Your identifier is !code',array('!code' => $node->field_inscription_code[0]['value'])); ?>
+        <?php print t('Your identifier is !code',array('!code' => $field_inscription_code[0]['value'])); ?>
     </div>
     <!-- Identifier Code -->
         
