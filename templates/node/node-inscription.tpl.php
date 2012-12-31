@@ -19,9 +19,11 @@
     <?php if(!$is_edit && $page == 1): ?>
     <div class="contest-info">
     <!-- Identifier Code -->
+    <?php if(!empty($field_inscription_code[0]['value'])): ?>
     <div class="inscription-code">
         <?php print t('Your identifier is !code',array('!code' => $field_inscription_code[0]['value'])); ?>
     </div>
+    <?php endif; ?>
     <!-- Identifier Code -->
         
     <!-- IMAGE --> 
