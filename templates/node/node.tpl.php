@@ -29,9 +29,9 @@
       <?php print $terms; ?>
     </div>
     <?php endif;?>
-    
+
     <div class="content clearfix<?php print ($node_right && !$teaser?' node-right':''); ?>">
-        <div class="node-content-main">  
+        <div class="node-content-main">
             <?php print $content ?>
         </div>
         <?php if ($node_right && !$teaser): ?>

@@ -563,10 +563,6 @@ h2.title a:hover, h2.title a:focus, h2.title a:active {
 .teaser {
 }
 .meta {
-  margin-bottom: 10px;
-  padding: 10px 0;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
   color: #B2B2B2;
 }
 .meta .userpicture {
@@ -5641,8 +5637,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   background-position: 0 -54px;
 }
 
-.view-news .views-field-comment-count span,
-.view-news .views-field-value span,
+.view-display-id-page_1 .views-field-comment-count span,
+.view-display-id-page_1 .views-field-value span,
 .sidebar-last .contest-followers span
 .sidebar-last .views-field-rating-value span,
 .sidebar-last .views-field-comment-count span,
@@ -5664,7 +5660,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   background: transparent url(../images/social.png) no-repeat 0 -84px;
 }
 
-.view-news .views-field-comment-count span,
+.view-display-id-page_1 .views-field-comment-count span,
 .sidebar-last .views-field-comment-count span,
 .sidebar-last .views-field-comments-count span,
 .sidebar-first .views-field-comment-count span,
@@ -5879,6 +5875,12 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 /* Content Types */
 
 /* News Nodes */
+.node-type-news .meta {
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
 .node-type-news .date {
   color: #B2B2B2;
   margin-bottom: 25px;
