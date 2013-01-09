@@ -95,7 +95,7 @@
 
   		<!-- main row: width = grid_width -->
       <div id="main-wrapper" class="main-wrapper full-width">
-        <div id="main" class="main row &lt;?php print $grid_width; ?&gt;">
+        <div id="main" class="main row <?php print $grid_width; ?>">
           <div id="main-inner" class="main-inner inner clearfix">
             <?php if ($content_top || $help || $messages): ?>
 
@@ -127,7 +127,7 @@
             <?php print theme('grid_row', $sidebar_first, 'sidebar-first', 'nested', $sidebar_first_width); ?>
 
             <!-- main group: width = grid_width - sidebar_first_width -->
-            <div id="main-group" class="main-group row nested &lt;?php print $main_group_width; ?&gt;">
+            <div id="main-group" class="main-group row nested <?php print $main_group_width; ?>">
               <div id="main-group-inner" class="main-group-inner inner">
                 <?php print theme('grid_row', $preface_bottom, 'preface-bottom', 'nested'); ?>
 
@@ -135,7 +135,7 @@
                   <div id="main-content-inner" class="main-content-inner inner">
 
                     <!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
-                    <div id="content-group" class="content-group row nested &lt;?php print $content_group_width; ?&gt;">
+                    <div id="content-group" class="content-group row nested <?php print $content_group_width; ?>">
                       <?php if ($title && !$is_front): ?>
 
                       <h1 class="title"><?php print $title; ?></h1><?php endif; ?>
