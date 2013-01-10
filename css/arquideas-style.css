@@ -997,25 +997,6 @@ body.node-type-group #content-region .block.gerenciall_block_form {
 .form-checkboxes label.option, .form-radios label.option {
 	white-space: nowrap;
 }
-form input.form-submit, .views-exposed-form .views-exposed-widget input.form-submit, .og-buttons a, body.node-type-group.page-node form input#edit-submit, body.page-node.no-sidebars #comment-form #edit-submit, body.page-node.no-sidebars #gerencia-generic-faq-reply-form #edit-submit {
-	background-color: transparent;
-	background-image: -moz-linear-gradient(center top, #36c9d3, #36c9d3);
-	border: 0 none;
-	color: #FFFFFF;
-	float: right;
-	font-family: calibri, arial;
-	font-size: 13px;
-	font-weight: bold;
-	height: 26px;
-	margin: 0 0 0 1em;
-	padding: 0 12px;
-	white-space: nowrap;
-}
-form input.form-submit:focus, .views-exposed-form .views-exposed-widget input.form-submit:focus, body.node-type-group.page-node form input#edit-submit:focus, body.page-node.no-sidebars #comment-form #edit-submit:focus, body.page-node.no-sidebars #gerencia-generic-faq-reply-form #edit-submit:focus, form input.form-submit:hover, .views-exposed-form .views-exposed-widget input.form-submit:hover, body.node-type-group.page-node form input#edit-submit:hover, body.page-node.no-sidebars #comment-form #edit-submit:hover, body.page-node.no-sidebars #gerencia-generic-faq-reply-form #edit-submit:hover, .og-buttons a:focus, .og-buttons a:hover {
-	background-color: #F86C00;
-	background-image: none;
-	text-decoration: none;
-}
 .views-tabs form input.form-submit, .views-tabs .views-exposed-form .views-exposed-widget input.form-submit {
 	float: none;
 	height: auto;
@@ -1204,16 +1185,17 @@ tr.drag td, tr.drag-previous td {
 #comments h2.comments-header {
 	display: none;
 }
-#comments .box, .page-comment #content-content .box, .buildmode-full .node-type-faq_question .field-gerencia-reply-form-widget > form > div {
+.buildmode-full .node-type-faq_question .field-gerencia-reply-form-widget > form > div {
 	background-color: #F4F4F4;
 	padding: 20px 12px;
 }
 #comments .box .content, .page-comment #content-content .box .content {
-	background-color: transparent;
+	background-color: #f3f3f3;
 	border: 0 none;
 	box-shadow: none;
 	display: block;
-	padding: 12px 0;
+	padding: 20px;
+	margin-bottom: 20px;
 }
 #comments fieldset.collapsible, .page-comment #content-content .box fieldset.collapsible {
 	display: none;
@@ -1229,32 +1211,27 @@ tr.drag td, tr.drag-previous td {
 	padding-top: 10px;
 }
 #comments h2, .page-comment #content-content .box h2, .buildmode-full .node-type-faq_question .field-gerencia-reply-form-widget h2 {
-	background-color: transparent;
+	background-color: #000;
 	border: 0 none;
 	border-radius: 0 0 0 0;
-	color: #666666;
-	font-family: calibri, arial;
-	font-size: 22px;
+	color: #fff;
+	font-size: 16px;
 	font-weight: normal;
-	padding: 0;
+	padding: 0 10px;
+	line-height: 45px;
 }
 .buildmode-full .node-type-faq_question .field-gerencia-reply-form-widget legend {
 	display: none;
 }
 div.comment {
-	border-top: 1px dashed #CCCCCC;
-	margin-top: 18px;
-	padding-top: 18px;
-}
-div.comment:first-child {
-	border: 0 none;
-	margin: 0;
-	padding: 0;
-}
-body.page-comment div.comment {
-	border-bottom: 1px dashed #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 div.comment h3.title {
+  font-size: 16px;
+	font-family: "SoinSans-Roman", Helvetica, Arial, sans-serif;
+	font-weight: normal;
 }
 .comment .comment-info {
 	background: none repeat scroll 0 0 transparent;
@@ -1317,7 +1294,28 @@ div.comment .comment-name a, div.comment h3.title a {
 	display: none;
 }
 .comment .comment-content .links ul.links {
-	margin-bottom: 0;
+  margin: 10px 0;
+  padding: 0;
+}
+.comment .comment-content .links ul.links li {
+  padding: 0;
+  margin: 0;
+	border: 0 none;
+}
+.comment .comment-content .links ul.links a {
+  font-size: 12px;
+  background-color: #000;
+	background-image: none;
+	margin: 0 5px 0 0;
+	padding: 6px 10px;
+	white-space: nowrap;
+	border-radius: 5px;
+  font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
+  color: #fff;
+  text-decoration: none;
+}
+.comment .comment-content .links ul.links a:hover {
+  background-color: #666;
 }
 .comments > a[id] {
 	position: absolute;
@@ -2391,19 +2389,6 @@ table.views-view-grid td {
 	clear: both;
 	margin: 0;
 	padding: 0;
-}
-
-.view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a,
-#view-id-contests-page_2 .views-field-view-node-1 a,
-#block-views-contests-block_5 .views-field-view-node a {
-	padding: 10px 25px;
-	color: #fff;
-	background: #FF3F3F;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  text-shadow: 1px 1px 2px #000000;
-  text-decoration: none;
 }
 
 .heartbeat-more-messages-wrapper p {
@@ -3634,15 +3619,39 @@ body .page-group h1.title {
 }
 #tagging-widget-container .tagging-widget-input, input.tagging-widget-input, .form-item input {
 	border: 1px solid #CCCCCC;
-	line-height: 1em;
+	line-height: 20px;
 	margin: 0;
-	padding: 2px 4px;
+	padding: 3px 5px;
+	width: 100%;
+	max-width: 100%;
+}
+.resizable-textarea {
+  width: 100%;
+}
+.resizable-textarea textarea,
+html.js .resizable-textarea textarea {
+	border: 1px solid #CCCCCC;
+	margin: 0;
+	padding: 3px 1%;
+	width: 98%;
+}
+.resizable-textarea textarea,
+.form-item input {
+	color: #666;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 12px;
 }
 #tagging-widget-container .tagging-widget-input, input.tagging-widget-input {
 	width: 376px;
 }
 .views-row label, .form-item label {
-	color: #666666;
+	color: #656565;
+  font-weight: normal;
+  font-size: 13px;
+  padding-bottom: 5px;
 }
 .views-row .field-content p {
 	margin-top: 0;
@@ -3657,7 +3666,6 @@ body .page-group h1.title {
 }
 #edit-comment-wrapper.form-item label, #edit-body-wrapper.form-item label {
 	float: none;
-	padding-bottom: 1em;
 }
 #tagging-widget-container label {
 	display: none;
@@ -3719,9 +3727,7 @@ div.grouping-curtags-wrapper label {
 	padding-top: 24px;
 }
 .form-item {
-	clear: both;
-	margin: 10px 0;
-	overflow: hidden;
+  	margin: 0 0 15px 0;
 }
 div.vertical-tabs {
 	border-right: 1px solid #E9E9E9;
@@ -3848,23 +3854,7 @@ body.page-node .og-manage-link {
 	right: 96px;
 	top: 16px;
 }
-body.page-node.no-sidebars #edit-submit, #edit-publish, #search-form #edit-submit, body.page-node .edit-content-link, body.page-ogdetails .edit-content-link, body.page-node .og-manage-link, body.page-node .generic-button, .flag-wrapper .flag {
-	background-image: -moz-linear-gradient(center bottom, #36C9D3, #36C9D3);
-        background-color: #36C9D3;
-	border-radius: 4px 4px 4px 4px;
-	color: #FFFFFF;
-	display: block;
-	font-family: calibri, arial;
-	font-size: 13px;
-	height: 19px;
-	line-height: 19px;
-	padding: 0 12px;
-	text-align: center;
-	text-transform: uppercase;
-}
-body.page-node .edit-content-link:hover {
-	text-decoration: none;
-}
+
 body.not-front .sidebar-last .block .inner > .content,
 body.page-node .sidebar-last .block .inner > .content {
 	background-color: transparent;
@@ -4307,9 +4297,6 @@ body.page-node #content-inner-inner {
 	width: 49%;
 }
 #edit-comment-wrapper label {
-	display: none;
-	float: right;
-	width: 49%;
 }
 .views-field-leave-group a {
 	background-color: #F4F4F4;
@@ -5639,6 +5626,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 .view-display-id-page_1 .views-field-comment-count span,
 .view-display-id-page_1 .views-field-value span,
+.view-display-id-block_4 .views-field-comment-count span,
+.view-display-id-block_4 .views-field-value span,
 .sidebar-last .contest-followers span
 .sidebar-last .views-field-rating-value span,
 .sidebar-last .views-field-comment-count span,
@@ -5661,6 +5650,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 
 .view-display-id-page_1 .views-field-comment-count span,
+.view-display-id-block_4 .views-field-comment-count span,
 .sidebar-last .views-field-comment-count span,
 .sidebar-last .views-field-comments-count span,
 .sidebar-first .views-field-comment-count span,
@@ -5820,7 +5810,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 /* News Common Styles */
 .view-news .views-field-title {
-  font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: normal;
   margin-top: 6px;
 }
@@ -5875,7 +5865,12 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 /* Content Types */
 
 /* News Nodes */
-.node-type-news .meta {
+.node-type-news > .inner > .content {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000;
+}
+.node.node-type-news .meta {
   margin-bottom: 10px;
   padding: 10px 0;
   border-top: 1px solid black;
@@ -5892,4 +5887,53 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 .node-type-inscription.only-groups input.contest-payment-individual {
     display: none;
+}
+
+/* Red Buttons */
+#comment-form #edit-submit,
+.view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a,
+#view-id-contests-page_2 .views-field-view-node-1 a,
+#block-views-contests-block_5 .views-field-view-node a {
+	padding: 10px 25px;
+	color: #fff;
+	background: #FF3F3F;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 2px #000000;
+  text-decoration: none;
+}
+
+#comment-form #edit-submit {
+  margin: 0 auto;
+  float: none;
+}
+
+/* Blue Buttons */
+form input.form-submit, .views-exposed-form .views-exposed-widget input.form-submit, .og-buttons a, body.node-type-group.page-node form input#edit-submit, #gerencia-generic-faq-reply-form #edit-submit,
+#edit-submit, #edit-publish, #search-form #edit-submit, body.page-node .edit-content-link, body.page-ogdetails .edit-content-link, body.page-node .og-manage-link, body.page-node .generic-button, .flag-wrapper .flag {
+	background-color: #36c9d3;
+	background-image: none;
+	border: 0 none;
+	color: #FFFFFF;
+	float: right;
+	font-size: 13px;
+	font-weight: normal;
+	height: auto;
+	margin: 0;
+	padding: 3px 12px;
+	white-space: nowrap;
+}
+
+
+/* Hover state of buttons */
+
+.view div.more-link a:hover, .view .view-footer a:hover, .heartbeat-more-messages-wrapper a:hover,
+#view-id-contests-page_2 .views-field-view-node-1 a:hover,
+#block-views-contests-block_5 .views-field-view-node a:hover,
+
+form input.form-submit:focus, .views-exposed-form .views-exposed-widget input.form-submit:focus, body.node-type-group.page-node form input#edit-submit:focus, #comment-form #edit-submit:focus, #gerencia-generic-faq-reply-form #edit-submit:focus, form input.form-submit:hover, .views-exposed-form .views-exposed-widget input.form-submit:hover, body.node-type-group.page-node form input#edit-submit:hover, #comment-form #edit-submit:hover, #gerencia-generic-faq-reply-form #edit-submit:hover, .og-buttons a:focus, .og-buttons a:hover {
+	background-color: #F86C00;
+	background-image: none;
+	text-decoration: none;
 }

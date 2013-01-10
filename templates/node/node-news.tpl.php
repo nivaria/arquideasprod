@@ -83,7 +83,9 @@
 
       <?php /*print $field_highlighted_text_news_rendered*/ ?>
       <?php print $node->content['body']['#value'] ?>
+    </div>
 
+    <div class="social-widgets">
       <!-- FiveStar Widget -->
       <?php
         if (user_access('rate content') && fivestar_validate_target('node', $node->nid)) {
