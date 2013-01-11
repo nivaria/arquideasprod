@@ -19,12 +19,13 @@
   <![endif]-->
   <?php print $local_styles; ?>
   <link href="/sites/all/libraries/booklet/jquery.booklet.1.4.0.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
-
+  <link href="/sites/all/libraries/lightbox/css/lightbox.css" rel="stylesheet" />
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
   <script src="/sites/all/libraries/booklet/jquery.easing.1.3.js" type="text/javascript"></script>
   <script src="/sites/all/libraries/booklet/jquery.booklet.1.4.0.min.js" type="text/javascript"></script>
+  <script src="/sites/all/libraries/lightbox/js/lightbox.js" type="text/javascript"></script>
   <script type="text/javascript">var switchTo5x=true;</script>
   <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
   <script type="text/javascript">stLight.options({publisher: "229e3f66-d682-4563-a7b5-18c5e67a7e77"});</script>
@@ -167,7 +168,9 @@
                                             <div class="logo">
                                                 <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
                                             </div>
-                                            <?php print $imageobj['image']; ?>
+                                            <a href="" rel="lightbox" title="<?php print $imageobj['title']; ?>">
+                                                <?php print $imageobj['image']; ?>
+                                            </a>    
                                             <div class="image-title">
                                                 <?php print $imageobj['title']; ?> 
                                             </div>
