@@ -5680,10 +5680,10 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   height: 490px;
 }
 
-/* Contests Page - Opened Contests */
-#view-id-contests-page_2 .views-row,
-#view-id-contests-page_3 .views-row,
-#block-views-contests-block_5 .views-row {
+
+/* Contests Common */
+
+.contests-view .views-row {
   position: relative;
   background: #fff;
   margin-bottom: 40px;
@@ -5692,19 +5692,15 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   left: 4px;
 }
 
-#view-id-contests-page_2 .views-row-inner,
-#view-id-contests-page_3 .views-row-inner,
-#block-views-contests-block_5 .views-row-inner {
+.contests-view .views-row-inner {
   position: relative;
   top: -4px;
   left: -4px;
   background: #000;
 }
 
-#view-id-contests-page_2 .views-field-phpcode-1,
-#view-id-contests-page_2 .views-field-comments-count,
-#view-id-contests-page_3 .views-field-phpcode-1,
-#view-id-contests-page_3 .views-field-comments-count,
+.contests-view .views-field-phpcode-1,
+.contests-view .views-field-comments-count,
 #block-views-contests-block_5 .views-field-phpcode,
 #block-views-contests-block_5 .views-field-phpcode-2,
 #block-views-contests-block_5 .views-field-comments-count {
@@ -5716,8 +5712,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   height: 25px;
   background: transparent url(../images/transparent-spacer.png) repeat;
 }
-#view-id-contests-page_2 .views-field-comments-count,
-#view-id-contests-page_3 .views-field-comments-count,
+
+.contests-view .views-field-comments-count,
 #block-views-contests-block_5 .views-field-comments-count {
   top: 25px;
   padding-bottom: 5px;
@@ -5727,9 +5723,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   top: 50px;
 }
 
-#view-id-contests-page_2 .views-field-title,
-#view-id-contests-page_3 .views-field-title,
-#block-views-contests-block_5 .views-field-title {
+.contests-view .views-field-title {
   text-align: center;
   text-transform: uppercase;
   font-size: 22px;
@@ -5737,16 +5731,13 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   margin-top: 10px;
   padding: 0 25px;
 }
-#view-id-contests-page_2 .views-field-title a,
-#view-id-contests-page_3 .views-field-title a,
-#block-views-contests-block_5 .views-field-title a {
+
+.contests-view .views-field-title a {
   color: #fff;
 }
 
 
-#view-id-contests-page_2 .views-field-field-contest-tagline-value,
-#view-id-contests-page_3 .views-field-field-contest-tagline-value,
-#block-views-contests-block_5 .views-field-field-contest-tagline-value {
+.contests-view .views-field-field-contest-tagline-value {
   color: #fff;
   font-size: 16px;
   padding-bottom: 20px;
@@ -5755,12 +5746,9 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   text-align: center;
 }
 
-#view-id-contests-page_2 .views-field-phpcode,
-#view-id-contests-page_3 .views-field-phpcode,
-#view-id-contests-page_2 .views-field-phpcode-3,
-#view-id-contests-page_3 .views-field-phpcode-3,
-#block-views-contests-block_5 .views-field-phpcode-1,
-#block-views-contests-block_5 .views-field-phpcode-3 {
+.contests-view .views-field-phpcode,
+.contests-view .views-field-phpcode-3,
+#block-views-contests-block_5 .views-field-phpcode-1 {
   text-align: right;
   width: 225px;
   height: 25px;
@@ -5780,30 +5768,22 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 
 
-#block-views-contests-block_5 .views-field-field-sponsors-image-contest-fid {
+.contests-view .views-field-field-sponsors-image-contest-fid {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-#view-id-contests-page_2 .hasCountdown,
-#block-views-contests-block_5 .hasCountdown {
-  background: transparent;
-  border: 0 none;
-}
-
-#view-id-contests-page_2 .countdown_section {
+.contests-view .countdown_section {
 
 }
 
-#view-id-contests-page_2 .countdown_section .countdown_amount,
-#block-views-contests-block_5 .countdown_section .countdown_amount {
+.contests-view .countdown_section .countdown_amount {
   font-size: 20px;
 }
 
-#view-id-contests-page_2 .views-field-view-node-1,
-#view-id-contests-page_3 .views-field-view-node-1,
-#block-views-contests-block_5 .views-field-view-node {
+.contests-view .views-field-view-node,
+.contests-view .views-field-view-node-1 {
   height: 40px;
   padding: 15px 0 5px 250px;
 }
