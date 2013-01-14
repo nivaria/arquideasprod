@@ -168,7 +168,7 @@
                                             <div class="logo">
                                                 <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
                                             </div>
-                                            <a href="" rel="lightbox" title="<?php print $imageobj['title']; ?>">
+                                            <a href="<?php print $imageobj['fullimage_path']; ?>" rel="lightbox[arqbook]" title="<?php print $imageobj['title']; ?>">
                                                 <?php print $imageobj['image']; ?>
                                             </a>    
                                             <div class="image-title">
