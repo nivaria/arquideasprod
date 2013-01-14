@@ -5379,8 +5379,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   background-image: none;
 }
 
-#block-views-contests-block_1 .state-open,
-#block-views-contests-block_1 .state-closed {
+.contests-list-blocks .state-open,
+.contests-list-blocks .state-closed {
   width: 90px;
   height: 23px;
   color: #fff;
@@ -5396,11 +5396,11 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   left: -3px;
 }
 
-#block-views-contests-block_1 .state-closed {
+.contests-list-blocks .state-closed {
   background-color: #000;
 }
 
-#block-views-contests-block_1 .contest-state {
+.contests-list-blocks .contest-state {
   width: 88px;
   height: 21px;
   position: relative;
@@ -5836,7 +5836,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   text-align: center
 }
 
-/* PartnerStyles */
+/* Partner Styles */
 
 .featured-colaborators h2.block-title {
   text-align: center;
@@ -5926,10 +5926,13 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 /* Jury and Partners */
 
+
+.view-jury-members,
 .view-jury-partners-co .views-row {
   margin-bottom: 20px;
 }
 
+.view-jury-members .views-field-title,
 .view-jury-partners-co .views-field-title {
   font-size: 14px;
   line-height: 25px;
@@ -5937,12 +5940,139 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   color: #000;
 }
 
+.view-jury-members .views-field-field-short-description-value,
 .view-jury-partners-co .field-content {
   color: #999;
 }
 
+.view-jury-members .views-field-field-rectangular-image-col-fid {
+  float: left;
+  margin-right: 20px;
+}
 .view-jury-partners-co .views-field-field-square-image-col-fid {
   float: right;
+  margin-left: 10px;
+}
+
+/* Collaborators */
+.colaborator-top {
+  background-color: #000;
+  color: #fff;
+  font-family: "SoinSans-Bold",Helvetica,Arial,sans-serif;
+  font-size: 15px;
+  height: 220px;
+}
+
+.colaborator-top img {
+  padding: 0 !important;
+  margin-right: 40px;
+  float: left;
+}
+
+body.page-node .colaborator-top h1.title {
+  font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
+  color: #fff;
+  text-transform: none;
+  font-size: 30px;
+  text-align: left;
+  padding: 25px 0 0;
+}
+
+.colaborator-top .short-description {
+  margin: 10px 0;
+}
+
+.colaborator-top .field-link-col {
+  font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
+  margin-bottom: 25px;
+}
+
+.colaborator-top .field-link-col .field-item,
+.colaborator-top .field-colaborator-type-col .field-item {
+  background: transparent !important;
+}
+
+.colaborator-comment {
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 15px 25px;
+  text-align: center;
+}
+
+.colaborator-comment .comment-title {
+  font-family: "SoinSans-Bold",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+}
+
+.colaborator-comment .comment-body {
+  font-family: "SoinSans-LightOblique",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.colaborator-presentation {
+  margin: 40px 0;
+}
+
+.colaborator-presentation h2 {
+  color: #000;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #000;
+  font-family: "SoinSans-Bold",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.view-colaborators-contests .views-row {
+  position: relative;
+  margin-bottom: 20px;
+  width: 290px;
+}
+
+.view-colaborators-contests .views-row-odd {
+  float: left;
+}
+
+.view-colaborators-contests .views-row-even {
+  float: right;
+}
+.view-colaborators-contests .views-field-field-contest-image-homepage-fid {
+  background-color: #000;
+  padding: 15px;
+}
+
+.view-colaborators-contests .view-content .views-field-title a {
+  background: url(../images/transparent-spacer.png) repeat scroll 0 0 transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  font-family: "SoinSans-BoldOblique",Helvetica,Arial,sans-serif;
+  font-size: 22px;
+  height: 130px;
+  left: 14px;
+  line-height: 25px;
+  padding: 30px 10px 0 10px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 14px;
+  width: 240px;
+}
+
+.view-colaborators-contests .views-field-title a:hover {
+  background: transparent;
+  z-index: 10;
+}
+
+.view-colaborators-contests .views-field-phpcode {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+}
+
+.view-colaborators-contests .state-closed {
+  background-color: #ff3f3f;
 }
 
 /* News Common Styles */
