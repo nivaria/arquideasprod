@@ -5683,7 +5683,19 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 /* Contests Common */
 
+.contests-view .views-field-phpcode,
+#block-views-contests-block_3 .views-field-phpcode-1,
+#block-views-contests-block_5 .views-field-phpcode-1,
+.contests-view .views-field-phpcode-2,
+.contests-view .views-field-phpcode-3,
+.contests-view .views-field-view-node,
+.contests-view .views-field-view-node-1 {
+  display: inline-block;
+}
 .contests-view .views-row {
+  font-family: "SoinSans-Roman", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
   position: relative;
   background: #fff;
   margin-bottom: 40px;
@@ -5699,11 +5711,10 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   background: #000;
 }
 
-.contests-view .views-field-phpcode-1,
+.contests-view .contest-followers,
 .contests-view .views-field-comments-count,
-#block-views-contests-block_5 .views-field-phpcode,
-#block-views-contests-block_5 .views-field-phpcode-2,
-#block-views-contests-block_5 .views-field-comments-count {
+#block-views-contests-block_5 .views-field-comments-count,
+.contests-view .follow-link {
   position: absolute;
   top: 0;
   left: 0;
@@ -5719,8 +5730,9 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   padding-bottom: 5px;
 }
 
-#block-views-contests-block_5 .views-field-phpcode {
-  top: 50px;
+.contests-view .follow-link {
+  top: 55px;
+  padding-bottom: 5px;
 }
 
 .contests-view .views-field-title {
@@ -5736,8 +5748,8 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   color: #fff;
 }
 
-
 .contests-view .views-field-field-contest-tagline-value {
+  font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
   color: #fff;
   font-size: 16px;
   padding-bottom: 20px;
@@ -5746,17 +5758,19 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   text-align: center;
 }
 
-.contests-view .views-field-phpcode,
-.contests-view .views-field-phpcode-3,
-#block-views-contests-block_5 .views-field-phpcode-1 {
+#block-views-contests-block_5 .views-field-phpcode-3 label,
+.contests-view .info,
+.contests-view .field-contest-public {
+  color: #fff;
+  display: block;
+  width: 210px;
   text-align: right;
-  width: 225px;
-  height: 25px;
-  padding: 15px 0 0 15px;
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  color: #fff !important;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+
+#view-id-contests-page_2 .views-field-phpcode {
+  float: left;
 }
 
 .comments-count {
@@ -5766,7 +5780,6 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   background: transparent url(../images/social.png) no-repeat 0 -27px;
   float: right;
 }
-
 
 .contests-view .views-field-field-sponsors-image-contest-fid {
   position: absolute;
@@ -5782,10 +5795,42 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   font-size: 20px;
 }
 
+.contests-view .public-vote-link,
 .contests-view .views-field-view-node,
 .contests-view .views-field-view-node-1 {
-  height: 40px;
-  padding: 15px 0 5px 250px;
+  margin-bottom: 15px;
+}
+
+.finished-contest-view .views-field-nothing,
+.finished-contest-view .views-field-field-jury-decision-value,
+.finished-contest-view .views-field-phpcode-3 {
+  text-transform: uppercase;
+  color: #fff;
+  display: block;
+  width: 260px;
+  text-align: center;
+  font-size: 13px;
+  margin-left: 25px;
+}
+
+.finished-contest-view .views-field-phpcode-3,
+.finished-contest-view .views-field-field-jury-decision-value {
+  min-height: 14px;
+  padding-bottom: 15px;
+}
+
+.finished-contest-view .views-field-field-jury-decision-value label {
+  color: #fff;
+}
+
+.finished-contest-view .views-field-phpcode-1,
+#block-views-contests-block_3 .views-field-phpcode-1 {
+  width: 260px;
+  float: right;
+  position: absolute;
+  bottom: 17px;
+  right: 25px;
+  text-align: center
 }
 
 /* News Common Styles */
@@ -5870,11 +5915,14 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 
 /* Red Buttons */
+a.contest-winners,
+a.public-vote-link,
 #comment-form #edit-submit,
 .view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a,
 #view-id-contests-page_2 .views-field-view-node-1 a,
 #block-views-contests-block_5 .views-field-view-node a {
-	padding: 10px 25px;
+  font-family: "SoinSans-BoldOblique",Helvetica,Arial,sans-serif;
+	padding: 10px 20px;
 	color: #fff;
 	background: #FF3F3F;
   -webkit-border-radius: 5px;
@@ -5882,6 +5930,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   border-radius: 5px;
   text-shadow: 1px 1px 2px #000000;
   text-decoration: none;
+  display: inline-block;
 }
 
 #comment-form #edit-submit {
@@ -5889,7 +5938,14 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   float: none;
 }
 
-/* Blue Buttons */
+/* Blue Rounded Buttons */
+a.public-vote-link {
+	background: #33CCCC;
+	margin-right: 10px;
+  display: inline-block;
+}
+
+/* Blue Square Buttons */
 form input.form-submit, .views-exposed-form .views-exposed-widget input.form-submit, .og-buttons a, body.node-type-group.page-node form input#edit-submit, #gerencia-generic-faq-reply-form #edit-submit,
 #edit-submit, #edit-publish, #search-form #edit-submit, body.page-node .edit-content-link, body.page-ogdetails .edit-content-link, body.page-node .og-manage-link, body.page-node .generic-button, .flag-wrapper .flag {
 	background-color: #36c9d3;
@@ -5897,7 +5953,6 @@ form input.form-submit, .views-exposed-form .views-exposed-widget input.form-sub
 	border: 0 none;
 	color: #FFFFFF;
 	float: right;
-	font-size: 13px;
 	font-weight: normal;
 	height: auto;
 	margin: 0;
@@ -5905,12 +5960,28 @@ form input.form-submit, .views-exposed-form .views-exposed-widget input.form-sub
 	white-space: nowrap;
 }
 
+/* Grey Buttons */
+a.contest-follow-link {
+  font-family: "SoinSans-BoldOblique",Helvetica,Arial,sans-serif;
+  padding: 4px 10px;
+	background-color: #999999;
+	color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-shadow: 1px 1px 2px #000000;
+  text-decoration: none;
+}
+
 
 /* Hover state of buttons */
-
+a.public-vote-link:hover,
+.contest-winners:hover,
 .view div.more-link a:hover, .view .view-footer a:hover, .heartbeat-more-messages-wrapper a:hover,
 #view-id-contests-page_2 .views-field-view-node-1 a:hover,
 #block-views-contests-block_5 .views-field-view-node a:hover,
+
+.contest-follow-link:hover,
 
 form input.form-submit:focus, .views-exposed-form .views-exposed-widget input.form-submit:focus, body.node-type-group.page-node form input#edit-submit:focus, #comment-form #edit-submit:focus, #gerencia-generic-faq-reply-form #edit-submit:focus, form input.form-submit:hover, .views-exposed-form .views-exposed-widget input.form-submit:hover, body.node-type-group.page-node form input#edit-submit:hover, #comment-form #edit-submit:hover, #gerencia-generic-faq-reply-form #edit-submit:hover, .og-buttons a:focus, .og-buttons a:hover {
 	background-color: #F86C00;
