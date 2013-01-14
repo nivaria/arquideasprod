@@ -15,6 +15,7 @@ a, a:link, a:visited, a:hover, a:focus, a:active {
 }
 img {
   max-width: 100%;
+  vertical-align: middle;
 }
 h1 {
 	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
@@ -529,13 +530,12 @@ form#search-theme-form input.form-submit {
 	font-size: 1em;
 }
 h1.title {
-	color: #333333;
-	font-family: calibri, arial;
-	font-size: 30px;
-	font-weight: bold;
-	line-height: 1.2em;
-	margin: 0 0 10px;
-	padding: 0;
+	color: #000;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 .node-unpublished {
 	background-color: #FF3F3F;
@@ -710,11 +710,7 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
   font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
   font-weight: normal;
   text-transform: uppercase;
-  font-size: 20px;
-}
-.subtitle {
-  font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
-  font-weight: normal;
+  font-size: 18px;
 }
 .block .fusion-block-config, .block .fusion-block-edit {
 	background: url("../images/gear.png") no-repeat scroll center center transparent;
@@ -3533,7 +3529,7 @@ body #main, body.page-one-column.page-node.node-type-group #main {
 body.not-front #content-group, body.page-node #content-group {
 	box-shadow: 0 none;
 	padding-right: 0;
-	width: 580px;
+	width: 600px;
 }
 body.node-type-contest .page-group #content-group {
 	width: 918px;
@@ -3578,7 +3574,7 @@ body.page-node.node-type-group #content-group #content-group-inner {
 	padding: 0;
 }
 body.not-front #sidebar-last, body.page-node #sidebar-last {
-	padding: 28px 0 20px;
+	padding: 0 0 20px;
 }
 body.page-title-page #sidebar-last {
 	padding: 0 0 20px;
@@ -3604,8 +3600,9 @@ body.page-node.node-type-group #content-group {
 body h1.title, body.page-node h1.title {
 	font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
 	font-weight: normal;
-	padding: 30px 0 10px;
+	padding: 20px 0 10px;
 	width: auto;
+	text-align: center;
 }
 body.page-node .node-edit h1.title, body.page-taxonomy h1.title {
 	width: 100%;
@@ -4968,13 +4965,19 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   text-align: center;
 }
 
+.subtitle,
 .front-page-block .subtitle {
+  font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
+  font-weight: normal;
   padding-bottom: 40px;
   margin: 0;
   font-size: 18px;
   color: #999;
-  border-bottom: 1px solid #000;
   text-align: center;
+}
+
+.front-page-block .subtitle  {
+  border-bottom: 1px solid #000;
 }
 
 .front-page-block .content {
@@ -5027,7 +5030,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 .sidebar-first .single-line h2.block-title,
 .single-line h2.block-title {
   padding-bottom: 15px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   background: transparent url(../images/single-border.png) repeat-x bottom;
 }
 
@@ -5035,7 +5038,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 .sidebar-first .double-line h2.block-title,
 .double-line h2.block-title {
   padding-bottom: 18px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   background: transparent url(../images/double-border.png) repeat-x bottom;
 }
 
@@ -5831,6 +5834,115 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   bottom: 17px;
   right: 25px;
   text-align: center
+}
+
+/* PartnerStyles */
+
+.featured-colaborators h2.block-title {
+  text-align: center;
+}
+
+.featured-colaborators .views-row {
+  position: relative;
+  overflow: hidden;
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+.featured-colaborators .views-field-field-square-image-col-fid {
+  float: left;
+}
+
+.featured-colaborators .views-field-field-comment-title-col-value,
+.featured-colaborators .views-field-phpcode,
+.featured-colaborators .views-field-view-node {
+  padding-left: 315px;
+  font-family: "SoinSans-Oblique",Helvetica,Arial,sans-serif;
+  text-align: center;
+}
+
+
+.featured-colaborators .views-field-field-comment-title-col-value {
+  color: #000;
+  font-size: 17px;
+  font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
+}
+
+.featured-colaborators .views-field-phpcode {
+  color: #999;
+}
+
+.featured-colaborators .views-field-view-node{
+  position: absolute;
+  bottom: 0;
+}
+
+.two-columns-colaborators .views-row {
+  border: 1px solid #cccccc;
+  width: 280px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  line-height: 13px;
+  height: 134px;
+  overflow: hidden;
+}
+
+.two-columns-colaborators .views-row-odd {
+  float: left;
+}
+
+.two-columns-colaborators .views-row-even {
+  float: right;
+}
+
+.two-columns-colaborators .views-field-field-square-image-col-fid {
+  float: left;
+  border-right: 1px solid #cccccc;
+  margin-right: 3px;
+}
+
+.two-columns-colaborators .views-field-field-comment-title-col-value,
+.two-columns-colaborators .views-field-phpcode,
+.two-columns-colaborators .views-field-view-node {
+  font-family: "SoinSans-Oblique",Helvetica,Arial,sans-serif;
+  text-align: center;
+}
+
+.two-columns-colaborators .views-field-field-comment-title-col-value {
+  color: #000;
+  font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
+  padding: 15px 3px 0 12px;
+}
+
+.two-columns-colaborators .views-field-phpcode {
+  color: #999;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+
+#block-views-colaborators-block_3 {
+  margin-top: 60px;
+}
+
+/* Jury and Partners */
+
+.view-jury-partners-co .views-row {
+  margin-bottom: 20px;
+}
+
+.view-jury-partners-co .views-field-title {
+  font-size: 14px;
+  line-height: 25px;
+  font-family: "SoinSans-Bold",Helvetica,Arial,sans-serif;
+  color: #000;
+}
+
+.view-jury-partners-co .field-content {
+  color: #999;
+}
+
+.view-jury-partners-co .views-field-field-square-image-col-fid {
+  float: right;
 }
 
 /* News Common Styles */
