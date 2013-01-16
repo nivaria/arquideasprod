@@ -181,9 +181,16 @@
           <div id="footer-inner" class="footer-inner inner clearfix">
             <?php print theme('grid_block', $primary_links_tree, 'primary-menu-footer'); ?>
             <?php print $footer; ?>
-			<?php print $footer_bottom; ?>
+            <div class="logo">
+              <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+            </div>
           </div><!-- /footer-inner -->
         </div><!-- /footer -->
+        <div id="footer-bottom" class="footer max-width row inner clearfix">
+          <div id="footer-bottom-inner" class="footer-inner inner clearfix">
+            <?php print $footer_bottom; ?>
+          </div><!-- /footer-bottom-inner -->
+        </div><!-- /footer-bottom -->
       </div>
 
     </div><!-- /page-inner -->

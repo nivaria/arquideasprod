@@ -20,7 +20,7 @@
   <?php print $local_styles; ?>
   <link href="/sites/all/libraries/booklet/jquery.booklet.1.4.0.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
   <link href="/sites/all/libraries/lightbox/css/lightbox.css" rel="stylesheet" />
-  
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
   <script src="/sites/all/libraries/booklet/jquery.easing.1.3.js" type="text/javascript"></script>
@@ -60,7 +60,7 @@
               </div><!-- /content-top-inner -->
             </div><!-- /content-top -->
             <?php endif; ?>
-                
+
             <!-- main group: width = grid_width - sidebar_first_width -->
             <div id="main-group" class="main-group row nested <?php print $main_group_width; ?>">
               <div id="main-group-inner" class="main-group-inner inner">
@@ -112,10 +112,10 @@
                                                 </div>
                                                 <div class="phone">
                                                     <?php print $arqbook_phone; ?>
-                                                </div>  
+                                                </div>
                                                 <div class="mail">
                                                     <?php print $arqbook_email; ?>
-                                                </div>    
+                                                </div>
                                                 <div class="links">
                                                     <div class="link-profile">
                                                         <?php print l(t('View profile'),'user/'.$arqbook_uid,array(
@@ -133,11 +133,11 @@
                                                     <?php foreach($arqbook_social_networks as $key => $link){ ?>
                                                     <li class="<?php print $key; ?>">
                                                         <?php print $link; ?>
-                                                    </li>    
+                                                    </li>
                                                     <?php } ?>
                                                 </ul>
                                                 <?php endif; ?>
-                                                
+
                                                 <div class="share-in">
                                                     <span class='st_email_large' displayText='Email'></span>
                                                     <span class='st_facebook_large' displayText='Facebook'></span>
@@ -157,10 +157,10 @@
                                         </div>
                                         <div>
                                             <div class="description">
-                                                <?php print $arqbook_description; ?>    
+                                                <?php print $arqbook_description; ?>
                                             </div>
                                             <div class="cv">
-                                                <?php print $arqbook_cv; ?>    
+                                                <?php print $arqbook_cv; ?>
                                             </div>
                                         </div>
                                         <?php foreach($arqbook_images as $imageobj){ ?>
@@ -170,25 +170,25 @@
                                             </div>
                                             <a href="<?php print $imageobj['fullimage_path']; ?>" rel="lightbox[arqbook]" title="<?php print $imageobj['title']; ?>">
                                                 <?php print $imageobj['image']; ?>
-                                            </a>    
+                                            </a>
                                             <div class="image-title">
-                                                <?php print $imageobj['title']; ?> 
+                                                <?php print $imageobj['title']; ?>
                                             </div>
                                             <div class="image-subtitle">
-                                                <?php print $imageobj['subtitle']; ?> 
+                                                <?php print $imageobj['subtitle']; ?>
                                             </div>
                                             <div class="image-type">
-                                                <?php print $imageobj['type']; ?> 
+                                                <?php print $imageobj['type']; ?>
                                             </div>
                                             <div class="image-contest">
-                                                <?php print $imageobj['contest']; ?> 
+                                                <?php print $imageobj['contest']; ?>
                                             </div>
                                             <div class="image-prize">
-                                                <?php print $imageobj['prize']; ?> 
+                                                <?php print $imageobj['prize']; ?>
                                             </div>
                                         </div>
                                         <?php } ?>
-                                    </div>    
+                                    </div>
                                     <!-- Finish Book Layout -->
                                 </div><!-- /content-content -->
                               </div><!-- /content-inner-inner -->
@@ -223,5 +223,5 @@
             keyboard: true
         });
     });
-</script>    
+</script>
 </html>

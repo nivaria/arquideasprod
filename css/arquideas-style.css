@@ -208,15 +208,25 @@ body.admin-menu #header-region-following.fixed-menu {
 
 #header-top-region #block-menu-menu-menu-superheader-left,
 #header-top-region .block-locale,
-#footer #block-menu-menu-menu-superheader-left,
-#footer #block-locale-0,
-#footer #block-menu-menu-menu-pie {
+#footer-bottom #block-menu-menu-menu-superheader-left,
+#footer-bottom #block-locale-0 {
   float: left;
+}
+
+#footer-bottom #block-menu-menu-menu-pie {
+  left: 0;
+  margin: 0 35%;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  width: 30%;
 }
 
 #header-large-wrapper .inner,
 #header-small-wrapper .inner,
-#header-region-following .inner {
+#header-region-following .inner,
+#footer-bottom .inner,
+#footer-bottom div.node {
   margin: 0 auto;
 }
 
@@ -234,19 +244,20 @@ body.admin-menu #header-region-following.fixed-menu {
 #header-region-top-following ul,
 #header-region-top-following li,
 #header-region-top-following ul li a,
-#footer ul,
-#footer li,
-#footer ul li a,
-#footer .block {
+#footer-bottom ul,
+#footer-bottom li,
+#footer-bottom ul li a,
+#footer-bottom .block {
   display: inline;
   line-height: 25px;
   margin: 0;
   padding: 0;
   width: auto;
+  color: #999999;
 }
 
 #header-top-region li,
-#footer li {
+#footer-bottom li {
   margin-right: 10px;
 }
 #header-region-top-following {
@@ -259,13 +270,23 @@ body.admin-menu #header-region-following.fixed-menu {
 }
 
 #header-region-top-following .block,
-#footer #block-nodeblock-221 {
+#footer-bottom #block-nodeblock-221 {
   float: right;
   margin-left: 15px;
 }
 
 #header-region-top-following li {
   margin-left: 10px;
+}
+
+#footer-inner {
+  position: relative;
+}
+.block-powered_by_nivaria {
+  float: right;
+  text-align: right;
+  position: absolute;
+  right: 0;
 }
 
 .calendar-calendar td .inner div.calendar div, .calendar-calendar td .inner div.calendar div a {
@@ -6215,6 +6236,22 @@ body.page-node .colaborator-top h1.title {
 
 #block-views-news-block_1 .views-field-title {
   margin: 0 0 5px 0;
+}
+
+/* Footer */
+#footer .logo {
+  clear: both;
+  text-align: center;
+  margin: 15px 0;
+}
+#footer .logo img {
+  max-height: 25px;
+}
+#footer-bottom {
+  margin: 0 auto;
+}
+#footer-bottom-inner {
+  border-top: 1px solid #999;
 }
 
 /* Content Types */

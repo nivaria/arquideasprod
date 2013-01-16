@@ -20,12 +20,12 @@
   <?php print $local_styles; ?>
   <link href="/sites/all/libraries/booklet/jquery.booklet.1.4.0.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
 
-  
+
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
   <script src="/sites/all/libraries/booklet/jquery.easing.1.3.js" type="text/javascript"></script>
   <script src="/sites/all/libraries/booklet/jquery.booklet.1.4.0.min.js" type="text/javascript"></script>
-  
+
 </head>
 
 <body id="<?php print $body_id; ?>" class="<?php print $body_classes; ?>">
@@ -57,7 +57,7 @@
               </div><!-- /content-top-inner -->
             </div><!-- /content-top -->
             <?php endif; ?>
-                
+
             <!-- main group: width = grid_width - sidebar_first_width -->
             <div id="main-group" class="main-group row nested <?php print $main_group_width; ?>">
               <div id="main-group-inner" class="main-group-inner inner">
@@ -70,7 +70,7 @@
                     <div id="content-group" class="content-group row nested <?php print $content_group_width; ?>">
                       <?php if ($title): ?>
                       <h1 class="title"><?php print $title; ?></h1>
-                      <?php endif; ?>  
+                      <?php endif; ?>
                       <div id="content-group-inner" class="content-group-inner inner">
                         <div id="content-region" class="content-region row nested">
                           <div id="content-region-inner" class="content-region-inner inner">
@@ -116,5 +116,5 @@
             keyboard: true
         });
     });
-</script>    
+</script>
 </html>
