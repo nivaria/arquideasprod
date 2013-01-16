@@ -248,13 +248,17 @@ body.admin-menu #header-region-following.fixed-menu {
 #footer-bottom ul,
 #footer-bottom li,
 #footer-bottom ul li a,
-#footer-bottom .block {
+#footer-bottom .block
+#block-arquideas_generic-8 ul,
+#block-arquideas_generic-8 li,
+#block-arquideas_generic-8 ul li a,
+#block-arquideas_generic-8 .block {
   display: inline;
   line-height: 25px;
   margin: 0;
   padding: 0;
   width: auto;
-  color: #999999;
+  color: #999;
 }
 
 #header-top-region li,
@@ -270,6 +274,7 @@ body.admin-menu #header-region-following.fixed-menu {
   margin-left: 10px;
 }
 
+#block-arquideas_generic-8,
 #header-region-top-following .block,
 #footer-bottom #block-nodeblock-221 {
   float: right;
@@ -3209,7 +3214,7 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 	float: left;
 	margin-right: 20px;
 	width: 405px;
-	height: 217px;
+	height: 211px;
 	position: relative;
 	margin-left: 25px;
 }
@@ -3231,10 +3236,12 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 	margin-left: 0;
 }
 #content-front #content-front-left .content-inner {
-  height: 176px;
+  height: 170px;
+  overflow: hidden;
 }
 #content-front #content-front-right .content-inner {
-  height: 190px;
+  height: 174px;
+  overflow: hidden;
 }
 .field-ds-group-ds-node-date-type-vote {
 	float: left;
@@ -5095,7 +5102,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 .triple-fat-middle-line h2.block-title {
   padding-bottom: 20px;
   margin-bottom: 25px;
-  background: transparent url(../images/triple-fat-border.png.png) repeat-x bottom;
+  background: transparent url(../images/triple-fat-border.png) repeat-x bottom;
 }
 
 .sidebar-last .small-block-title h2.block-title,
@@ -5219,6 +5226,68 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   padding: 0;
   width: 32px;
   height: 32px;
+}
+
+/* Front page users count */
+#content-front-right .block {
+  margin: 0;
+}
+.users-total {
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  background: transparent url(../images/triple-fat-border.png) repeat-x bottom;
+}
+
+.users-total .label {
+  font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+.users-total .total {
+  font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
+  font-size: 46px;
+  line-height: 50px;
+}
+
+/* Front Page Menu */
+#block-menu-menu-menu-homepage ul {
+  margin: 0;
+  padding: 0;
+}
+#block-menu-menu-menu-homepage ul li {
+  float: left;
+  width: 93px;
+  height: 80px;
+  padding: 0px 7px;
+  border-right: 1px solid #000;
+}
+
+#block-menu-menu-menu-homepage ul li.last {
+  border: 0 none;
+}
+
+#block-menu-menu-menu-homepage ul li a {
+  margin: 0;
+  padding: 37px 0 0 0;
+  display: block;
+  text-align: center;
+  font-family: "SoinSans-Roman", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  text-transform: uppercase;
+  background: transparent url(../images/front-page-menu.png) no-repeat 0 0;
+}
+
+#block-menu-menu-menu-homepage ul li a#menu-homepage-km {
+  background-position: -89px 0;
+}
+
+#block-menu-menu-menu-homepage ul li a#menu-homepage-users {
+  background-position: -180px 0;
+}
+
+#block-menu-menu-menu-homepage ul li a#menu-homepage-lorem {
+  background-position: -271px 0;
 }
 
 
@@ -6307,7 +6376,8 @@ a.public-vote-link,
 #comment-form #edit-submit,
 .view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a,
 #view-id-contests-page_2 .views-field-view-node-1 a,
-#block-views-contests-block_5 .views-field-view-node a {
+#block-views-contests-block_5 .views-field-view-node a,
+.register-link-div a {
   font-family: "SoinSans-BoldOblique",Helvetica,Arial,sans-serif;
 	padding: 10px 20px;
 	color: #fff;
@@ -6323,6 +6393,10 @@ a.public-vote-link,
 #comment-form #edit-submit {
   margin: 0 auto;
   float: none;
+}
+
+.register-link-div a:first-child {
+  background-color: #000;
 }
 
 /* Blue Rounded Buttons */
