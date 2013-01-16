@@ -207,7 +207,10 @@ body.admin-menu #header-region-following.fixed-menu {
 }
 
 #header-top-region #block-menu-menu-menu-superheader-left,
-#header-top-region .block-locale {
+#header-top-region .block-locale,
+#footer #block-menu-menu-menu-superheader-left,
+#footer #block-locale-0,
+#footer #block-menu-menu-menu-pie {
   float: left;
 }
 
@@ -230,7 +233,11 @@ body.admin-menu #header-region-following.fixed-menu {
 #header-region-top-following .block,
 #header-region-top-following ul,
 #header-region-top-following li,
-#header-region-top-following ul li a {
+#header-region-top-following ul li a,
+#footer ul,
+#footer li,
+#footer ul li a,
+#footer .block {
   display: inline;
   line-height: 25px;
   margin: 0;
@@ -238,7 +245,8 @@ body.admin-menu #header-region-following.fixed-menu {
   width: auto;
 }
 
-#header-top-region li {
+#header-top-region li,
+#footer li {
   margin-right: 10px;
 }
 #header-region-top-following {
@@ -250,7 +258,8 @@ body.admin-menu #header-region-following.fixed-menu {
   margin-left: 10px;
 }
 
-#header-region-top-following .block {
+#header-region-top-following .block,
+#footer #block-nodeblock-221 {
   float: right;
   margin-left: 15px;
 }
@@ -3616,7 +3625,7 @@ body.page-taxonomy h1.title {
 body .page-group h1.title {
 	padding-top: 0;
 }
-#tagging-widget-container .tagging-widget-input, input.tagging-widget-input, .form-item input {
+#tagging-widget-container .tagging-widget-input, input.tagging-widget-input {
 	border: 1px solid #CCCCCC;
 	line-height: 20px;
 	margin: 0;
@@ -4927,6 +4936,13 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 	color: #FF3F3F;
 	padding: 0 12px 0 24px !important;
 }
+
+#primary-menu-footer,
+#primary-menu-footer .block,
+#primary-menu-footer .block ul {
+  display: block;
+  float: none;
+}
 .view-groups-main-listing thead {
 	display: none;
 }
@@ -5720,6 +5736,23 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 /* Contests Common */
 
+body.page-opened-contests h1.title,
+body.page-finished-contests h1.title,
+body.page-opened-contests #content-region h2.block-title,
+body.page-finished-contests #content-region h2.block-title {
+  font-family: "SoinSans-Bold",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  padding: 5px 0 20px;
+  width: auto;
+  color: #000000;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid #000;
+}
+
 .contests-view .views-field-phpcode,
 #block-views-contests-block_3 .views-field-phpcode-1,
 #block-views-contests-block_5 .views-field-phpcode-1,
@@ -5777,7 +5810,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   text-transform: uppercase;
   font-size: 22px;
   line-height: 26px;
-  margin-top: 10px;
+  margin-top: 25px;
   padding: 0 25px;
 }
 
@@ -5790,9 +5823,15 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   color: #fff;
   font-size: 16px;
   padding-bottom: 20px;
-  margin: 10px 25px 20px 25px;
+  margin: 5px 25px 20px 25px;
   border-bottom: 1px solid #333333;
   text-align: center;
+}
+
+.contests-view .field-delivery-limit-date {
+  width: 210px;
+  margin-left: 25px;
+  margin-right: 10px;
 }
 
 #block-views-contests-block_5 .views-field-phpcode-3 label,
@@ -6081,6 +6120,10 @@ body.page-node .colaborator-top h1.title {
   float: right;
 }
 
+.contests-list-blocks .views-field-field-contest-image-fid img {
+  padding: 0;
+}
+
 .contests-list-blocks .views-field-field-contest-image-fid,
 .view-colaborators-contests .views-field-field-contest-image-homepage-fid {
   background-color: #000;
@@ -6102,6 +6145,7 @@ body.page-node .colaborator-top h1.title {
   text-decoration: none;
   top: 14px;
   width: 240px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
 .contests-list-blocks .views-field-title a:hover {
@@ -6176,6 +6220,10 @@ body.page-node .colaborator-top h1.title {
 /* Content Types */
 
 /* News Nodes */
+body.node-type-news h1.title {
+  text-align: left;
+  text-transform: none;
+}
 .node-type-news > .inner > .content {
   margin-bottom: 20px;
   padding-bottom: 20px;

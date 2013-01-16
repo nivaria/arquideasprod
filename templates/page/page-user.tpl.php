@@ -242,6 +242,7 @@
           <div id="footer-inner" class="footer-inner inner clearfix">
             <?php print theme('grid_block', $primary_links_tree, 'primary-menu-footer'); ?>
             <?php print $footer; ?>
+			<?php print $footer_bottom; ?>
           </div><!-- /footer-inner -->
         </div><!-- /footer -->
       </div>
