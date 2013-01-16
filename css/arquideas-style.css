@@ -199,7 +199,7 @@ body.admin-menu #header-region-following.fixed-menu {
   top: -9px;
 }
 #header-top-region {
-  height: 31px;
+  height: 32px;
   overflow: hidden;
 }
 
@@ -240,7 +240,7 @@ body.admin-menu #header-region-following.fixed-menu {
 
 #header-large-wrapper .inner,
 #header-small-wrapper .inner {
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 #header-top-region .block,
@@ -5258,8 +5258,10 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 
 #block-arquideas_generic-2 {
   position: absolute;
-  top: 13px;;
   right: 10px;
+  text-align: right;
+  top: 20px;
+  width: auto;
 }
 
 /* Front Page Menu */
@@ -5280,6 +5282,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 
 #block-menu-menu-menu-homepage ul li a {
+  color: #444;
   margin: 0;
   padding: 37px 0 0 0;
   display: block;
@@ -6384,7 +6387,6 @@ a.follow-link-pinterest {
 }
 
 /* Red Buttons */
-.join-us-link-div a,
 a.contest-winners,
 a.public-vote-link,
 #comment-form #edit-submit,
@@ -6424,6 +6426,10 @@ a.public-vote-link,
   background-color: #000;
 }
 
+.join-us-link-div a {
+  font-size: 16px;
+}
+
 /* Blue Rounded Buttons */
 a.public-vote-link {
 	background: #33CCCC;
@@ -6461,7 +6467,7 @@ a.contest-follow-link {
 
 
 /* Hover state of buttons */
-.join-us-link-div a,
+.join-us-link-div a:hover,
 a.public-vote-link:hover,
 .contest-winners:hover,
 .view div.more-link a:hover, .view .view-footer a:hover, .heartbeat-more-messages-wrapper a:hover,
