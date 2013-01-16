@@ -199,7 +199,7 @@ body.admin-menu #header-region-following.fixed-menu {
   top: -9px;
 }
 #header-top-region {
-  height: 29px;
+  height: 31px;
   overflow: hidden;
 }
 
@@ -212,6 +212,13 @@ body.admin-menu #header-region-following.fixed-menu {
 #footer-bottom #block-menu-menu-menu-superheader-left,
 #footer-bottom #block-locale-0 {
   float: left;
+}
+
+#footer-bottom #block-menu-menu-menu-superheader-left,
+#footer-bottom #block-locale-0,
+#footer-bottom #block-nodeblock-221 {
+  display: inline;
+  width: auto;
 }
 
 #footer-bottom #block-menu-menu-menu-pie {
@@ -233,7 +240,7 @@ body.admin-menu #header-region-following.fixed-menu {
 
 #header-large-wrapper .inner,
 #header-small-wrapper .inner {
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 #header-top-region .block,
@@ -3242,6 +3249,7 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 #content-front #content-front-right .content-inner {
   height: 174px;
   overflow: hidden;
+  position: relative;
 }
 .field-ds-group-ds-node-date-type-vote {
 	float: left;
@@ -5249,6 +5257,12 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   line-height: 50px;
 }
 
+.join-us-link-div a {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
 /* Front Page Menu */
 #block-menu-menu-menu-homepage ul {
   margin: 0;
@@ -6377,7 +6391,8 @@ a.public-vote-link,
 .view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a,
 #view-id-contests-page_2 .views-field-view-node-1 a,
 #block-views-contests-block_5 .views-field-view-node a,
-.register-link-div a {
+.register-link-div a,
+.join-us-link-div a {
   font-family: "SoinSans-BoldOblique",Helvetica,Arial,sans-serif;
 	padding: 10px 20px;
 	color: #fff;
@@ -6395,7 +6410,17 @@ a.public-vote-link,
   float: none;
 }
 
-.register-link-div a:first-child {
+.register-link-div {
+  float: left;
+  margin-left: 10px;
+  padding: 0;
+}
+.register-link-div a {
+    vertical-align: baseline;
+    padding: 2px 20px 0 20px;
+    line-height: 24px;
+}
+.register-link-div:last-child a {
   background-color: #000;
 }
 
@@ -6436,6 +6461,7 @@ a.contest-follow-link {
 
 
 /* Hover state of buttons */
+.join-us-link-div a,
 a.public-vote-link:hover,
 .contest-winners:hover,
 .view div.more-link a:hover, .view .view-footer a:hover, .heartbeat-more-messages-wrapper a:hover,
