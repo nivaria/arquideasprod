@@ -3522,11 +3522,10 @@ table .mini-day-on a {
 }
 .block-powered_by_nivaria {
 	float: right;
-	padding-top: 30px;
+	padding-top: 10px;
 	width: auto;
 }
 #footer-inner #block-block-1 {
-	padding-top: 20px;
 	width: auto;
 }
 #views-bulk-operations-submit {
@@ -5254,13 +5253,13 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 .users-total .total {
   font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
   font-size: 46px;
-  line-height: 50px;
+  line-height: 54px;
 }
 
-.join-us-link-div a {
+#block-arquideas_generic-2 {
   position: absolute;
-  right: 0;
-  top: 10px;
+  top: 13px;;
+  right: 10px;
 }
 
 /* Front Page Menu */
@@ -6385,6 +6384,7 @@ a.follow-link-pinterest {
 }
 
 /* Red Buttons */
+.join-us-link-div a,
 a.contest-winners,
 a.public-vote-link,
 #comment-form #edit-submit,
