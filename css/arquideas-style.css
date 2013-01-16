@@ -194,6 +194,7 @@ body.admin-menu #header-region-following.fixed-menu {
   margin: 0 auto;
 }
 #header-large-inner .logo {
+  margin: 0 250px;
   position: relative;
   top: -9px;
 }
@@ -6283,6 +6284,21 @@ body.node-type-news h1.title {
 
 .node-type-inscription.only-groups input.contest-payment-individual {
     display: none;
+}
+
+/* Follow Module Icons */
+
+a.follow-link-facebook {
+	background-image: url(../images/social/icon-facebook.png);
+}
+a.follow-link-twitter {
+	background-image: url(../images/social/icon-twitter.png);
+}
+a.follow-link-flickr {
+	background-image: url(../images/social/icon-flickr.png);
+}
+a.follow-link-pinterest {
+	background-image: url(../images/social/icon-pinterest.png);
 }
 
 /* Red Buttons */
