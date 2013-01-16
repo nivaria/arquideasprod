@@ -1236,7 +1236,7 @@ div.comment h3.title {
 	margin: 0 16px 0 0;
 	padding: 0;
 	position: relative;
-	text-align: center;
+	text-align: left;
 	width: 64px;
 	z-index: 10;
 }
@@ -1262,6 +1262,8 @@ div.comment h3.title {
 	margin-bottom: 2px;
 }
 .comment .comment-info .submitted span {
+  font-family: "SoinSans-Roman", Helvetica, Arial, sans-serif;
+  font-size: 11px;
 	display: block;
 	width: auto;
 }
@@ -5281,6 +5283,37 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   bottom: 25px;
 }
 
+/* Mini sliders */
+
+.mini-slider-controls.contests-list-blocks .views-row,
+.mini-slider-controls .views-row {
+  margin-bottom: 15px;
+}
+
+.mini-slider-controls .views-slideshow-controls-bottom {
+  text-align: right;
+  border-top: 1px solid #000;
+  padding-top: 5px;
+}
+
+.mini-slider-controls .views-slideshow-controls-bottom .views_slideshow_pause,
+.mini-slider-controls .views-slideshow-controls-bottom .views_slideshow_play {
+  display: none;
+}
+
+
+.mini-slider-controls .views-slideshow-controls-bottom a {
+  background: transparent url(../images/mini-controls.png) left center;
+  display: inline-block;
+  width: 15px;
+  height: 24px;
+  text-indent: 9999px;
+  margin-left: 10px;
+}
+
+.mini-slider-controls .views-slideshow-controls-bottom a.views_slideshow_next {
+  background-position: right center;
+}
 
 /* Front page slider */
 
@@ -5504,7 +5537,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   font-size: 16px;
   line-height: 20px;
 }
-.block div.node,
+
 .block p {
   margin: 0;
   padding: 0;
@@ -5604,6 +5637,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   height: 25px;
   width: 65px;
   background: transparent url(../images/social.png) no-repeat 0 4px;
+  font-family: Arial,sans-serif;
 }
 
 .view .views-field-value label,
@@ -5771,6 +5805,14 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   margin-left: 25px;
   margin-right: 10px;
 }
+
+#block-views-contests-block_3 .views-field-phpcode,
+#block-views-contests-block_3 .views-field-phpcode-2,
+#block-views-contests-block_5 .views-field-phpcode,
+#block-views-contests-block_5 .views-field-phpcode-2 {
+  position: absolute;
+}
+
 
 #view-id-contests-page_2 .views-field-phpcode {
   float: left;
@@ -6025,7 +6067,7 @@ body.page-node .colaborator-top h1.title {
   text-transform: uppercase;
 }
 
-.view-colaborators-contests .views-row {
+.contests-list-blocks .views-row {
   position: relative;
   margin-bottom: 20px;
   width: 290px;
@@ -6038,12 +6080,14 @@ body.page-node .colaborator-top h1.title {
 .view-colaborators-contests .views-row-even {
   float: right;
 }
+
+.contests-list-blocks .views-field-field-contest-image-fid,
 .view-colaborators-contests .views-field-field-contest-image-homepage-fid {
   background-color: #000;
   padding: 15px;
 }
 
-.view-colaborators-contests .view-content .views-field-title a {
+.contests-list-blocks .view-content .views-field-title a {
   background: url(../images/transparent-spacer.png) repeat scroll 0 0 transparent;
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
@@ -6060,18 +6104,18 @@ body.page-node .colaborator-top h1.title {
   width: 240px;
 }
 
-.view-colaborators-contests .views-field-title a:hover {
+.contests-list-blocks .views-field-title a:hover {
   background: transparent;
   z-index: 10;
 }
 
-.view-colaborators-contests .views-field-phpcode {
+.contests-list-blocks .views-field-phpcode {
   position: absolute;
   bottom: 12px;
   width: 100%;
 }
 
-.view-colaborators-contests .state-closed {
+.contests-list-blocks .state-closed {
   background-color: #ff3f3f;
 }
 
