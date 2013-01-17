@@ -47,14 +47,14 @@
 ?>
 <li>
   <?php if(isset($result['node']->nid)): ?>
-     <?php print nodetype_apachesolr_get_node_image($result['node']->nid); ?> 
+     <?php print nodetype_apachesolr_get_node_image($result['node']->nid); ?>
      <h2 class="title">
      <?php print l($title,'node/'.$result['node']->nid,array(
          'attributes' => array(
             'title' => '',
-            'class' => 'node-'.$result['node']->nid, 
+            'class' => 'node-'.$result['node']->nid,
           ),
-        )); ?> 
+        )); ?>
      </h2>
     <div class="voting-count">
         <span>

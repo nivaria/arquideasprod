@@ -55,7 +55,7 @@
         print l($account->realname,'user/'.$result['node']->uid,array(
          'attributes' => array(
             'title' => $account->realname,
-            'class' => 'user-'.$result['node']->uid, 
+            'class' => 'user-'.$result['node']->uid,
           ),
         )); ?>
      <div class="job">
@@ -63,16 +63,16 @@
             $jobname = '';
             if(!empty($account->profile_job)){
                 $jobname = $account->profile_job;
-            } 
+            }
             print $jobname;
         ?>
-    </div> 
-     <?php print nodetype_apachesolr_get_node_image($result['node']->nid); ?> 
+    </div>
+     <?php print nodetype_apachesolr_get_node_image($result['node']->nid); ?>
      <h2 class="title">
          <?php print l($title,'node/'.$result['node']->nid,array(
          'attributes' => array(
             'title' => '',
-            'class' => 'node-'.$result['node']->nid, 
+            'class' => 'node-'.$result['node']->nid,
           ),
         )); ?>
      </h2>

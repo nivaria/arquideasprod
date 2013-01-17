@@ -3264,7 +3264,7 @@ body.page-home #content-front #content-front-right .content-inner {
 .page-solr-nodetype-multi #content-front .block .inner {
   margin: 0;
 }
-#main-content-inner .block {
+#main .block {
 	margin-bottom: 30px;
 }
 .field-ds-group-ds-node-date-type-vote .field {
@@ -4842,10 +4842,6 @@ a.disabled {
 #block-follow-site a.follow-link {
 	display: inline-block;
 }
-body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
-	padding-left: 18px;
-	width: 670px;
-}
 
 .primary-menu {
 	float: none !important;
@@ -5944,7 +5940,8 @@ body.page-finished-contests #content-region h2.block-title {
   text-align: center;
 }
 
-.contests-view .field-delivery-limit-date {
+.contests-view .field-delivery-limit-date,
+.contests-view .field-registration-limit-date {
   width: 210px;
   margin-left: 25px;
   margin-right: 10px;
@@ -5966,11 +5963,6 @@ body.page-finished-contests #content-region h2.block-title {
 #block-views-contests-block_5 .views-field-phpcode,
 #block-views-contests-block_5 .views-field-phpcode-2 {
   position: absolute;
-}
-
-
-#view-id-contests-page_2 .views-field-phpcode {
-  float: left;
 }
 
 .comments-count {
@@ -6062,7 +6054,9 @@ body.page-finished-contests #content-region h2.block-title {
 }
 
 .page-solr-nodetype-multi #content-front #content-front-left #block-arquideas_generic-2 {
-  bottom: 25px;
+  bottom: 22px;
+  right: 0;
+  top: auto;
 }
 
 .page-solr-nodetype-multi #content-front #content-front-left .users-total {
@@ -6071,6 +6065,29 @@ body.page-finished-contests #content-region h2.block-title {
   background: transparent url(../images/single-border.png) repeat-x bottom;
 }
 
+body.page-solr-nodetype #main-group,
+body.page-solr-nodetype-multi #main-group {
+	padding-left: 40px;
+	width: 680px;
+}
+
+body.page-solr-nodetype #content-group,
+body.page-solr-nodetype-multi #content-group {
+  width: 680px;
+}
+
+body.page-solr-nodetype-multi #search-form #edit-submit {
+  font-size: 14px;
+  height: 31px;
+  line-height: 31px;
+  padding: 0 30px;
+}
+
+body.page-solr-nodetype .box > h2.title,
+body.page-solr-nodetype-multi .box  > h2.title {
+  visibility: hidden;
+  display: none;
+}
 
 /* Partner Styles */
 
@@ -6438,6 +6455,7 @@ a.follow-link-pinterest {
 /* Red Buttons */
 a.contest-winners,
 a.public-vote-link,
+#view-id-contests-page_2 .register-link-div a,
 #comment-form #edit-submit,
 .view div.more-link a, .view .view-footer a, .heartbeat-more-messages-wrapper a,
 #view-id-contests-page_2 .views-field-view-node-1 a,
@@ -6461,12 +6479,12 @@ a.public-vote-link,
   float: none;
 }
 
-.register-link-div {
+.login-and-register-link-div .register-link-div {
   float: left;
   margin-left: 10px;
   padding: 0;
 }
-.register-link-div a {
+.login-and-register-link-div .register-link-div a {
     vertical-align: baseline;
     padding: 2px 20px 0 20px;
     line-height: 24px;
@@ -6484,6 +6502,10 @@ a.public-vote-link {
 	background: #33CCCC;
 	margin-right: 10px;
   display: inline-block;
+}
+
+#view-id-contests-page_2 .register-link-div a {
+  background-color: #33CCCC;
 }
 
 /* Blue Square Buttons */
@@ -6516,6 +6538,7 @@ a.contest-follow-link {
 
 
 /* Hover state of buttons */
+#view-id-contests-page_2 .register-link-div a:hover,
 .join-us-link-div a:hover,
 a.public-vote-link:hover,
 .contest-winners:hover,
