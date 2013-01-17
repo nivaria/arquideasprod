@@ -3219,34 +3219,40 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 }
 #content-front #content-front-left {
 	float: left;
+}
+#content-front #content-front-right {
+	float: right;
+}
+body.page-home #content-front #content-front-left {
 	margin-right: 20px;
 	width: 405px;
 	height: 211px;
 	position: relative;
 	margin-left: 25px;
 }
-.page-solr-nodetype #content-front #content-front-left, .page-solr-nodetype-multi #content-front #content-front-left {
-	width: 454px;
+.page-solr-nodetype #content-front #content-front-left,
+.page-solr-nodetype-multi #content-front #content-front-left {
+	width: 620px;
 }
 #content-front #content-front-left .content-inner {
 	margin: 0;
 }
-#content-front #content-front-right {
-	float: right;
+body.page-home #content-front #content-front-right {
 	width: 455px;
 	height: 190px;
 }
-.page-solr-nodetype #content-front #content-front-right, .page-solr-nodetype-multi #content-front #content-front-right {
-	width: 454px;
+.page-solr-nodetype #content-front #content-front-right,
+.page-solr-nodetype-multi #content-front #content-front-right {
+	width: 290px;
 }
 #content-front #content-front-right .content-inner {
 	margin-left: 0;
 }
-#content-front #content-front-left .content-inner {
+body.page-home #content-front #content-front-left .content-inner {
   height: 170px;
   overflow: hidden;
 }
-#content-front #content-front-right .content-inner {
+body.page-home #content-front #content-front-right .content-inner {
   height: 174px;
   overflow: hidden;
   position: relative;
@@ -3254,6 +3260,9 @@ textarea, .form-item input, .form-item select, #content-region input.form-text {
 .field-ds-group-ds-node-date-type-vote {
 	float: left;
 	width: 100%;
+}
+.page-solr-nodetype-multi #content-front .block .inner {
+  margin: 0;
 }
 #main-content-inner .block {
 	margin-bottom: 30px;
@@ -3863,7 +3872,6 @@ body.page-node .relations th {
 	padding: 0 0 10px;
 }
 body.page-node h1 {
-	font-family: calibri, arial;
 	font-size: 38px;
 	line-height: 110%;
 	font-weight: bold;
@@ -5030,6 +5038,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
   text-align: center;
 }
 
+body.page-news .subtitle,
 .front-page-block .subtitle  {
   border-bottom: 1px solid #000;
 }
@@ -5236,7 +5245,7 @@ body.page-solr-nodetype #main-group, body.page-solr-nodetype-multi #main-group {
 }
 
 /* Front page users count */
-#content-front-right .block {
+body.page-home #content-front-right .block {
   margin: 0;
 }
 .users-total {
@@ -6024,6 +6033,45 @@ body.page-finished-contests #content-region h2.block-title {
   text-align: center
 }
 
+/* Projects Styles */
+.page-solr-nodetype-multi #content-front {
+  margin-bottom: 40px;
+}
+
+.page-solr-nodetype-multi #content-front #content-front-left {
+  height: 234px;
+  position: relative;
+}
+
+.page-solr-nodetype #content-front #content-front-left h2.block-title,
+.page-solr-nodetype-multi #content-front #content-front-left h2.block-title {
+  font-family: "SoinSans-Bold",Helvetica,Arial,sans-serif;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: left;
+}
+
+.page-solr-nodetype-multi #content-front #content-front-right h2.block-title {
+  margin-bottom: 11px;
+}
+
+.page-solr-nodetype-multi #content-front #content-front-left #block-arquideas_generic-1 {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+}
+
+.page-solr-nodetype-multi #content-front #content-front-left #block-arquideas_generic-2 {
+  bottom: 25px;
+}
+
+.page-solr-nodetype-multi #content-front #content-front-left .users-total {
+  padding-bottom: 15px;
+  margin: 0;
+  background: transparent url(../images/single-border.png) repeat-x bottom;
+}
+
+
 /* Partner Styles */
 
 .featured-colaborators h2.block-title {
@@ -6271,6 +6319,7 @@ body.page-node .colaborator-top h1.title {
 }
 
 /* News Common Styles */
+
 .view-news .views-field-title {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight: normal;
