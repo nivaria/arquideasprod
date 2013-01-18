@@ -5225,6 +5225,48 @@ body.page-news .subtitle,
   margin-right: 150px;
 }
 
+.before-after-title:before,
+.before-after-title:after {
+  display: block;
+  content: " ";
+  width: 100%;
+  height: 10px;
+  border: 1px solid #000;
+  -moz-box-shadow: 4px 4px 0 #000;
+  -webkit-box-shadow: 4px 4px 0 #000;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.before-after-title {
+  margin: 40px 0 50px 0;
+}
+
+.before-after-title .view-content {
+  margin: 30px 0;
+}
+
+/* Contest Activity Node Stream */
+.view-contest-activity-log-stream h2.title {
+
+  text-align: center;
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px 0 30px;
+  padding-bottom: 30px;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.view-contest-activity-log-stream .view-content {
+  border-bottom: 1px solid #000;
+  margin: 0 auto;
+  padding: 20px 100px;
+}
+
+div.participate-link {
+  margin-top: 30px;
+  text-align: center;
+}
+
 /* Search Block Form */
 #search-block-form,
 #search-block-form-1 {
@@ -5482,6 +5524,7 @@ body.page-home #content-front-right .block {
   height: 24px;
   text-indent: 9999px;
   margin-left: 10px;
+  overflow: hidden;
 }
 
 .mini-slider-controls .views-slideshow-controls-bottom a.views_slideshow_next {
@@ -6339,6 +6382,10 @@ body.node-type-contest .node-content-main {
   line-height: 150%;
 }
 
+.view-contest-blocks.view-display-id-block_6 {
+  text-align: center;
+}
+
 /* Projects Styles */
 .page-solr-nodetype-multi #content-front {
   margin-bottom: 40px;
@@ -6839,6 +6886,8 @@ a.follow-link-pinterest {
 }
 
 /* Red Buttons */
+a.participate-link,
+.view-contest-blocks.view-display-id-block_6 .info,
 a.contest-winners,
 a.public-vote-link,
 #view-id-contests-page_2 .register-link-div a,
@@ -6875,7 +6924,8 @@ a.public-vote-link,
     padding: 2px 20px 0 20px;
     line-height: 24px;
 }
-.register-link-div:last-child a {
+.register-link-div:last-child a,
+a.participate-link {
   background-color: #000;
 }
 
@@ -6921,6 +6971,7 @@ a.contest-follow-link {
 
 
 /* Hover state of buttons */
+a.participate-link:hover,
 #view-id-contests-page_2 .register-link-div a:hover,
 .join-us-link-div a:hover,
 a.public-vote-link:hover,
