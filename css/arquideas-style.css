@@ -223,11 +223,11 @@ body.admin-menu #header-region-following.fixed-menu {
 
 #footer-bottom #block-menu-menu-menu-pie {
   left: 0;
-  margin: 0 35%;
+  margin: 0 25%;
   position: absolute;
   text-align: center;
   top: 1px;
-  width: 30%;
+  width: 50%;
 }
 
 #header-large-wrapper .inner,
@@ -594,6 +594,7 @@ h1.title {
 .node .content img {
 	padding: 10px;
 }
+.node-right .content img,
 .node .content .filefield-file img {
 	padding: 0;
 }
@@ -1194,11 +1195,13 @@ tr.even td, tr.odd td {
 	padding: 10px 16px;
 }
 .block.block-views .view-content .item-list ul li.views-row-odd {
-	background-color: #F7F7F7;
+	background-color: transparent;
+	border: 0 none;
 	padding: 18px 16px;
 }
 .block.block-views .view-content .item-list ul li.views-row-even {
-	background-color: #FFFFFF;
+	border: 0 none;
+	background-color: transparent;
 	padding: 18px 16px;
 }
 tr.views-row-last, tr.views-row-last td, tr.last, tr.last td {
@@ -1743,11 +1746,11 @@ input.node-add-to-cart:hover, input.node-add-to-cart.hover, input.node-add-to-ca
 }
 .sidebar-last .sidebar-last-inner .block {
 	margin: 0;
-	width: 99%;
+	width: 100%;
 }
 #sidebar-last {
 	float: right;
-	width: 246px;
+	width: 300px;
 }
 .sidebar-last .block h2.block-title, .sidebar-first .block h2.block-title {
 	color: #2C2C2C;
@@ -2419,7 +2422,9 @@ table.views-view-grid td {
 	right: 0;
 }
 
-.view div.more-link, .view .view-footer, .heartbeat-more-messages-wrapper {
+.view div.more-link,
+.view .view-footer,
+.heartbeat-more-messages-wrapper {
   font-family: "SoinSans-BoldOblique", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	font-weight: normal;
@@ -2431,18 +2436,52 @@ table.views-view-grid td {
 	margin: 0;
 	padding: 0;
 }
-
 .heartbeat-more-messages-wrapper p {
 	margin: 0;
 }
 .view div.more-link {
 	background: none repeat scroll 0 0 transparent;
-	margin: 10px 0;
-	padding-right: 16px;
+	margin: 0;
+	padding-right: 0;
 }
 .view-footer div {
 	margin: 0;
 	padding: 0;
+}
+/* Views Read More on Left */
+.view.left-more-link div.more-link,
+.view.left-more-link .view-footer,
+.view.right-more-link div.more-link,
+.view.right-more-link .view-footer {
+  border-top: 1px solid #000000;
+  padding-top: 15px;
+  text-align: left;
+  min-height: auto;
+}
+
+.view.right-more-link div.more-link,
+.view.right-more-link .view-footer {
+  text-align: right;
+}
+
+.view.left-more-link div.more-link a,
+.view.left-more-link .view-footer a,
+.view.right-more-link div.more-link a,
+.view.right-more-link .view-footer a {
+  background: transparent;
+  color: #FF3F40;
+  padding: 0;
+  margin: 0;
+  text-shadow: none;
+  border-radius: 0;
+  font-size: 14px;
+}
+.view.left-more-link div.more-link a:hover,
+.view.left-more-link .view-footer a:hover
+.view.right-more-link div.more-link a:hover,
+.view.right-more-link .view-footer a:hover {
+  background: transparent;
+  text-decoration: underline;
 }
 fieldset.views-exposed-form {
 	background-color: #F8F8F8;
@@ -3376,12 +3415,7 @@ body.page-home #content-front #content-front-right .content-inner {
 .content-inner ul, .content-inner ol {
 	margin-bottom: 0;
 }
-.block.block-views .content .view-footer {
-	margin-top: 0;
-}
-.block.block-views .content .more-link {
-	border: 0 none;
-}
+
 #main .gerenciall_calendar .content {
 	background-color: transparent;
 }
@@ -3458,7 +3492,7 @@ td.views-field-last-updated.active, td.views-field-last-updated {
 	line-height: 14px;
 }
 .view .view-content .views-field-title a {
-	font-size: 1.2em;
+
 }
 .views-field-last-updated a {
 	color: #0099FF;
@@ -4789,7 +4823,7 @@ a.disabled {
 }
 .full-node .inner .node-right .node-right {
 	float: right;
-	width: 290px;
+	width: 300px;
 }
 .user-login-left-fs {
 	float: left;
@@ -5417,8 +5451,21 @@ body.page-home #content-front-right .block {
 .mini-slider-controls .views-slideshow-controls-bottom {
   text-align: right;
   border-top: 1px solid #000;
-  padding-top: 5px;
+  padding-top: 8px;
 }
+
+.left-more-link.mini-slider-controls .views-slideshow-controls-bottom {
+  border-top: 0 none;
+  position: absolute;
+  right: 0;
+}
+
+.right-more-link.mini-slider-controls .views-slideshow-controls-bottom {
+  border-top: 0 none;
+  position: absolute;
+  left: 0;
+}
+
 
 .mini-slider-controls .views-slideshow-controls-bottom .views_slideshow_pause,
 .mini-slider-controls .views-slideshow-controls-bottom .views_slideshow_play {
@@ -6130,7 +6177,7 @@ text-align: center;
   height: 23px;
   line-height: 26px;
   margin: 10px auto 20px;
-  padding: 0 6px;
+  padding: 0 8px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -6170,7 +6217,7 @@ body.node-type-contest .node-content-main {
   margin: 0;
   padding: 0;
   position: absolute;
-  top: -60px;
+  top: -65px;
 }
 
 #quicktabs-quicktabs_contest_closed .quicktabs_tabs li,
@@ -6242,7 +6289,7 @@ body.node-type-contest .node-content-main {
 .node-type-contest .views-field-field-prize-value,
 .node-type-contest .views-field-field-registration-fee-value {
   border: 1px solid #e6e6e6;
-  padding: 25px 20px;
+  padding: 20px;
   margin-bottom: 20px;
   font-size: 13px;
 }
@@ -6514,7 +6561,10 @@ body.page-node .colaborator-top h1.title {
 .contests-list-blocks .views-row {
   position: relative;
   margin-bottom: 20px;
-  width: 290px;
+}
+
+.view-colaborators-contests .views-row {
+  max-width: 290px;
 }
 
 .view-colaborators-contests .views-row-odd {
@@ -6542,14 +6592,14 @@ body.page-node .colaborator-top h1.title {
   font-family: "SoinSans-BoldOblique",Helvetica,Arial,sans-serif;
   font-size: 22px;
   height: 130px;
-  left: 14px;
+  left: 15px;
   line-height: 25px;
   padding: 30px 10px 0 10px;
   position: absolute;
+  right: 15px;
   text-align: center;
   text-decoration: none;
-  top: 14px;
-  width: 240px;
+  top: 15px;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -6624,6 +6674,59 @@ body.page-node .colaborator-top h1.title {
   margin: 0 0 5px 0;
 }
 
+/* Contest Winners */
+.view-arquideas-contest-winners .views-field-timestamp {
+  color: #000;
+  font-family: "SoinSans-Bold",Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.view-arquideas-contest-winners .views-field-title-1 {
+  font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 160%;
+}
+
+.view-arquideas-contest-winners .views-field-title-1 a {
+  color: #000;
+}
+
+.view-arquideas-contest-winners .views-field-title,
+.view-arquideas-contest-winners .views-field-field-inscription-members-list-vname {
+  color: #b3b3b3;
+  font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 130%;
+  margin-bottom: 3px;
+}
+
+.view-arquideas-contest-winners label {
+  padding: 0;
+  float: left;
+  margin-right: 5px;
+}
+
+.view-arquideas-contest-winners .views-field-title a,
+.view-arquideas-contest-winners .views-field-field-inscription-members-list-vname a {
+  color: #FF3F3F;
+  font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.view-arquideas-contest-winners .views-field-field-inscription-members-list-vname a:after {
+  content: ',';
+  margin-right: 5px;
+}
+
+.view-arquideas-contest-winners .views-field-field-inscription-members-list-vname .views-field-name:last-child a:after {
+  content: '';
+}
 /* Footer */
 #footer .logo {
   clear: both;
