@@ -47,17 +47,19 @@
 ?>
 <li>
   <?php if(isset($result['node']->nid)): ?>
-     <?php
-        $account = user_load($result['node']->uid);
-        if($account && !empty($account->picture)){
-           print theme_imagecache('user_picture_meta', $account->picture, $account->name);
-        }
-        print l($account->realname,'user/'.$result['node']->uid,array(
-         'attributes' => array(
-            'title' => $account->realname,
-            'class' => 'user-'.$result['node']->uid,
-          ),
-        )); ?>
+    <?php $account = user_load($result['node']->uid); ?>
+    <?php  if($account && !empty($account->picture)): ?>
+    <div class="user-image">
+      <?php print theme_imagecache('user_picture_meta', $account->picture, $account->name); ?>
+    </div>
+    <?php endif; ?>
+    <?php
+      print l($account->realname,'user/'.$result['node']->uid,array(
+       'attributes' => array(
+          'title' => $account->realname,
+          'class' => 'user-'.$result['node']->uid,
+        ),
+      )); ?>
      <div class="job">
         <?php
             $jobname = '';
@@ -67,25 +69,21 @@
             print $jobname;
         ?>
     </div>
-     <?php print nodetype_apachesolr_get_node_image($result['node']->nid); ?>
-     <h2 class="title">
-         <?php print l($title,'node/'.$result['node']->nid,array(
-         'attributes' => array(
-            'title' => '',
-            'class' => 'node-'.$result['node']->nid,
-          ),
-        )); ?>
-     </h2>
-     <div class="voting-count">
-        <span>
-            <?php print nodetype_apachesolr_get_votes_count($result['node']->nid); ?>
-        </span>
+    <div class="image-and-social">
+      <?php print nodetype_apachesolr_get_node_image($result['node']->nid); ?>
+      <div class="project-social">
+        <span class="voting-count"><?php print nodetype_apachesolr_get_votes_count($result['node']->nid); ?></span>
+        <span class="comments-count"><?php print comment_num_all($result['node']->nid); ?></span>
+      </div>
     </div>
-    <div class="comments-count">
-        <span>
-            <?php print comment_num_all($result['node']->nid); ?>
-        </span>
-    </div>
+    <h2 class="title">
+       <?php print l($title,'node/'.$result['node']->nid,array(
+       'attributes' => array(
+          'title' => '',
+          'class' => 'node-'.$result['node']->nid,
+        ),
+      )); ?>
+    </h2>
   <?php else: ?>
     <h2 class="title">
     <a href="#" title=""><?php print $title; ?></a>

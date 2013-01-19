@@ -858,12 +858,13 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
 	clear: both;
 }
 .item-list ul.pager {
-	display: inline-block;
-	float: right;
-	margin: 10px 0;
-	padding: 0;
-	position: relative;
-	text-align: right;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+	display: block;
+	margin: 0 auto;
+	padding: 8px 0;
+	text-align: center;
+	float: none;
 }
 body.page-groups .item-list ul.pager, body.page-search .item-list ul.pager {
 	background-color: #F7F7F7;
@@ -885,7 +886,7 @@ body.page-groups .item-list ul.pager, body.page-search .item-list ul.pager {
 	padding: 0;
 }
 .item-list ul.pager li a.active {
-	color: #5B5B5B;
+	color: #FF3F3F;
 }
 .item-list ul.pager li {
 	margin: 0 0 0 6px !important;
@@ -909,20 +910,19 @@ body.page-groups .item-list ul.pager li a, body.page-groups .item-list ul.pager 
 	font-size: 14px;
 }
 .item-list ul.pager li a, .item-list ul.pager li a:link, .item-list ul.pager li a:visited {
-	color: #0099FF;
+	color: #000;
 }
 .item-list ul.pager li.pager-current {
-	color: #999999;
+	color: #FF3F3F;
 }
 body.page-groups .item-list ul.pager li.pager-current, body.page-search .item-list ul.pager li.pager-current {
-	color: #333333;
+	color: #FF3F3F;
 }
 .item-list ul.pager li a:hover, .item-list ul.pager li a:active {
 	text-decoration: underline;
 }
 .item-list ul.pager li.pager-current {
 	background-color: transparent;
-	color: #999999;
 	font-weight: bold;
 }
 .item-list ul.pager li {
@@ -938,50 +938,7 @@ body.page-groups .item-list ul.pager li.pager-current, body.page-search .item-li
 .item-list ul.pager li.pager-item {
 	border: 0 none;
 }
-.item-list ul.pager li.pager-number {
-	border-left: 1px solid #999999;
-}
-body.page-groups .item-list ul.pager li.pager-number, body.page-search .item-list ul.pager li.pager-number {
-	border-left: 1px solid #D9D9D9;
-}
-body.page-groups .item-list ul.pager li.pager-number:first-child, body.page-search .item-list ul.pager li.pager-number:first-child {
-	border: 0 none;
-}
-.item-list ul.pager li.pager-number-first {
-	border: 0 none;
-}
-.block .content .item-list .pager li {
-	display: inline;
-}
-.item-list ul.pager li.pager-first, .item-list ul.pager li.pager-last {
-	display: none !important;
-}
-.item-list ul.pager li.pager-previous a {
-	background-image: url("../images/arrow-left.png");
-	background-repeat: no-repeat;
-	border: 0 none;
-	display: block;
-	height: 20px;
-	left: 14px;
-	padding: 0;
-	position: absolute;
-	text-indent: 9999px;
-	top: 6px;
-	width: 21px;
-}
-.item-list ul.pager li.pager-next a {
-	background-image: url("../images/arrow-right.png");
-	background-repeat: no-repeat;
-	border: 0 none;
-	display: block;
-	height: 20px;
-	padding: 0;
-	position: absolute;
-	right: 14px;
-	text-indent: 9999px;
-	top: 6px;
-	width: 21px;
-}
+
 body.page-groups .item-list ul.pager li.pager-previous a, body.page-groups .item-list ul.pager li.pager-next a, body.page-search .item-list ul.pager li.pager-previous a, body.page-search .item-list ul.pager li.pager-next a {
 	background: none repeat scroll 0 0 transparent;
 	display: inline-block;
@@ -3275,7 +3232,7 @@ body.page-home #content-front #content-front-left {
 }
 .page-solr-nodetype #content-front #content-front-left,
 .page-solr-nodetype-multi #content-front #content-front-left {
-	width: 620px;
+	width: 610px;
 }
 #content-front #content-front-left .content-inner {
 	margin: 0;
@@ -3286,7 +3243,7 @@ body.page-home #content-front #content-front-right {
 }
 .page-solr-nodetype #content-front #content-front-right,
 .page-solr-nodetype-multi #content-front #content-front-right {
-	width: 290px;
+	width: 300px;
 }
 #content-front #content-front-right .content-inner {
 	margin-left: 0;
@@ -5810,29 +5767,32 @@ body.page-home #content-front-right .block {
 }
 
 #block-views-arqnetwork_projects-block_1 .project-social {
-  background-color: #000;
-  color: #fff;
+  background-color: #000000;
+  color: #FFFFFF;
+  height: 28px;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
   position: absolute;
   top: 144px;
-  margin-left: 72px;
-  padding: 0 2px;
-  width: 85px;
-  height: 28px;
+  width: 110px;
+  text-align: center;
 }
 
 #block-views-arqnetwork_projects-block_1 .views-field-rating-value,
 #block-views-arqnetwork_projects-block_1 .views-field-comment-count {
-  padding-left: 25px;
-  margin-left: 8px;
+  background: url("../images/social.png") no-repeat scroll 0 4px transparent;
+  display: inline-block;
+  float: none;
   line-height: 28px;
+  padding-left: 21px;
   width: auto;
-  display: block;
-  float: left;
-  background: transparent url(../images/social.png) no-repeat 0 4px;
 }
 
 #block-views-arqnetwork_projects-block_1 .views-field-comment-count {
   background-position: 0 -27px;
+  margin-left: 8px;
 }
 
 .view .contest-followers span,
@@ -6421,7 +6381,7 @@ body.node-type-contest .node-content-main {
 }
 
 .page-solr-nodetype-multi #content-front #content-front-left {
-  height: 234px;
+  height: 250px;
   position: relative;
 }
 
@@ -6457,13 +6417,13 @@ body.node-type-contest .node-content-main {
 
 body.page-solr-nodetype #main-group,
 body.page-solr-nodetype-multi #main-group {
-	padding-left: 40px;
-	width: 680px;
+	padding-left: 30px;
+	width: 690px;
 }
 
 body.page-solr-nodetype #content-group,
 body.page-solr-nodetype-multi #content-group {
-  width: 680px;
+  width: 690px;
 }
 
 body.page-solr-nodetype-multi #search-form #edit-submit {
@@ -6477,6 +6437,75 @@ body.page-solr-nodetype .box > h2.title,
 body.page-solr-nodetype-multi .box  > h2.title {
   visibility: hidden;
   display: none;
+}
+
+.box ul.nodetype_apachesolr_search-results {
+  margin: 40px 0;
+}
+
+.box ul.nodetype_apachesolr_search-results li {
+  float: left;
+  margin: 0 20px 20px 0;
+  width: 210px;
+  height: 280px;
+  padding: 0;
+  position: relative;
+}
+
+.nodetype_apachesolr_search-results li .user-image {
+  float: left;
+  margin: 0 5px 10px 0;
+}
+
+.nodetype_apachesolr_search-results li .job {
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.nodetype_apachesolr_search-results li .title {
+  margin: 10px 0;
+}
+
+.nodetype_apachesolr_search-results li .title a {
+  color: #000;
+}
+
+.nodetype_apachesolr_search-results li .image-and-social {
+  position: relative;
+  height: 140px;
+  clear: both;
+}
+
+.nodetype_apachesolr_search-results li .project-social {
+  background-color: #000000;
+  color: #FFFFFF;
+  height: 28px;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  position: absolute;
+  bottom: 0;
+  width: 110px;
+  text-align: center;
+}
+
+.nodetype_apachesolr_search-results li .project-social .voting-count,
+.nodetype_apachesolr_search-results li .project-social .comments-count {
+  background: url("../images/social.png") no-repeat scroll 0 4px transparent;
+  display: inline-block;
+  float: none;
+  line-height: 28px;
+  padding-left: 21px;
+  width: auto;
+}
+
+.nodetype_apachesolr_search-results li .project-social .comments-count {
+  background: url("../images/social.png") no-repeat scroll 0 -27px transparent;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 21px;
+  margin-left: 8px;
 }
 
 /* Partner Styles */
