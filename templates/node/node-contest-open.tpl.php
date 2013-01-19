@@ -67,13 +67,6 @@
 
       <div class="clearfix">&nbsp;</div>
 
-      <!-- SHARE SOCIAL BLOCK -->
-      <?php
-          $block = module_invoke('arquideas_generic', 'block', 'view', '13');
-          print $block['content'];
-      ?>
-      <!-- END SHARE SOCIAL BLOCK -->
-
       <!-- Edit Button -->
       <?php if(!$is_edit): ?>
           <?php if(node_access('update', $node)){
@@ -149,7 +142,13 @@
         <?php if ($node_right && !$teaser): ?>
         <div class="node-right">
             <div class="node-right-inner inner">
-                <?php print $node_right; ?>
+              <!-- SHARE SOCIAL BLOCK -->
+              <?php
+                  $block = module_invoke('arquideas_generic', 'block', 'view', '13');
+                  print $block['content'];
+              ?>
+              <!-- END SHARE SOCIAL BLOCK -->
+              <?php print $node_right; ?>
             </div><!-- /node-right-inner -->
         </div><!-- /node-right -->
         <?php endif; ?>

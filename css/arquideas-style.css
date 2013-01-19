@@ -2481,7 +2481,7 @@ table.views-view-grid td {
   font-size: 14px;
 }
 .view.left-more-link div.more-link a:hover,
-.view.left-more-link .view-footer a:hover
+.view.left-more-link .view-footer a:hover,
 .view.right-more-link div.more-link a:hover,
 .view.right-more-link .view-footer a:hover {
   background: transparent;
@@ -5927,6 +5927,31 @@ body.page-home #content-front-right .block {
   height: 490px;
 }
 
+/* Social Sharing Widget */
+.social-sharing-widget {
+  margin-bottom: 20px;
+}
+
+.social-sharing-widget .widget-header .icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+  overflow: hidden;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.social-sharing-widget .widget-header .icon-facebook {
+	background-image: url(../images/social/icon-facebook.png);
+}
+.social-sharing-widget .widget-header .icon-twitter {
+	background-image: url(../images/social/icon-twitter.png);
+}
+.social-sharing-widget .widget-header .icon-linkedin {
+	background-image: url(../images/social/icon-linkedin.png);
+}
+
 
 /* Contests Common */
 
@@ -6198,7 +6223,7 @@ text-align: center;
 
 .contest-state-wrapper {
   float: left;
-  padding: 15px 10px 0 10px;
+  padding: 10px 10px 0 10px;
   min-height: 65px;
   text-align: center;
   width: 220px;
@@ -6215,10 +6240,14 @@ text-align: center;
   font-size: 13px;
   height: 23px;
   line-height: 26px;
-  margin: 10px auto 20px;
+  margin: 10px auto 10px;
   padding: 0 8px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.contest-state-wrapper .public-votation-link {
+  display: inline-block;
 }
 
 .social-corner {
