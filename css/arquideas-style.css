@@ -780,7 +780,7 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
 	margin: 0;
 }
 #content-tabs ul.primary, #content-tabs ul.secondary {
-	border-bottom: 1px solid #CCCCCC;
+	border-bottom: 1px solid #000;
 	clear: both;
 	float: left;
 	margin: 0;
@@ -788,8 +788,8 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
 	width: 100%;
 }
 #content-tabs ul.secondary {
-	background-color: #EBEBEB;
-	border-bottom: 1px solid #D1D1D1;
+	background-color: #ffffff;
+	border-bottom: 1px solid #000;
 	padding-top: 10px;
 	text-transform: uppercase;
 }
@@ -811,10 +811,14 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
 	margin: 0;
 	padding: 0;
 }
-#content-tabs ul.primary li a, #content-tabs ul.primary li a:link, #content-tabs ul.primary li a:visited {
-	background-color: #E9E9E9;
-	border: 0 none;
-	color: #666666;
+#content-tabs ul.primary li a,
+#content-tabs ul.primary li a:link,
+#content-tabs ul.primary li a:visited {
+	background-color: #fff;
+	border-style: solid;
+	border-color: #000;
+	border-width: 1px 1px 0 1px;
+	color: #000;
 	font-size: 12px;
 	font-weight: normal;
 	height: 20px;
@@ -822,15 +826,24 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
 	margin: 0 0 0 12px;
 	padding: 0 16px;
 }
-#content-tabs ul.primary li:first-child a, #content-tabs ul.primary li:first-child a:link, #content-tabs ul.primary li:first-child a:visited {
+#content-tabs ul.primary li:first-child a,
+#content-tabs ul.primary li:first-child a:link,
+#content-tabs ul.primary li:first-child a:visited {
 	margin: 0;
 }
-#content-tabs ul.primary li a.active, #content-tabs ul.primary li a.active:link, #content-tabs ul.primary li a.active:visited {
-	background-color: #ff3f40;
-	border: 0 none;
+#content-tabs ul.primary li.active a,
+#content-tabs ul.primary li.active a:link,
+#content-tabs ul.primary li.active a:visited {
+	border: 1px solid #000;
+	background-color: #000;
 	color: #FFFFFF;
 }
-#content-tabs ul.secondary li a:link, #content-tabs ul.secondary li a:visited {
+#content-tabs ul.primary li a:hover,
+#content-tabs ul.primary li a:focus {
+  background-color: #eee;
+}
+#content-tabs ul.secondary li a:link,
+#content-tabs ul.secondary li a:visited {
 	background-color: transparent;
 	border: medium none;
 	color: #323232;
@@ -841,15 +854,18 @@ div.content-messages div.error, div.content-help-inner div.help, div.content-mes
 	text-decoration: none;
 	white-space: nowrap;
 }
-#content-tabs ul.secondary li a:link, #content-tabs ul.secondary li a:visited {
+#content-tabs ul.secondary li a:link,
+#content-tabs ul.secondary li a:visited {
 	color: #555555;
 }
-#content-tabs ul.secondary li a.active:link, #content-tabs ul.secondary li a.active:visited {
+#content-tabs ul.secondary li a.active:link,
+#content-tabs ul.secondary li a.active:visited {
 	border-bottom: 4px solid #555555;
 	color: #777777;
 	padding-bottom: 2px;
 }
-#content-tabs ul.secondary li a:hover, #content-tabs ul.secondary li a:focus {
+#content-tabs ul.secondary li a:hover,
+#content-tabs ul.secondary li a:focus {
 	border-bottom: 4px solid #777777;
 	color: #777777;
 	padding-bottom: 2px;
@@ -1098,12 +1114,15 @@ tr td.views-field-subscribe {
 	border: medium none !important;
 }
 fieldset {
+	border-color: #000;
 }
 fieldset legend {
-	color: #666666;
+	color: #000;
 	float: left;
-	font-weight: bold;
-	padding: 5px 0;
+  font-family: "SoinSans-Bold",Helvetica,Arial,sans-serif;
+	font-size: 15px;
+	font-weight: normal;
+	padding: 6px 0;
 	width: 100%;
 }
 .shoutbox-add-form fieldset {
@@ -1116,6 +1135,7 @@ fieldset legend {
 html.js fieldset.collapsed {
 	background-color: transparent;
 	padding: 10px;
+	border-color: #000;
 }
 fieldset legend {
 }
@@ -3205,7 +3225,9 @@ body.page-taxonomy #content-content .node .meta .picture, body.page-taxonomy #co
 .node-form .form-text {
 	width: 80%;
 }
-textarea, .form-item input, .form-item select, #content-region input.form-text {
+textarea,
+.form-item input.form-text,
+.form-item select {
   width: 98%;
 	max-width: 98%;
 }
@@ -3691,6 +3713,7 @@ html.js .resizable-textarea textarea {
 .resizable-textarea textarea,
 .form-item input {
 	color: #666;
+	border-color: #9c9c9c;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -4794,26 +4817,6 @@ a.disabled {
 .full-node .inner .node-right .node-right {
 	float: right;
 	width: 300px;
-}
-.user-login-left-fs {
-	float: left;
-	width: 45%;
-}
-.user-login-right-fs {
-	float: right;
-	width: 45%;
-}
-.login-wrapper, .forgot-wrapper {
-	float: left;
-	width: 100%;
-}
-.user-register-left-fs {
-	float: left;
-	width: 55%;
-}
-.user-register-right-fs {
-	float: right;
-	width: 33%;
 }
 .twocol-50-50 > .first {
 	float: left;
@@ -6910,6 +6913,99 @@ body.page-node .colaborator-top h1.title {
 .activity-log-time {
   color: #999999;
   font-style: italic;
+}
+
+/* Login Page */
+.user-login-left-fs,
+.user-register-left-fs {
+	float: left;
+	width: 47%;
+
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  padding: 15px 20px;
+}
+
+.user-login-right-fs,
+.user-register-right-fs {
+	float: right;
+	width: 32%;
+
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  padding: 15px 20px;
+}
+#TB_window user-register,
+.login-wrapper, .forgot-wrapper {
+	width: 90%;
+	margin: 20px 5% 0 5%;
+}
+
+.user-login-left-fs fieldset,
+.user-register-left-fs fieldset,
+.user-login-right-fs fieldset,
+.user-register-right-fs fieldset {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.user-login-right-fs .form-item {
+  margin: 0;
+}
+
+/* Login Overlay */
+#TB_overlay {
+  background: #fff;
+  z-index: 1000;
+}
+
+#TB_window {
+  position: absolute;
+  top: 100px;
+  margin-top: 0 !important;
+  border: 3px solid #000;
+  z-index: 1001;
+}
+
+#TB_window a:link,
+#TB_window a:visited,
+#TB_window a:hover,
+#TB_window a:active {
+  color: #FF3F3F;
+}
+
+#TB_title {
+  color: #999;
+  height: 30px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  background-color: transparent;
+}
+
+#TB_ajaxContent {
+  height: auto !important;
+}
+
+#TB_ajaxContent h2 {
+  text-align: center;
+}
+
+#TB_ajaxContent fieldset {
+  background-color: transparent;
+  margin: 0 0 15px 0;
+}
+
+#TB_ajaxContent .user-login-left-fs,
+#TB_ajaxContent .user-register-left-fs {
+	width: 43%;
+}
+
+#TB_ajaxContent .user-login-right-fs,
+#TB_ajaxContent .user-register-right-fs {
+	width: 37%;
 }
 
 
