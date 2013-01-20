@@ -322,6 +322,29 @@ function arquideasprod_preprocess_page(&$vars)
       }
   }
 
+  //ADDITIONAL PREPROCESS FOR USER PAGES
+  // Set grid info & row widths
+  $grid_name = substr(theme_get_setting('theme_grid'), 0, 7);
+  $grid_type = substr(theme_get_setting('theme_grid'), 7);
+  $grid_width = (int)substr($grid_name, 4, 2);
+  
+  if(preg_match('/^user\/\d+\/account\/edit$/', $_GET['q'])==1){
+      $vars['main_group_width'] = $grid_name . $grid_width.' forms_user';
+      $vars['content_group_width'] = $grid_name .'12 force_width';
+  }
+  if(preg_match('/^user\/\d+\/content$/', $_GET['q'])==1 ||
+     preg_match('/^user\/\d+\/projects$/', $_GET['q'])==1 ||
+     preg_match('/^user\/\d+\/account/projects$/', $_GET['q'])==1 ||
+     preg_match('/^user\/\d+\/account/inscriptions$/', $_GET['q'])==1 ||
+     preg_match('/^user\/\d+\/account/arquideasbook$/', $_GET['q'])==1){
+      $vars['main_group_width'] = $grid_name . $grid_width.' force_width border';
+      $vars['content_group_width'] = $grid_name .'12 force_width';
+  }
+  if(preg_match('/^user\/\d+$/', $_GET['q'])==1){
+      $vars['body_classes'] .= ' entrada-ficha';
+      $vars['main_group_width'] = $grid_name . '12 force_width border';
+      $vars['content_group_width'] = $grid_name .'12 force_width';
+  }
 }
 
 /**
