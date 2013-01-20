@@ -345,6 +345,13 @@ function arquideasprod_preprocess_page(&$vars)
       $vars['main_group_width'] = $grid_name . '12 force_width border';
       $vars['content_group_width'] = $grid_name .'12 force_width';
   }
+  //ADDITIONAL PREPROCESS FOR NETWORK
+  if(preg_match('/^arquideas_network$/', $_GET['q'])==1){
+      $vars['body_classes'] .= ' area-comunidad comunidad';
+  }    
+  if(preg_match('/^users$/', $_GET['q'])==1){
+      $vars['body_classes'] .= '  area-comunidad usuarios';
+  }
 }
 
 /**
