@@ -3206,6 +3206,7 @@ body.page-taxonomy #content-content .node .meta .picture, body.page-taxonomy #co
 	width: 80%;
 }
 textarea, .form-item input, .form-item select, #content-region input.form-text {
+  width: 98%;
 	max-width: 98%;
 }
 .flag-message {
@@ -3575,6 +3576,16 @@ body.not-front #content-group, body.page-node #content-group {
 	box-shadow: 0 none;
 	padding-right: 0;
 	width: 600px;
+}
+body.no-sidebars #content-group {
+  margin: 0 auto;
+  float: none;
+}
+body.no-sidebars #content-group h1.title {
+  border-bottom: 1px solid #000;
+  padding: 20px 0 30px;
+  margin-bottom: 30px;
+  background: transparent url(../images/double-border.png) repeat-x bottom;
 }
 body.node-type-contest .page-group #content-group {
 	width: 945px;
@@ -5585,6 +5596,7 @@ body.page-home #content-front-right .block {
   background-image: none;
 }
 
+#block-views-contests-block_1 .contest-state,
 .contests-list-blocks .contest-state {
   width: 88px;
   height: 21px;
@@ -5597,6 +5609,8 @@ body.page-home #content-front-right .block {
   text-align: center;
 }
 
+#block-views-contests-block_1 .state-open,
+#block-views-contests-block_1 .state-closed,
 .contests-list-blocks .state-open,
 .contests-list-blocks .state-closed {
   width: 90px;
@@ -5614,6 +5628,7 @@ body.page-home #content-front-right .block {
   left: -3px;
 }
 
+#block-views-contests-block_1 .state-closed,
 .contests-list-blocks .state-closed {
   background-color: #000;
 }
@@ -5747,8 +5762,10 @@ body.page-home #content-front-right .block {
 }
 
 #block-views-arqnetwork_projects-block_1 .views-field-title {
+  font-size: 20px;
+  line-height: 100%;
   position: absolute;
-  bottom: 50%;
+  bottom: 45%;
   text-align: center;
   width: 229px;
 }
@@ -5759,7 +5776,7 @@ body.page-home #content-front-right .block {
 
 #block-views-arqnetwork_projects-block_1 .views-field-field-project-type-project-value {
   position: absolute;
-  top: 50%;
+  top: 55%;
   text-align: center;
   width: 229px;
   color: #FF3F3F;
@@ -6377,7 +6394,6 @@ body.node-type-contest .node-content-main {
 
 /* Projects Styles */
 .page-solr-nodetype-multi #content-front {
-  margin-bottom: 40px;
 }
 
 .page-solr-nodetype-multi #content-front #content-front-left {
