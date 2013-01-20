@@ -185,6 +185,74 @@ body.admin-menu #header-region-following.fixed-menu {
 	margin-bottom: 0;
 	padding: 0;
 }
+#user-menu .logged-user-link-div {
+  position: relative;
+  font-family: "SoinSans-Bold", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+}
+#user-menu .hello-user {
+  color: #fff;
+  display: block;
+  float: right;
+  height: 35px;
+  line-height: 35px;
+  padding-right: 35px;
+  background: transparent url(../images/user-menu-down.png) no-repeat right center;
+}
+
+#user-menu .logged-user-links {
+  position: absolute;
+  right: 0;
+  top: 29px;
+  height: 25px;
+  line-height: 25px;
+}
+
+#user-menu .logged-user-open-links-block {
+  display: none;
+}
+
+#user-menu .logged-user-links ul.links {
+  font-family: "SoinSans-Roman", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  background-color: #FFFFFF;
+  border: 1px solid #000000;
+  box-shadow: 4px 4px 0 #000000;
+  max-height: 0;
+  overflow: hidden;
+
+  -webkit-transition: max-height 0.5s ease-in-out;
+     -moz-transition: max-height 0.5s ease-in-out;
+       -o-transition: max-height 0.5s ease-in-out;
+          transition: max-height 0.5s ease-in-out;
+
+}
+
+#user-menu .logged-user-link-div:hover ul.links {
+  max-height: 400px;
+}
+#user-menu .logged-user-links ul.links li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+#user-menu .logged-user-links ul.links li a {
+  display: block;
+  margin: 0;
+  padding: 2px 12px;
+  border-bottom: 1px solid #000;
+  color: #000;
+}
+#user-menu .logged-user-links ul.links li a:hover,
+#user-menu .logged-user-links ul.links li a:active {
+  color: #FF3F3F;
+  text-decoration: none;
+}
+
+#user-menu .open-toggle {
+
+}
 #footer {
 	margin: 0 auto;
 }
@@ -4589,34 +4657,33 @@ body.not-front .page-full-view #main-content .view-content .views-slideshow-cont
 	margin-left: 0;
 }
 .jq-scrollable-inscription {
-	height: 465px;
+	min-height: auto;
 	margin: 0 auto;
 	position: relative;
-	width: 698px;
+	width: 640px;
 }
 .scrollable {
-	height: 465px;
+	height: auto;
+	min-height: 480px;
 	overflow: hidden;
 	position: relative;
-	width: 698px;
+	width: 640px;
 }
 .scrollable .items {
 	clear: both;
 	position: absolute;
 	width: 20000em;
 }
-.items div {
+.scrollable .items div {
 	float: left;
-	width: 698px;
+	width: 640px;
 }
 .scrollable img {
-	background-color: #FFFFFF;
-	border: 1px solid #CCCCCC;
 	float: left;
-	height: 460px;
+	height: auto;
 	margin: 0;
-	padding: 2px;
-	width: 690px;
+	padding: 0;
+	width: 640px;
 }
 .scrollable .active {
 	cursor: default;
@@ -5664,6 +5731,12 @@ body.page-home #content-front-right .block {
   margin-bottom: 40px;
 }
 
+.activity-log-picture,
+.activity-log-picture img {
+  width: auto;
+  height: auto;
+}
+
 /* Front page News block */
 #block-views-news-block_3 {
   position: relative;
@@ -6541,6 +6614,169 @@ body.page-solr-nodetype-multi .box  > h2.title {
   padding-left: 21px;
   margin-left: 8px;
 }
+
+/* Project Details Styles */
+
+body.node-type-project h1.title,
+body.node-type-inscription-1 h1.title {
+  background-image: none;
+}
+
+body.node-type-project #content-group,
+body.node-type-inscription-1 #content-group,
+body.node-type-project #breadcrumbs,
+body.node-type-inscription-1 #breadcrumbs {
+  width: 960px;
+}
+
+.inscription-info-public,
+.project-info-public {
+  background-color: #000;
+  padding: 20px;
+  color: #fff;
+  font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+}
+
+.node-type-project .social-sharing-widget,
+.node-type-inscription .social-sharing-widget {
+  float: right;
+}
+
+.inscription-info-public .col01,
+.project-info-public .col01 {
+  float: left;
+  width: 260px;
+}
+
+.inscription-navigation {
+  font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+.inscription-navigation .previous-inscription a,
+.inscription-navigation .next-inscription a {
+  background-color: #000;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.inscription-navigation .next-inscription a {
+  margin-left: 15px;
+}
+
+.inscription-navigation .previous-inscription a:hover
+.inscription-navigation .next-inscription a:hover {
+  background-color: red;
+}
+
+.inscription-info-public .col02,
+.project-info-public .col02 {
+  float: right;
+  width: 640px;
+}
+
+.inscription-info-public h2.title,
+.project-info-public h2.title,
+.project-info-public .project-type {
+  color: #fff;
+  font-size: 26px;
+  line-height: 100%;
+  margin-bottom: 10px;
+}
+
+.inscription-info-public h3.subtitle,
+.project-info-public h3.subtitle {
+  margin-bottom: 10px;
+  padding: 0;
+  text-align: left;
+}
+
+.inscription-info-public .odd,
+.inscription-info-public .even,
+.project-info-public .odd,
+.project-info-public .even {
+  background: transparent;
+}
+
+.inscription-info-public .fivestar-widget,
+.project-info-public .fivestar-widget {
+
+}
+
+.inscription-info-public .fivestar-widget-5,
+.inscription-info-public .fivestar-widget-static,
+.project-info-public .fivestar-widget-5,
+.project-info-public .fivestar-widget-static {
+  float: left;
+  margin-right: 10px;
+}
+
+.inscription-info-public .fivestar-static-form-item label,
+.project-info-public .fivestar-static-form-item label {
+  display: none;
+}
+
+.inscription-info-public .fivestar-widget .user-rating,
+.project-info-public .fivestar-widget .user-rating {
+  display: block;
+}
+
+.inscription-info-public fieldset,
+.project-info-public fieldset {
+  background-color: transparent;
+  border: 0 none;
+}
+
+.inscription-info-public .university-country {
+  color: #cccccc;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.inscription-info-public .number-members {
+  font-size: 12px;
+}
+
+.view-og-members-faces.view-display-id-block_1 {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #999999;
+}
+
+.view-og-members-faces.view-display-id-block_1 .views-field-picture,
+.view-og-members-faces.view-display-id-block_1 .field-content {
+  margin-right: 2px;
+  display: inline;
+}
+
+.inscription-info-public .terms ul.links li,
+.project-info-public .terms ul.links li {
+  padding: 0;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.inscription-info-public .downloads,
+.project-info-public .downloads {
+  margin-bottom: 10px;
+}
+
+.inscription-info-public .downloads h3,
+.project-info-public .downloads h3 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.inscription-info-public .downloads ul li,
+.project-info-public .downloads ul li {
+  margin: 8px 0;
+  padding: 0;
+  font-size: 12px;
+}
+
 
 /* Partner Styles */
 

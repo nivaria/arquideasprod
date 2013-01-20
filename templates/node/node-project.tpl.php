@@ -1,11 +1,11 @@
 <?php
-// $Id: node-project.tpl.php 7510 
+// $Id: node-project.tpl.php 7510
   $fields = content_types($node->type);
   if (!empty($fields) && !empty($fields['fields'])) {?>
-    <!-- Fields of <?php print $node->type ?>: 
+    <!-- Fields of <?php print $node->type ?>:
     <?php foreach ($fields['fields'] as $field) {
       print $field['field_name'];?>
-    
+
     <?php }?>
         -->
 <?php }?>
@@ -16,7 +16,7 @@
     <?php if ($page == 0): ?>
     <h2 class="title"><a href="<?php print $node_url ?>" title="<?php print $title ?>"><?php print $title ?></a></h2>
     <?php endif; ?>
-    
+
 
     <!-- ADDTHIS widget -->
     <?php
@@ -24,6 +24,7 @@
         print $block['content'];
     ?>
     <!-- END ADDTHIS widget -->
+    <div class="clearfix">&nbsp;</div>
 
     <?php if(!$is_edit && $page == 1): ?>
     <div class="project-info-public">
@@ -33,43 +34,43 @@
             <?php print $title; ?>
             </h2>
             <!-- End Project TITLE-->
-            
+
             <!-- Project SUBTITLE -->
             <h3 class="subtitle">
                 <?php print $field_subtitle_project_rendered; ?>
             </h3>
             <!-- End Project SUBTITLE -->
-            
-            <!-- FiveStar Widget --> 
-            <?php 
+
+            <!-- FiveStar Widget -->
+            <?php
             if (user_access('rate content') && fivestar_validate_target('node', $node->nid)) {
                 print fivestar_widget_form($node);
             }
             ?>
             <!-- END FiveStar Widget -->
-            
+
             <!-- Project Type -->
             <div class="project-type">
                 <?php print $field_project_type_project_rendered ?>
             </div>
             <!-- End Project Type -->
-            
+
             <?php if ($terms): ?>
             <div class="terms">
             <?php print $terms; ?>
             </div>
             <?php endif;?>
-            
+
             <!-- Description of Project -->
             <div class="project-body">
                 <?php print $field_body_project_rendered ?>
             </div>
             <!-- END Description of Project -->
-            
+
             <!-- DOWNLOAD files -->
             <?php print $field_documents_project_rendered ?>
             <!-- End DOWNLOAD files -->
-            
+
             <?php if ($links): ?>
                 <div class="links">
                 <?php print $links; ?>
@@ -82,12 +83,12 @@
             <?php $preset = variable_get('nivaria_contests_base_jpgpreset', 'Featured');
             print get_project_images($node, TRUE, FALSE, $preset); ?>
             <!-- End Inscription IMAGES -->
-            
         </div>
+        <div class="clearfix">&nbsp;</div>
     </div>
     <?php endif; ?>
-    
-    
+
+
     <?php if ($node_top && !$teaser): ?>
     <div id="node-top" class="node-top row nested">
       <div id="node-top-inner" class="node-top-inner inner">
@@ -109,7 +110,7 @@
     </div>
     <?php endif; ?>
     <!-- End Edit link -->
-    
+
     <!-- Translate link -->
     <?php if(isset($node->content['nivaria_translate_content_link']) && !empty($node->content['nivaria_translate_content_link']['#value'])): ?>
     <div class="node-translate-link">
