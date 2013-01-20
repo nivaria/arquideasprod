@@ -89,6 +89,10 @@ body {
 
 }
 
+div.messages ul, div.content-help .help ul {
+  margin: 0.6em 0 0.6em 2em;
+}
+
 #admin-menu {
   position: fixed;
 }
@@ -98,6 +102,7 @@ body {
   height: 35px;
   background-color: #000;
   z-index: 999;
+  top: 0;
 }
 
 body.admin-menu #user-menu-wrapper {
@@ -118,6 +123,10 @@ body.admin-menu #user-menu-wrapper {
 
 #header-small-wrapper {
   position: fixed;
+  top: 0;
+}
+
+body.logged-in #header-small-wrapper {
   top: 35px;
 }
 
@@ -133,6 +142,10 @@ body.admin-menu #header-small-wrapper {
 
 #header-region-following.fixed-menu {
   position: fixed;
+  top: 45px;
+}
+
+body.logged-in #header-region-following.fixed-menu {
   top: 80px;
 }
 
@@ -183,12 +196,14 @@ body.admin-menu #header-region-following.fixed-menu {
 	overflow: hidden;
 	width: 280px;
 }
-#header-large-wrapper{
+#header-large-wrapper {
   text-align: center;
   position: relative;
-  padding-top: 35px;
   height: 180px;
   overflow: hidden;
+}
+body.logged-in #header-large-wrapper {
+  padding-top: 35px;
 }
 #header-large-inner {
   margin: 0 auto;
@@ -3228,8 +3243,8 @@ body.page-taxonomy #content-content .node .meta .picture, body.page-taxonomy #co
 textarea,
 .form-item input.form-text,
 .form-item select {
-  width: 98%;
-	max-width: 98%;
+  width: 95%;
+	max-width: 95%;
 }
 .flag-message {
 	top: 1.2em;
@@ -6937,10 +6952,11 @@ body.page-node .colaborator-top h1.title {
   box-shadow: 4px 4px 0 #000000;
   padding: 15px 20px;
 }
-#TB_window user-register,
+#TB_window #user-register,
 .login-wrapper, .forgot-wrapper {
 	width: 90%;
 	margin: 20px 5% 0 5%;
+	float: left;
 }
 
 .user-login-left-fs fieldset,
@@ -6964,9 +6980,9 @@ body.page-node .colaborator-top h1.title {
 
 #TB_window {
   position: absolute;
-  top: 100px;
+  top: 70px;
   margin-top: 0 !important;
-  border: 3px solid #000;
+  border: 4px solid #999999;
   z-index: 1001;
 }
 
@@ -7000,12 +7016,12 @@ body.page-node .colaborator-top h1.title {
 
 #TB_ajaxContent .user-login-left-fs,
 #TB_ajaxContent .user-register-left-fs {
-	width: 43%;
+	width: 44%;
 }
 
 #TB_ajaxContent .user-login-right-fs,
 #TB_ajaxContent .user-register-right-fs {
-	width: 37%;
+	width: 36%;
 }
 
 

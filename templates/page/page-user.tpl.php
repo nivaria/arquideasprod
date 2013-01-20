@@ -28,12 +28,14 @@
         <a href="#main-content-area"><?php print t('Skip to Main Content Area'); ?></a>
       </div>
 
+      <?php if ($user_bar): ?>
       <!-- user-bar row: width = grid_width -->
       <div id="user-menu-wrapper" class="full-width">
         <div id="user-menu" class="max-width row inner clearfix">
 					<?php print $user_bar; ?>
   			</div><!-- /user-menu-wrapper -->
       </div><!-- /user-menu -->
+      <?php endif; ?>
 
       <!-- header-group row: width = grid_width -->
       <div id="header-large-wrapper" class="full-width">
