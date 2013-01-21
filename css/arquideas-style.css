@@ -3684,6 +3684,9 @@ body.not-front #content-group, body.page-node #content-group {
 }
 body.no-sidebars #content-group {
   margin: 0 auto;
+}
+body.node-type-page  #content-group,
+body#pid-content-contact #content-group {
   float: none;
 }
 body.no-sidebars #content-group h1.title {
