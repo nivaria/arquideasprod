@@ -295,9 +295,9 @@ function arquideasprod_preprocess_page(&$vars)
   $pattern = '/^user\/\d+\/account\/inscriptions\/\d+$/';
   $res = preg_match($pattern, $_GET['q']);
   if($res==1){
-      $vars['template_files'][] = 'page';
+      /*$vars['template_files'][] = 'page';
       $vars['title'] = '';
-      $vars['sidebar_first'] = '';
+      $vars['sidebar_first'] = '';*/
   }
   if(isset($vars['node']) && $vars['node']->type=='inscription'){
       $vars['title'] = '';
