@@ -57,7 +57,7 @@ Más cambios en la fila 200,
         <a href="#main-content-area"><?php print t('Skip to Main Content Area'); ?></a>
       </div>
 
-      <?php if ($user_bar): ?>
+     <?php if ($user_bar): ?>
       <!-- user-bar row: width = grid_width -->
       <div id="user-menu-wrapper" class="full-width">
         <div id="user-menu" class="max-width row inner clearfix">
@@ -131,6 +131,73 @@ Más cambios en la fila 200,
             <?php print theme('grid_row', $sidebar_first, 'sidebar-first', 'nested', $sidebar_first_width); ?>
 
             <!-- main group: width = grid_width - sidebar_first_width -->
+			<!-- el header Lo quito de content-inner y lo subo aqui -->
+			 <?php if ($title && !$is_front): ?>
+                   <header class="header row nested grid16-12">
+                       <div class="name-holder clearfix">
+						<h1 class="title"><?php print $title; ?></h1>
+						<div class="follow-box">
+							<div class="follow-box-inner">
+<?php if(isset($account)){
+						   // NÃºmero de seguidores
+                           //  I just need to find out how to correctly user_load the account that is being viewed
+                           //  from arg or something like that.  What code should I put in these 2 lines?
+                           $params = array("user" => $account->uid);
+                           $count = user_relationships_load($params, array("count" => TRUE));
+                           print '<span class="followers-count">'.$count.'</span>';
+                           // Follow
+                           // Provide relationship links/messages
+                           if (user_access('maintain own relationships')) {
+                               // For the Commons "Follower" relatinoship, hide controls to
+                               // make another user unfollow the present user.
+                               $actions = _user_relationships_ui_actions_between($user, $account);
+                               foreach ($actions as $action) {
+                                   print '<span class="ur_action">'.$action.'</span>';
+                               }
+                           }
+                           
+                       } ?>
+					   		</div>
+					   	 </div>
+					   </div>
+                       <!--TODO: make it with some include -->
+                       <?php if(!$is_edit): ?>
+                       
+                      
+                       <div class="userpoints">
+                           <?php if (isset($account->badges)): ?>
+                               <?php
+                               foreach ($account->badges as $badge) {
+                                   $badges[] = theme('user_badge', $badge, $account);
+                               }
+
+                               if (!empty($badges)) {
+                                   print theme('user_badge_group', $badges);
+                               }
+                               ?>
+                           <?php endif; ?>
+                           <span class="user-points">
+                               <?php print isset($account)?userpoints_get_current_points($account->uid).' '.t('points'):''; ?>
+                           </span>
+                       </div>
+					   <div class="user-job"><?php print isset($account)?$account->profile_job:''; ?></div>
+                       <?php if(FALSE && isset($account) && user_has_role(ROL_CONTEST_JURY, $account)): ?>
+                       <div class="jury-member">
+                           <?php print t('Jury of Arquideas'); ?>
+                       </div>
+                       <?php endif; ?>
+                       <?php
+                           $block = module_invoke('addthis', 'block', 'view', '0');
+                           print $block['content'];
+                       ?>
+                       <?php endif; ?>
+					   <div class="clear"></div>
+					    <?php
+                            print theme('grid_block', $tabs, 'content-tabs');
+                        ?>
+                   </header>
+               <?php endif; ?>
+			   <!-- Agregada esta definicion, la que viene del sistema está mal -->
 			 <?php 
 			 /*-----------------------------
 			 Cuando es edicion de datos, esta 
@@ -197,63 +264,9 @@ Más cambios en la fila 200,
 
                                 <div id="content-inner" class="content-inner block">
                                     <div id="content-inner-inner" class="content-inner-inner inner">
-                                    <?php if ($title && !$is_front): ?>
-                                        <header class="header">
-                                            <h1 class="title"><?php print $title; ?></h1>
-                                            <!--TODO: make it with some include -->
-                                            <?php if(!$is_edit): ?>
-                                            <div class="user-job"><?php print isset($account)?$account->profile_job:''; ?></div>
-                                            <?php if(isset($account)){
-                                                // Follow
-                                                // Provide relationship links/messages
-                                                if (user_access('maintain own relationships')) {
-                                                    // For the Commons "Follower" relatinoship, hide controls to
-                                                    // make another user unfollow the present user.
-                                                    $actions = _user_relationships_ui_actions_between($user, $account);
-                                                    foreach ($actions as $action) {
-                                                        print '<span class="ur_action">'.$action.'</span>';
-                                                    }
-                                                }
-                                                // NÃºmero de seguidores
-                                                //  I just need to find out how to correctly user_load the account that is being viewed
-                                                //  from arg or something like that.  What code should I put in these 2 lines?
-                                                $params = array("user" => $account->uid);
-                                                $count = user_relationships_load($params, array("count" => TRUE));
-                                                print '&nbsp;<span class="followers-count">'.$count.'</span>';
-                                            } ?>
-                                            <div class="userpoints">
-                                                <?php if (isset($account->badges)): ?>
-                                                    <?php
-                                                    foreach ($account->badges as $badge) {
-                                                        $badges[] = theme('user_badge', $badge, $account);
-                                                    }
+                                   <!-- El header lo movemos arriba, en el diseño sale a la derecha de la imagen -->
 
-                                                    if (!empty($badges)) {
-                                                        print theme('user_badge_group', $badges);
-                                                    }
-                                                    ?>
-                                                <?php endif; ?>
-                                                <span class="user-points">
-                                                    <?php print isset($account)?userpoints_get_current_points($account->uid).' '.t('points'):''; ?>
-                                                </span>
-                                            </div>
-                                            <?php if(FALSE && isset($account) && user_has_role(ROL_CONTEST_JURY, $account)): ?>
-                                            <div class="jury-member">
-                                                <?php print t('Jury of Arquideas'); ?>
-                                            </div>
-                                            <?php endif; ?>
-                                            <?php
-                                                $block = module_invoke('addthis', 'block', 'view', '0');
-                                                print $block['content'];
-                                            ?>
-                                            <?php endif; ?>
-
-                                        </header>
-                                    <?php endif; ?>
-
-                                        <?php
-                                            print theme('grid_block', $tabs, 'content-tabs');
-                                        ?>
+                                       
 
                                         <?php if ($content): ?>
                                             <div id="content-content" class="content-content">
@@ -270,7 +283,10 @@ Más cambios en la fila 200,
                         <?php print theme('grid_row', $content_bottom, 'content-bottom', 'nested'); ?>
                       </div><!-- /content-group-inner -->
                     </div><!-- /content-group -->
-
+					
+                    <?php 
+						$sidebar_last_width=($area=='visualizacion')?'grid16-4':$sidebar_last_width;
+					?>
                     <?php print theme('grid_row', $sidebar_last, 'sidebar-last', 'nested', $sidebar_last_width); ?>
                   </div><!-- /main-content-inner -->
                 </div><!-- /main-content -->
@@ -291,16 +307,8 @@ Más cambios en la fila 200,
           <div id="footer-inner" class="footer-inner inner clearfix">
             <?php print theme('grid_block', $primary_links_tree, 'primary-menu-footer'); ?>
             <?php print $footer; ?>
-            <div class="logo">
-              <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-            </div>
           </div><!-- /footer-inner -->
         </div><!-- /footer -->
-        <div id="footer-bottom" class="footer max-width row inner clearfix">
-          <div id="footer-bottom-inner" class="footer-inner inner clearfix">
-            <?php print $footer_bottom; ?>
-          </div><!-- /footer-bottom-inner -->
-        </div><!-- /footer-bottom -->
       </div>
 
     </div><!-- /page-inner -->
