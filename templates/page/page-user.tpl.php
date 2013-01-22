@@ -20,7 +20,36 @@
   <?php print $local_styles; ?>
   <?php print $scripts; ?>
 </head>
-
+<?php
+/*-----------------------
+Añadido para el control 
+de las clases en área de 
+edición y de visualización
+-------------------------*/
+ $body_classes.=(strpos($body_id,'-account-edit')||strpos($body_id,'-account-projects')||strpos($body_id,'-account-inscriptions')||strpos($body_id,'-account-arquideasbook'))?' account-edit ':'';
+ $cambios_ancho=array(
+ 	'edicion'=>array(
+		'grid16-16 forms_user',
+		'grid16-12 force_width'
+	),
+	'visualizacion'=>array(
+		'grid16-16 force_width border',
+		'grid16-12 force_width'
+	),
+	'visualizacion-2'=>array(
+		'grid16-12 force_width border',
+		'grid16-12 force_width'
+	)
+ );
+ $area=(strpos($body_classes,'account-edit'))?'edicion':'visualizacion';
+ $area=(strpos($body_id,'-projects')&&($area=='visualizacion'))?'visualizacion-2':$area;
+ $body_classes.=($area=='visualizacion-2')?'  ':'';
+/*-------------------------
+HASTA AQUÍ ----------------
+Más cambios en la fila 200,
+ 215 y 285 ----------------
+-------------------------*/
+?>
 <body id="<?php print $body_id; ?>" class="<?php print $body_classes; ?>">
   <div id="page" class="page">
     <div id="page-inner" class="page-inner">
@@ -102,6 +131,15 @@
             <?php print theme('grid_row', $sidebar_first, 'sidebar-first', 'nested', $sidebar_first_width); ?>
 
             <!-- main group: width = grid_width - sidebar_first_width -->
+			 <?php 
+			 /*-----------------------------
+			 Cuando es edicion de datos, esta 
+			 capa es 16-16 Cuando es 
+			 VISUALIZACIÓN de datos es 
+			 grid16-12, porque lleva a la 
+			 izquierda la columna de datos
+			 ------------------------------*/
+			 $main_group_width= $cambios_ancho[$area][0]; ?>
             <div id="main-group" class="main-group row nested <?php print $main_group_width; ?>">
               <div id="main-group-inner" class="main-group-inner inner">
                 <?php print theme('grid_row', $preface_bottom, 'preface-bottom', 'nested'); ?>
@@ -109,6 +147,15 @@
                 <div id="main-content" class="main-content row nested">
                   <div id="main-content-inner" class="main-content-inner inner">
                     <!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
+					<?php 
+					 /*-----------------------------
+					 Cuando es edicion de datos, esta 
+					 capa es 16-12. Cuando es 
+					 VISUALIZACIÓN de datos es también
+					 grid16-12, porque lleva a la 
+					 izquierda la columna de datos
+					 ------------------------------*/
+					$content_group_width=$cambios_ancho[$area][1];?>
                     <div id="content-group" class="content-group row nested <?php print $content_group_width; ?>">
                       <div id="content-group-inner" class="content-group-inner inner">
 

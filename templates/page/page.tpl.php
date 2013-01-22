@@ -20,7 +20,38 @@
   <?php print $local_styles; ?>
   <?php print $scripts; ?>
 </head>
-
+<?php
+/*-----------------------
+Añadido para el control 
+de las clases en área de 
+edición y de visualización
+las clases force-width se
+agregan para restaurar los 
+valores originales del grid
+que se han modificado en la
+css de presentación
+-------------------------*/
+ $body_classes.=($body_id=='pid-comunidad-arquideas'||$body_id=='pid-arquideas-network'||$body_id=='pid-usuarios'||$body_id=='pid-users')?' area-comunidad ':'';
+ $body_classes.=($body_id=='-account-inscriptions')?' area-social ':'';
+ $cambios_ancho=array(
+ 	'comunidad'=>array(
+		'grid16-8 force-width',
+		'grid16-4 force-width'
+	),
+	'usuarios'=>array(
+		'grid16-12 force-width',
+		'grid16-4 force-width'
+	),
+ );
+ $area=($body_id=='pid-comunidad-arquideas'||$body_id=='pid-arquideas-network')?'comunidad':'usuarios';
+ $body_classes.=(" ".$area." ")
+/*-------------------------
+||$body_id=='pid-usuarios'
+HASTA AQUÍ ----------------
+Más cambios en la fila 200,
+ 215 y 285 ----------------
+-------------------------*/
+?>
 <body id="<?php print $body_id; ?>" class="<?php print $body_classes; ?>">
   <div id="page" class="page<?php print isset($page_classes)?$page_classes:''; ?>">
     <div id="page-inner" class="page-inner">
@@ -137,6 +168,11 @@
                   <div id="main-content-inner" class="main-content-inner inner">
 
                     <!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
+					<?php 
+					 /*-----------------------------
+					 MODIFICACIÓN
+					 ------------------------------*/
+					$content_group_width=$cambios_ancho[$area][0];?>
                     <div id="content-group" class="content-group row nested <?php print $content_group_width; ?>">
                       <?php if ($title && !$is_front): ?>
 
@@ -166,6 +202,11 @@
                         <?php print theme('grid_row', $content_bottom, 'content-bottom', 'nested'); ?>
                       </div><!-- /content-group-inner -->
                     </div><!-- /content-group -->
+					<?php 
+					 /*-----------------------------
+					 MODIFICACIÓN
+					 ------------------------------*/
+					$sidebar_last_width=$cambios_ancho[$area][1];?>
                     <?php print theme('grid_row', $sidebar_last, 'sidebar-last', 'nested', $sidebar_last_width); ?>
                   </div><!-- /main-content-inner -->
                 </div><!-- /main-content -->

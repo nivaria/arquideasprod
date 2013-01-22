@@ -20,7 +20,33 @@
   <?php print $local_styles; ?>
   <?php print $scripts; ?>
 </head>
+<?php
+/*-----------------------
+Añadido para el control 
+del layout en áreas de 
+contenido. Se agrega la clase 
+blog-type al body para adaptar
+el layout.
+las clases force-width se
+agregan para restaurar los 
+valores originales del grid
+que se han modificado en la
+css de presentación
+Es posible que se pueda usar 
+la clase "page-node" que ya viene 
+incluida, pero no estoy seguro de ello
+-------------------------*/
 
+ $body_classes.=(strpos($body_id,'id-blog-')||strpos($body_id,'id-event-')||strpos($body_id,'id-wiki-'))?' blog-type ':'';
+ $cambios_ancho=array(
+ 	'nodos'=>array(
+		'grid16-11 force-width',
+		'grid16-5 force-width',
+	),
+ );
+$area=(strpos($body_classes,'blog-type'))?'nodos':'';
+
+?>
 <body id="<?php print $body_id; ?>" class="<?php print $body_classes; ?>">
   <div id="page" class="page">
     <div id="page-inner" class="page-inner">
@@ -109,6 +135,13 @@
                 <div id="main-content" class="main-content row nested">
                   <div id="main-content-inner" class="main-content-inner inner">
                     <!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
+					 <?php 
+					 /*------------------------------
+					 Forzamos la anchura para        
+					 respetar el grid               
+					 ------------------------------*/
+					 $content_group_width= $cambios_ancho[$area][0];
+					 ?>
                     <div id="content-group" class="content-group row nested <?php print $content_group_width; ?>">
                         <?php if ($title && !$is_front): ?>
                           <h1 class="title"><?php print $title; ?></h1>
@@ -170,7 +203,13 @@
                         <?php print theme('grid_row', $content_bottom, 'content-bottom', 'nested'); ?>
                       </div><!-- /content-group-inner -->
                     </div><!-- /content-group -->
-
+					<?php 
+					 /*------------------------------
+					 Forzamos la anchura para        
+					 respetar el widht               
+					 ------------------------------*/
+					 $sidebar_last_width= $cambios_ancho[$area][1];
+					 ?>
                     <?php print theme('grid_row', $sidebar_last, 'sidebar-last', 'nested', $sidebar_last_width); ?>
                   </div><!-- /main-content-inner -->
                 </div><!-- /main-content -->
