@@ -42,7 +42,7 @@ edición y de visualización
 	)
  );
  $area=(strpos($body_classes,'account-edit'))?'edicion':'visualizacion';
- $area=(strpos($body_id,'-projects')&&($area=='visualizacion'))?'visualizacion-2':$area;
+ $area=(strpos($body_classes,'entrada-ficha')&&($area=='visualizacion'))?'visualizacion-2':$area;
  $body_classes.=($area=='visualizacion-2')?'  ':'';
 /*-------------------------
 HASTA AQUÍ ----------------
