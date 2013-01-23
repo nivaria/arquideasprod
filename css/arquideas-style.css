@@ -8317,10 +8317,16 @@ body.page-user #sidebar-last.nested .block .users-total,  body.profile-me #sideb
 .area-comunidad.usuarios #content-content .view-user-directory .view-filters{
 	padding: 20px;
 }
+#sidebar-last .block-views .view-newest-users thead{
+	display: none;
+}
 #sidebar-last .block-views .view-newest-users tr, 
 #sidebar-last .block-views .view-most-active-users tr{
 	border-bottom: 2px solid #fff;
 	background: #f3f3f3;
+}
+#sidebar-last .block-views .view-most-active-users .view-content{
+	padding: 0 5px;
 }
 #sidebar-last .block-views .view-most-active-users tr{
 	background: #fff;
@@ -8421,6 +8427,7 @@ body.blog-type #content-group  h1.title{
 	margin-bottom: 20px!important;
 	padding-bottom: 0!important;
 	text-align: left;
+	margin-top: 20px;
 }
 .blog-type #sidebar-last .block .content li a{
 	color: #000;
@@ -8431,6 +8438,7 @@ body.blog-type #content-group  h1.title{
 .blog-type #sidebar-last #block-views-contests-block_2{
 	width: 292px !important;
 	margin: 0!important;
+	margin-bottom: 20px;
 }
 .blog-type #sidebar-last #block-views-contests-block_2 .inner{
 	padding: 20px;
