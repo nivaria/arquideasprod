@@ -50,7 +50,7 @@ Más cambios en la fila 200,
  215 y 285 ----------------
 -------------------------*/
 ?>
-<body id="<?php print $body_id; ?>" class="<?php print $body_classes; ?> area-social">
+<body id="<?php print $body_id; ?>" class="<?php print $body_classes; ?>">
   <div id="page" class="page">
     <div id="page-inner" class="page-inner">
       <div id="skip">
