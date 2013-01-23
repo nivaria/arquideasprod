@@ -1138,6 +1138,7 @@ background-color: #F3F3F3;
 background-image: none;
 border: 1px solid #D1D1D1;
 color: #666666;
+font-family: calibri, arial;
 font-size: 11px;
 font-weight: bold;
 padding: 4px 12px;
@@ -2881,6 +2882,7 @@ padding: 0;
 }
 .view-user-meta .views-field-nothing a, .view-user-meta .views-field-nothing-1 a {
 color: #FFFFFF;
+font-family: calibri, arial;
 font-size: 13px;
 font-weight: bold;
 text-transform: uppercase;
@@ -2931,6 +2933,7 @@ width: auto;
 }
 .view-user-meta .views-field-name span.welcome-text {
 color: #666666;
+font-family: calibri, arial;
 font-size: 24px;
 font-weight: normal;
 left: 84px;
@@ -2976,6 +2979,7 @@ line-height: 260%;
 text-align: justify;
 }
 .tagadelic a {
+font-family: calibri, arial;
 }
 .gerenciall_add_padding.block .inner .content {
 padding: 12px;
@@ -3413,6 +3417,7 @@ position: relative;
 }
 .calendar-calendar div.date-nav a, .calendar-calendar div.date-nav h3 {
 color: #333333;
+font-family: calibri, arial;
 font-size: 20px;
 font-weight: normal;
 }
@@ -3461,6 +3466,7 @@ background-image: none;
 }
 .block .block-title a, .gerenciall_default .block-title a, body.node-type-group .page-group .sidebar-last .block .block-title a, body.page-title-page .page-inner .sidebar-last .block .block-title a {
 color: #333333;
+font-family: calibri, arial;
 font-size: 20px;
 line-height: 100%;
 padding: 12px 16px 16px 14px;
@@ -3505,6 +3511,7 @@ border-radius: 12px 12px 0 0;
 }
 .gerenciall_highlight .block-title a {
 color: #FFFFFF !important;
+font-family: calibri, arial;
 line-height: 100%;
 padding: 12px 16px 16px 14px;
 }
@@ -3592,6 +3599,7 @@ padding-bottom: 6px;
 .block-title-inside-content {
 color: #333333;
 display: inline-block;
+font-family: calibri, arial;
 font-size: 16px;
 line-height: 120%;
 padding-top: 6px;
@@ -3967,6 +3975,7 @@ display: none;
 body.page-node .relations th {
 border-bottom: 1px dashed #D9D9D9;
 color: #666666;
+font-family: calibri, arial;
 font-size: 18px;
 margin: 0 0 10px;
 padding: 0 0 10px;
@@ -4037,6 +4046,7 @@ padding-bottom: 30px;
 .field-file .field-label {
 background-color: #F2F2F2;
 color: #333333;
+font-family: calibri, arial;
 font-size: 16px;
 font-weight: normal;
 height: 30px;
@@ -4064,6 +4074,7 @@ padding-bottom: 30px;
 }
 .block .field-links .field-label {
 color: #333333;
+font-family: calibri, arial;
 font-size: 18px;
 font-weight: normal;
 }
@@ -4307,6 +4318,7 @@ border-radius: 0 0 0 0;
 }
 #main .gerenciall_search h2.block-title a {
 color: #333333;
+font-family: calibri, arial;
 font-size: 16px;
 }
 #main .gerenciall_search .content {
@@ -4324,6 +4336,7 @@ padding-top: 20px;
 body.page-search .box h2 a {
 background: none repeat scroll 0 0 transparent;
 color: #333333;
+font-family: calibri, arial;
 font-size: 24px;
 font-weight: normal;
 }
@@ -4393,6 +4406,7 @@ width: auto;
 }
 .page-node .page-group .og-terms-container a, .page-ogdetails .page-inner .view-group-selected-categories .view-content a {
 color: #333333;
+font-family: calibri, arial;
 font-size: 13px;
 line-height: 27px;
 text-align: center;
@@ -7444,7 +7458,6 @@ body.area-social  h1.title, body.page-node.area-social  h1.title {
 	float: left;
 	font-weight: normal;
 	font-family: SoinSans-Bold;
-	font-size: 30px;
 }
 body.area-social td{
 	padding: 0!important
@@ -7521,7 +7534,6 @@ table tr td.active{
 	float: right;
 	margin: 15px 0;
 	display: inline-block;
-	height: 29px;
 }
 .area-social .views-field-picture .active{
 	height: 200px;
@@ -7530,7 +7542,6 @@ table tr td.active{
 }
 .area-social #content-tabs{
 	margin-top: 0px;
-	font-size: 75%!important;
 }
 
 .area-social #content-tabs ul.primary{
@@ -7540,7 +7551,6 @@ table tr td.active{
 	font-family: SoinSans-Bold;
 	border: 0;
 	width: 690px;
-	height: 45px;
 }
 .account-edit.area-social #content-tabs ul.primary, .account-edit.area-social .name-holder{
 	/*margin-left: -24px;
@@ -7608,7 +7618,7 @@ ul.primary.ui-tabs-nav{
 	margin: 0 0 30px 0;
 }
 #main-group.forms_user{
-	margin-top: -30px;
+	margin-top: -22px;
 }
 #main-group.forms_user #main-content{
 	width: 958px!important;
@@ -7965,7 +7975,6 @@ body.area-social #sidebar-last.nested{
 	margin: 0 -1px;
 	width: 240px!important;
 }
-
 .grid16-16.force_width.border{
 	margin-top: -23px;
 }
@@ -7974,19 +7983,14 @@ body.area-social #sidebar-last.nested .block{
 	max-width: 218px;
 	background: none repeat scroll 0 0 #FFFFFF !important;
     border: 1px solid #000000;
+   
     margin: 0 10px;
+    padding: 10px;
     text-align: center;
     width: auto !important;
 	margin-bottom: 20px;
 }
 
-body.area-social #sidebar-last.nested #block-views-contests-block_2{
-	padding: 0!important;
-}
-body.area-social #sidebar-last.nested .block .inner{
-	   padding: 10px;
-	   max-width: 198px;
-}
 body.area-social #sidebar-last.nested #block-views-advertisements-block_6{
 	  border: 2px solid #000000;
 	 box-shadow: 2px 2px 0 #FFFFFF, 3px 3px 0 #000000;
@@ -8002,7 +8006,7 @@ body.area-social #sidebar-last.nested #block-commons_core-group_create_content{
 }
 
 body.area-social #sidebar-last.nested #block-commons_core-group_create_content .inner .content {
-    padding: 10px;
+    padding: 14px 14px 14px 14px;
 }
 body.area-social .sidebar-last .block-arquideas_generic .inner,
 body.area-social .sidebar-last #block-views-profile_following-block_1 .inner,
