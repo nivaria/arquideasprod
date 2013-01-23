@@ -8435,10 +8435,11 @@ body.blog-type h1.title{
 .blog-type .views-field-created{
 	padding-bottom: 0;
 }
-.blog-type .buildmode-full .node .field-terms {
+.blog-type .buildmode-full .node .field-terms, .blog-type .buildmode-full .node .field-contributors-widget {
 	margin-bottom: 0px;
 	border-bottom: none;
 }
+
 .blog-type .field-date{
 	font-size: 13px;
 	color: #999;
@@ -8489,11 +8490,11 @@ body.blog-type h1.title{
 	padding-top: 5!important;
 }
 .comments.block h2.title{
-	margin: -20px -12px 0 -12px;
+	/*margin: -20px -12px 0 -12px;*/
 	background-color: #000!important;
 	color: #fff!important;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding: 10px 12px 10px 12px!important;
+	padding: 0 12px!important;
 	font-weight: bold!important;
 	font-size: 1.5em!important;
 } 
