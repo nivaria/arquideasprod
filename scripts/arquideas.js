@@ -1,19 +1,19 @@
 /*
-* To change this template, choose Tools | Templates
-* and open the template in the editor.
-*/
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 $(function(){
     //Node form position
     /*var jqNodeForm = $("body.page-node #node-form div.node-form");
-if(jqNodeForm.length>0){
-var jqStand = $("body.page-node #node-form div.node-form > .standard");
-var jqRel = $("body.page-node #node-form div.node-form > .relations");
-if(jqStand.length>0 && jqRel.length>0){
-$("<div class='node-form-cols'></div>").prependTo(jqNodeForm);
-jqStand.appendTo(jqNodeForm.find("div.node-form-cols")).css("width","73%").css("float","left");
-jqRel.appendTo(jqNodeForm.find("div.node-form-cols")).css("width","25%").css("float","right");
-}
-}*/
+    if(jqNodeForm.length>0){
+        var jqStand = $("body.page-node #node-form div.node-form > .standard");
+        var jqRel = $("body.page-node #node-form div.node-form > .relations");
+        if(jqStand.length>0 && jqRel.length>0){
+            $("<div class='node-form-cols'></div>").prependTo(jqNodeForm);
+            jqStand.appendTo(jqNodeForm.find("div.node-form-cols")).css("width","73%").css("float","left");
+            jqRel.appendTo(jqNodeForm.find("div.node-form-cols")).css("width","25%").css("float","right");
+        }
+    }*/
     //Mi actividad hack
     $("body.profile-me #header-group ul.menu li a[href$='/user']").addClass("active");
     //Add Mark all in group page Subscriptions block
@@ -104,21 +104,5 @@ jqRel.appendTo(jqNodeForm.find("div.node-form-cols")).css("width","25%").css("fl
             $('#main-wrapper').removeClass('fixed-menu-page');
         }
     });
-	
-	/*-------------------------------------------------------
-	Adaptación para el área de usuario en edicion de cuentas.
-	DLTC 1-1-12
-	--------------------------------------------------------*/
-	if($('.header .tabs.primary').find('li:last').children('a').text()=="My account"||
-		$('.header .tabs.primary').find('li:last').children('a').text()=="Mi cuenta"){
-			$('.header .tabs.primary').find('li:last').addClass('account');	
-		}
-	
-	if($('.area-social').length&&$('body[id^="pid-user"]').length&&!$('.account-edit').length&&$('body[id$="-projects"]').length){
-		$('#sidebar-last').remove();
-	}else if($('.area-social').length&&$('body[id^="pid-user"]').length&&!$('body[id$="-projects"]').length){
-	$('.views-field-field-address-acp-value,.views-field-field-company-acp-value,.views-field-phpcode-1,.views-field-field-small-description-acp-value,.views-field-phpcode,.views-field-field-facebook-acp-url,.views-field-field-google-acp-url,.views-field-field-linkedin-acp-url,.views-field-field-pinterest-acp-url,.views-field-field-twitter-acp-url').remove()
-	}
-	$('#content-content .view-arqnetwork-projects .view-content .item-list ul li.views-row').find('img').attr('height','95')
-	$('#main-content .view-user-directory .views-exposed-wrapper').find('.views-exposed-submit').appendTo('.views-exposed-widgets')
 });
+
