@@ -8413,27 +8413,21 @@ body.page-user #sidebar-last.nested .block .users-total,  body.profile-me #sideb
 .blog-type #sidebar-last .block .content li{
 	padding: 0;
 }
-body.blog-type #content-group  h1.title{
+body.blog-type h1.title{
 	padding: 0;
 	font-size: 40px;
-	background-image: none!important;
-	border-bottom: none!important;
-	margin-bottom: 20px!important;
-	padding-bottom: 0!important;
+	background-imag: none;
+	border-bottom: none;
+	margin-bottom: 20px;
+	padding-bottom: 0;
 	text-align: left;
+	margin-top: 20px;
 }
 .blog-type #sidebar-last .block .content li a{
 	color: #000;
 }
 .blog-type #sidebar-last .block-nodeblock .block-title, #sidebar-last .block-views .block-title{
 	border-bottom: none;
-}
-.blog-type #sidebar-last #block-views-contests-block_2{
-	width: 292px !important;
-	margin: 0!important;
-}
-.blog-type #sidebar-last #block-views-contests-block_2 .inner{
-	padding: 20px;
 }
 .blog-type .view-content .item-list{
 	border: none;
@@ -8605,8 +8599,6 @@ body.book #content-content{
 }
 #mybook #general-info .title{
 	color: #000;
-	margin-bottom: 15px;
-	padding: 18px 0;
 }
 #mybook .buttons{
 	border-bottom: 1px solid #000;
@@ -8686,7 +8678,6 @@ body.book #content-content{
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 	border-bottom: 1px solid #000;
-	font-size: .9em;
 }
 #mybook #personal-info label{font-weight: bold}
 #mybook #personal-info div{
