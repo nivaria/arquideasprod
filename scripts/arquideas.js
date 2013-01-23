@@ -109,19 +109,18 @@ jqRel.appendTo(jqNodeForm.find("div.node-form-cols")).css("width","25%").css("fl
 	Adaptación para el área de usuario en edicion de cuentas.
 	DLTC 1-1-12
 	--------------------------------------------------------*/
-	/*El enlace a "mi cuenta" en el área de ficha de usuario ha de tener la clase account*/
-	if(
-		$('.header .tabs.primary').find('li:last').children('a').text()=="My account"||
-		$('.header .tabs.primary').find('li:last').children('a').text()=="Mi cuenta"
-	){
+	if($('.header .tabs.primary').find('li:last').children('a').text()=="My account"||
+		$('.header .tabs.primary').find('li:last').children('a').text()=="Mi cuenta"){
 			$('.header .tabs.primary').find('li:last').addClass('account');	
-	}
+		}
 	
+	/*if($('.area-social').length&&$('body[id^="pid-user"]').length&&!$('.account-edit').length&&$('body[id$="-projects"]').length)*/
+	/* if($('.area-social').length&&$('body[id^="pid-user"]').length&&!$('body[id$="-projects"]').length)*/
 	if($('.entrada-ficha').length){
 		$('#sidebar-last').remove();
 	}else{
 	$('.views-field-field-address-acp-value,.views-field-field-company-acp-value,.views-field-phpcode-1,.views-field-field-small-description-acp-value,.views-field-phpcode,.views-field-field-facebook-acp-url,.views-field-field-google-acp-url,.views-field-field-linkedin-acp-url,.views-field-field-pinterest-acp-url,.views-field-field-twitter-acp-url').remove()
 	}
-	//$('#content-content .view-arqnetwork-projects .view-content .item-list ul li.views-row').find('img').attr('height','95')
+	$('#content-content .view-arqnetwork-projects .view-content .item-list ul li.views-row').find('img').attr('height','95')
 	$('#main-content .view-user-directory .views-exposed-wrapper').find('.views-exposed-submit').appendTo('.views-exposed-widgets')
 });

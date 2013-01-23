@@ -8073,7 +8073,6 @@ body.page-user #sidebar-last.nested .block .users-total,  body.profile-me #sideb
 /*Hay que quitar del la css de jqueryUi las definiciones de fuentes, como no tengo acceso a esa css la sobreescribo aquí*/
 .ui-tabs-panel{
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif!important;
-	margin-bottom: 20px;
 }
 /*Muro*/
 #block-facebook_status-facebook_status .facebook-status-sender{
