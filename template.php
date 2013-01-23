@@ -3,7 +3,7 @@
 /**
  * Breadcrumb themeing
  */
-function arquideasprod_breadcrumb($breadcrumb) {
+function arquideasjoined_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
     global $language;
 
@@ -152,7 +152,7 @@ function arquideasprod_breadcrumb($breadcrumb) {
 /**
  * Page preprocessing
  */
-function arquideasprod_preprocess_page(&$vars)
+function arquideasjoined_preprocess_page(&$vars)
 {
   // Format the footer message
   // We do this here instead of in page.tpl.php because
@@ -357,7 +357,7 @@ function arquideasprod_preprocess_page(&$vars)
 /**
  * Node preprocessing
  */
-function arquideasprod_preprocess_node(&$vars) {
+function arquideasjoined_preprocess_node(&$vars) {
   // Add node_right region content
   $vars['node_right'] = theme('blocks', 'node_right');
 
@@ -478,7 +478,7 @@ function arquideasprod_preprocess_node(&$vars) {
 /**
  * Profile preprocessing
  */
-function arquideasprod_preprocess_user_profile_item(&$vars) {
+function arquideasjoined_preprocess_user_profile_item(&$vars) {
   // Separate userpoints value from the edit links
   if ($vars['title'] == 'Points') {
     $userpoints = explode(' - ', $vars['value']);
@@ -490,7 +490,7 @@ function arquideasprod_preprocess_user_profile_item(&$vars) {
 /**
  * Implementation of theme_shoutbox_post()
  */
-function arquideasprod_shoutbox_post($shout, $links = array(), $alter_row_color=TRUE) {
+function arquideasjoined_shoutbox_post($shout, $links = array(), $alter_row_color=TRUE) {
   global $user;
 
   // Gather moderation links
@@ -566,7 +566,7 @@ function arquideasprod_shoutbox_post($shout, $links = array(), $alter_row_color=
   return $post;
 }
 
-function arquideasprod_item_list($items = array(), $title = NULL, $type = 'ul', $attributes = NULL) {
+function arquideasjoined_item_list($items = array(), $title = NULL, $type = 'ul', $attributes = NULL) {
   $output = '<div class="item-list">';
   if (isset($title)) {
     $output .= '<h3>'. $title .'</h3>';
@@ -650,7 +650,7 @@ function arquideasprod_item_list($items = array(), $title = NULL, $type = 'ul', 
   return $output;
 }
 
-function arquideasprod_preprocess_block($variables) {
+function arquideasjoined_preprocess_block($variables) {
   global $user;
   $variables['template_files'][] = 'block-'.$variables['block']->region.'-'.$variables['block']->module;
   $variables['template_files'][] = 'block-'.$variables['block']->region.'-'.$variables['block']->module.'-'.$variables['block']->delta;
@@ -730,7 +730,7 @@ function arquideasprod_preprocess_block($variables) {
   }
 }
 
-function arquideasprod_search_theme_form($form) {
+function arquideasjoined_search_theme_form($form) {
 	$form['search_theme_form']['#value']= t('Project, study, contest...');
 	$form['submit']['#type'] = 'image_button';
 	$form['submit']['#src'] = drupal_get_path('theme', 'arquideasdev') . '/images/search_icon.png';
@@ -738,7 +738,7 @@ function arquideasprod_search_theme_form($form) {
 	return '<div id="search" class="container-inline">' . drupal_render($form) . '</div>';
 }
 
-function arquideasprod_preprocess_search_block_form(&$vars, $hook) {
+function arquideasjoined_preprocess_search_block_form(&$vars, $hook) {
   // Modify elements of the search form
   unset($vars['form']['search_block_form']['#title']);
 
@@ -772,7 +772,7 @@ function arquideasprod_preprocess_search_block_form(&$vars, $hook) {
   $vars['search_form'] = implode($vars['search']);
 }
 
-function arquideasprod_commons_core_info_block() {
+function arquideasjoined_commons_core_info_block() {
   $content = '';
 
   $content .= '<div id="acquia-footer-message">';
@@ -797,7 +797,7 @@ function arquideasprod_commons_core_info_block() {
 }
 
 //hide links and change page title
-function arquideasprod_taxonomy_term_page($tids, $result) {
+function arquideasjoined_taxonomy_term_page($tids, $result) {
   $str_tids = arg(2);
   $terms = taxonomy_terms_parse_string($str_tids);
   $title_result = db_query(db_rewrite_sql('SELECT t.tid, t.name FROM {term_data} t WHERE t.tid IN ('. db_placeholders($terms['tids']) .')', 't', 'tid'), $terms['tids']);
@@ -839,7 +839,7 @@ function arquideasprod_taxonomy_term_page($tids, $result) {
   return $output;
 }
 
-function arquideasprod_taxonomy_render_nodes($result) {
+function arquideasjoined_taxonomy_render_nodes($result) {
   $output = '';
   $has_rows = FALSE;
   while ($node = db_fetch_object($result)) {
@@ -864,7 +864,7 @@ drupal_add_js(path_to_theme() . '/scripts/clear_default_searchbox_text.js', 'the
  *
  * @ingroup themeable
  */
-function arquideasprod_node_form($form) {
+function arquideasjoined_node_form($form) {
   $output = "\n<div class=\"node-form\">\n";
 
   // Admin form fields and submit buttons must be rendered first, because
@@ -1030,7 +1030,7 @@ function arquideasprod_node_form($form) {
   return $output;
 }
 
-function arquideasprod_preprocess_mimemail_message(&$variables) {
+function arquideasjoined_preprocess_mimemail_message(&$variables) {
   global $base_url;
   $variables['logo'] = $base_url . theme_get_setting('logo');
   $variables['slogan'] = t('The architecture and design ideas community');
@@ -1038,7 +1038,7 @@ function arquideasprod_preprocess_mimemail_message(&$variables) {
 
 }
 
-function arquideasprod_username($user, $link = TRUE) {
+function arquideasjoined_username($user, $link = TRUE) {
   if ($object->uid && function_exists('profile_load_profile')) {
     profile_load_profile($user);
   }
@@ -1082,7 +1082,7 @@ function arquideasprod_username($user, $link = TRUE) {
  *
  * @ingroup themeable
  */
-function arquideasprod_pager($tags = array(), $limit = 10, $element = 0, $parameters = array(), $quantity = 9) {
+function arquideasjoined_pager($tags = array(), $limit = 10, $element = 0, $parameters = array(), $quantity = 9) {
   global $pager_page_array, $pager_total;
 
   // Calculate various markers within this pager piece:
@@ -1190,7 +1190,7 @@ function arquideasprod_pager($tags = array(), $limit = 10, $element = 0, $parame
   }
 }
 
-function arquideasprod_commons_profile_image_action_links_block($picture, $links, $account) {
+function arquideasjoined_commons_profile_image_action_links_block($picture, $links, $account) {
   $content = '';
   $pops = array();
 
@@ -1227,11 +1227,11 @@ function arquideasprod_commons_profile_image_action_links_block($picture, $links
  * @param $vid - vocab id for which more link is wanted
  * @ingroup themable
  */
-function arquideasprod_tagadelic_more($vid) {
+function arquideasjoined_tagadelic_more($vid) {
   return "";
 }
 
-function arquideasprod_jcalendar_view($node) {
+function arquideasjoined_jcalendar_view($node) {
   $output = node_view($node, TRUE);
   $output .= '<div id="nodelink">'. l(t('more', array(), $node->language), calendar_get_node_link($node), array(
         'attributes' => array(
@@ -1244,7 +1244,7 @@ function arquideasprod_jcalendar_view($node) {
 /**
  *  Theme from/to date combination on form.
  */
-function arquideasprod_date_combo($element) {
+function arquideasjoined_date_combo($element) {
   $field = content_fields($element['#field_name'], $element['#type_name']);
   if (!$field['todate']) {
     return $element['#children'];
