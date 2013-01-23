@@ -141,6 +141,7 @@ Más cambios en la fila 200,
 
             <div id="content-front" class="content-front">
               <div id="content-front-inner" class="content-front-inner inner">
+			  	<h1 class="title block-title"><?php print $title; ?></h1>
                 <?php if ($content_front_left): ?>
 
                 <div id="content-front-left" class="content-front-left">
