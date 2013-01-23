@@ -114,11 +114,9 @@ jqRel.appendTo(jqNodeForm.find("div.node-form-cols")).css("width","25%").css("fl
 			$('.header .tabs.primary').find('li:last').addClass('account');	
 		}
 	
-	/*if($('.area-social').length&&$('body[id^="pid-user"]').length&&!$('.account-edit').length&&$('body[id$="-projects"]').length)*/
-	/* if($('.area-social').length&&$('body[id^="pid-user"]').length&&!$('body[id$="-projects"]').length)*/
-	if($('.entrada-ficha').length){
+	if($('.area-social').length&&$('body[id^="pid-user"]').length&&!$('.account-edit').length&&$('body[id$="-projects"]').length){
 		$('#sidebar-last').remove();
-	}else{
+	}else if($('.area-social').length&&$('body[id^="pid-user"]').length&&!$('body[id$="-projects"]').length){
 	$('.views-field-field-address-acp-value,.views-field-field-company-acp-value,.views-field-phpcode-1,.views-field-field-small-description-acp-value,.views-field-phpcode,.views-field-field-facebook-acp-url,.views-field-field-google-acp-url,.views-field-field-linkedin-acp-url,.views-field-field-pinterest-acp-url,.views-field-field-twitter-acp-url').remove()
 	}
 	$('#content-content .view-arqnetwork-projects .view-content .item-list ul li.views-row').find('img').attr('height','95')

@@ -7624,7 +7624,7 @@ ul.primary.ui-tabs-nav{
 }
 #main-group.grid16-12.force_width  #main-content{
 	width: 718px;
-	margin-top: -30px;
+	margin-top: -20px;
 	overflow: hidden;
 }
 .forms_user #sidebar-last.nested{
@@ -7920,7 +7920,7 @@ a.add-content-link{
 	width: 238px;
 	overflow: hidden;
 	border-left: none;
-	height: 199px;
+	height: 198px;
 }
 .view-arqnetwork-user-profile{
 	border-left: 1px solid #ccc;
@@ -7969,7 +7969,7 @@ body.area-social #sidebar-last.nested{
 }
 
 .grid16-16.force_width.border{
-	margin-top: -31px;
+	margin-top: -23px;
 }
 body.area-social #sidebar-last.nested .block{
 	margin: 10px;
