@@ -7517,7 +7517,7 @@ table tr td.active{
 	font-family: SoinSans-Bold;
 	line-height: 29px;	
 }
-.addthis_toolbox{
+header .addthis_toolbox{
 	float: right;
 	margin: 15px 0;
 	display: inline-block;
@@ -8104,6 +8104,7 @@ body.page-user #sidebar-last.nested .block .users-total,  body.profile-me #sideb
 #block-nodeblock-246{
 	font-family: SoinSans-Bold;
 	font-size: 1.6em;
+	margin-bottom: 0;
 }
 #content-front #content-front-right{
 	width: 440px;
@@ -8154,10 +8155,11 @@ body.page-user #sidebar-last.nested .block .users-total,  body.profile-me #sideb
 #sidebar-last.grid16-4.force-width{
 	width: 240px;
 }
-.area-comunidad #sidebar-first .block.block-views, 
-.area-comunidad #sidebar-last .block.block-views,
-.area-comunidad #sidebar-last .block.block-tagadelic,
-.area-comunidad #sidebar-last .block.block-commons_core{
+
+.area-comunidad #sidebar-first .block.block-views .inner, 
+.area-comunidad #sidebar-last .block.block-views .inner,
+.area-comunidad #sidebar-last .block.block-tagadelic .inner,
+.area-comunidad #sidebar-last .block.block-commons_core .inner{
 	border: 1px solid #ccc;
 	
 }
@@ -8200,10 +8202,13 @@ body.page-user #sidebar-last.nested .block .users-total,  body.profile-me #sideb
 
 .area-comunidad #sidebar-last .view-arqnetwork-groups-most-active .view-content table a{
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 0.9em;
+	font-size: 0.85em;
 	text-indent: 0px;
 	display: block;
 	margin: 0;
+}
+.area-comunidad #sidebar-last .view-arqnetwork-groups-most-active .view-content table th{
+	display: none;
 }
 .area-comunidad #sidebar-last .view-arqnetwork-groups-most-active .view-content table tr
 {
@@ -8411,6 +8416,12 @@ body.page-user #sidebar-last.nested .block .users-total,  body.profile-me #sideb
 body.blog-type h1.title{
 	padding: 0;
 	font-size: 40px;
+	background-imag: none;
+	border-bottom: none;
+	margin-bottom: 20px;
+	padding-bottom: 0;
+	text-align: left;
+	margin-top: 20px;
 }
 .blog-type #sidebar-last .block .content li a{
 	color: #000;
@@ -8431,6 +8442,9 @@ body.blog-type h1.title{
 }
 .blog-type .field-ds-group-ds-node-date-type-vote {
     border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	padding-bottom: 18px;
+	margin-bottom: 18px;
 }
 .blog-type .views-field-created{
 	padding-bottom: 0;
@@ -8482,6 +8496,7 @@ body.blog-type h1.title{
 	background-color: transparent;
     text-align: left;
     text-transform: uppercase;
+	float: left!important;
 } 
 .comments.block .box{
 	padding-bottom: 0!important;
