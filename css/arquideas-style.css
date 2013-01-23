@@ -7540,9 +7540,8 @@ table tr td.active{
 	font-family: SoinSans-Bold;
 	border: 0;
 	width: 690px;
-	height: 44px;
+	height: 45px;
 }
-
 .account-edit.area-social #content-tabs ul.primary, .account-edit.area-social .name-holder{
 	/*margin-left: -24px;
 	padding-left: 24px;*/
@@ -7551,7 +7550,6 @@ table tr td.active{
 	padding: 12px 20px!important;
 	color: #fff!important;
 	background-color: #000!important;
-	border: none!important;
 }
 .area-social #content-tabs  li a.active, .area-social #content-tabs  li a:hover{
 	color: #99CC00!important;
@@ -7776,7 +7774,7 @@ a.add-content-link{
 #block-nodeblock-718, #block-views-advertisements-block_6, #block-views-contests-block_2{
 	margin: 0 10px;
 	border: 2px solid #000;
-	/*padding: 10px;*/
+	padding: 10px;
 	text-align: center;
 	width: auto!important;
 	background: #fff!important;
@@ -7951,11 +7949,11 @@ body.page-user #main-inner #sidebar-first #sidebar-first-inner, body.page-user-1
 	width: 100%;
 }
 .sidebar-first .view-arqnetwork-user-profile .views-field-picture{
-	max-height:199px;
+	max-height:200px;
 }
 .sidebar-first .view-arqnetwork-user-profile .views-field-picture .imagecache-image_220_220{
 	width: 238px;
-	height: 199px;
+	height: 198px;
 	border: 1px solid #ccc;
 	overflow: hidden;
 	border-left: none;
@@ -8002,10 +8000,7 @@ body.area-social #sidebar-last.nested #block-commons_core-group_create_content{
 	padding: 0;
 	text-align: left;
 }
-body.area-social #sidebar-last.nested #block-commons_core-group_create_content .inner{
-	max-width: 230px; 
-	width: 220px
-}
+
 body.area-social #sidebar-last.nested #block-commons_core-group_create_content .inner .content {
     padding: 10px;
 }
@@ -8826,19 +8821,6 @@ body.book #content-content{
 #user-menu .open-toggle {
 }
 /*Edición datos concurso*/
-.view-arqnetwork-account-inscriptions .views-row{
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 20px;
-	margin-top: 20px;
-}
-.view-arqnetwork-account-inscriptions .views-row.views-row-first{
-	border-top: 1px solid #ccc;
-	padding-top: 20px;
-}
-.view-arqnetwork-account-inscriptions .views-row.views-row-last{
-	border-bottom: 1px solid #ccc;
-	padding-bottom: 20px;
-}
 .view-arqnetwork-account-inscriptions .views-field-title-1{
 	margin: 15px 0;	
 }
