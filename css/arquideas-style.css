@@ -5986,6 +5986,30 @@ text-transform: uppercase;
   float: left;
   height: 490px;
 }
+.arquideas-partners-home {
+  margin: 0 auto;
+}
+.block-arquideas_partners_home .scroll {
+  text-align: center;
+}
+.block-arquideas_partners_home .scroll-left,
+.block-arquideas_partners_home .scroll-right{
+  display: inline-block;
+}
+.block-arquideas_partners_home .scroll-left a,
+.block-arquideas_partners_home .scroll-right a {
+  background: #000 url("../images/slider-controls.png") no-repeat 10px center;
+  display: inline-block;
+  height: 42px;
+  width: 42px;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.block-arquideas_partners_home .scroll-right a {
+  margin-left: 1px;
+  background-position: -55px center;
+}
 
 /* Social Sharing Widget */
 .social-sharing-widget {
