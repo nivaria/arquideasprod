@@ -5986,6 +5986,14 @@ text-transform: uppercase;
   float: left;
   height: 490px;
 }
+
+#block-nodeblock-224 .content {
+  width: 810px;
+  margin: 40px auto 0;
+  font-family: "SoinSans-Bold",Helvetica,Arial,sans-serif;
+  font-weight: 18px;
+  line-height: 140%;
+}
 .arquideas-partners-home {
   margin: 0 auto;
 }
@@ -5998,7 +6006,7 @@ text-transform: uppercase;
 }
 .block-arquideas_partners_home .scroll-left a,
 .block-arquideas_partners_home .scroll-right a {
-  background: #000 url("../images/slider-controls.png") no-repeat 10px center;
+  background: #000 url("../images/slider-controls.png") no-repeat 12px center;
   display: inline-block;
   height: 42px;
   width: 42px;
@@ -6730,6 +6738,7 @@ body.node-type-inscription-1 #breadcrumbs {
   font-family: "SoinSans-Roman",Helvetica,Arial,sans-serif;
   font-size: 14px;
   font-weight: normal;
+  float: left;
 }
 .inscription-navigation .previous-inscription a,
 .inscription-navigation .next-inscription a {
