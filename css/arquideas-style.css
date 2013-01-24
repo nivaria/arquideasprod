@@ -1625,8 +1625,6 @@ input.node-add-to-cart:hover, input.node-add-to-cart.hover, input.node-add-to-ca
 }
 #uc-cart-view-form #edit-checkout, #uc-cart-checkout-form #edit-continue, #uc-cart-checkout-review-form #edit-submit {
 }
-.order-review-table {
-}
 #cart-form-products table th {
 border-bottom: 3px solid #DEC2C3;
 }
@@ -3678,7 +3676,8 @@ body.no-sidebars #content-group {
   margin: 0 auto;
 }
 body.node-type-page #content-group,
-body#pid-content-contact #content-group {
+body#pid-content-contact #content-group,
+body.page-cart #content-group {
   float: none;
 }
 body.no-sidebars #content-group h1.title {
@@ -7344,6 +7343,28 @@ body.node-type-news h1.title {
 
 .node-type-inscription.only-groups input.contest-payment-individual {
     display: none;
+}
+
+/* Checkout Styles */
+
+.order-review-table {
+  margin: 20px auto;
+  width: 100%;
+}
+.order-review-table .title-col {
+    width: 100px;
+    padding-right: 10px;
+}
+#uc-cart-checkout-form #payment-pane #payment_details {
+  border: 0 none;
+  padding: 0;
+}
+#uc-cart-checkout-form .cart-review tr:last-child,
+.order-review-table tr:last-child {
+  border-bottom: 0 none;
+}
+#edit-back.form-submit {
+  float: left;
 }
 
 /* Follow Module Icons */
