@@ -314,7 +314,7 @@ function arquideasprod_preprocess_page(&$vars)
   $vars['css'] = drupal_add_css();
   $vars['styles'] = drupal_get_css();
   $vars['scripts'] = drupal_get_js();
-  
+
   //PREPROCESS COLABORATOR PAGE
   if(isset($vars['node']) && $vars['node']->type=='colaborator'){
       if(!$vars['is_edit']){
@@ -327,7 +327,7 @@ function arquideasprod_preprocess_page(&$vars)
   $grid_name = substr(theme_get_setting('theme_grid'), 0, 7);
   $grid_type = substr(theme_get_setting('theme_grid'), 7);
   $grid_width = (int)substr($grid_name, 4, 2);
-  
+
   if(preg_match('/^user\/\d+\/account\/edit$/', $_GET['q'])==1){
       $vars['main_group_width'] = $grid_name . $grid_width.' forms_user';
       $vars['content_group_width'] = $grid_name .'12 force_width';
@@ -348,7 +348,7 @@ function arquideasprod_preprocess_page(&$vars)
   //ADDITIONAL PREPROCESS FOR NETWORK
   if(preg_match('/^arquideas_network$/', $_GET['q'])==1){
       $vars['body_classes'] .= ' area-comunidad comunidad';
-  }    
+  }
   if(preg_match('/^users$/', $_GET['q'])==1){
       $vars['body_classes'] .= '  area-comunidad usuarios';
   }
@@ -419,12 +419,12 @@ function arquideasprod_preprocess_node(&$vars) {
       if($match==1){
           $vars['template_files'][] = 'node-inscription-public';
       }
-      
+
       $members = contest_notifications_get_group_members($vars['node']);
       $vars['num_members'] = count($members);
-      
+
       if(count($members)>1){
-          $vars['node_classes'] .= ' only-groups'; 
+          $vars['node_classes'] .= ' only-groups';
       }
   }
 
@@ -733,7 +733,7 @@ function arquideasprod_preprocess_block($variables) {
 function arquideasprod_search_theme_form($form) {
 	$form['search_theme_form']['#value']= t('Project, study, contest...');
 	$form['submit']['#type'] = 'image_button';
-	$form['submit']['#src'] = drupal_get_path('theme', 'arquideasdev') . '/images/search_icon.png';
+	$form['submit']['#src'] = drupal_get_path('theme', 'arquideasprod') . '/images/search_icon.png';
 	$form['submit']['#attributes']['class'] = 'btn';
 	return '<div id="search" class="container-inline">' . drupal_render($form) . '</div>';
 }
@@ -758,7 +758,7 @@ function arquideasprod_preprocess_search_block_form(&$vars, $hook) {
   //$vars['form']['submit']['#value'] = t('Go!');
 
   // Change submit button into image button - NOTE: '#src' leading '/' automatically added
-  $vars['form']['submit']['image_button'] = array('#type' => 'image_button', '#src' => drupal_get_path('theme', 'arquideasdev') . '/images/search_icon.png');
+  $vars['form']['submit']['image_button'] = array('#type' => 'image_button', '#src' => drupal_get_path('theme', 'arquideasprod') . '/images/search_icon.png');
 
   // Rebuild the rendered version (search form only, rest remains unchanged)
   unset($vars['form']['search_block_form']['#printed']);
