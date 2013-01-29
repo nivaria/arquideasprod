@@ -39,7 +39,7 @@
 
     <div class="content clearfix">
         <div class="colaborator-top">
-           <?php print theme_imagecache('image_220_220', $field_square_image_col[0]['filepath'], $node->title); ?>
+           <?php print theme_imagecache(''original', $field_image_slideshow_home[0]['filepath'], $node->title); ?>
             <h1 class="title"><?php print $node->title; ?></h1>
             <div class="short-description">
             <?php print $field_short_description[0]['value']; ?>
